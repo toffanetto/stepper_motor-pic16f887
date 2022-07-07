@@ -1,18 +1,39 @@
 #include "stepper.h"
 #include <stdint.h>
+#include <xc.h>
+#include <stdlib.h>
 
 void setupStepper(void){
-    // configura Timer, velocidade e "saídas"
+
+	TRISD = 0b11110000; 
+
+    INTCONbits.GIE = 1; // Interrução global
+	INTCONbits.PEIE = 1; // Interrução periféticos
+
+	PIE1bits.TMR2IE = 1; // Interrução TMR2
+	PIR1bits.TMR2IF = 0; // Interrupt flag bit
+	T2CON = 0b01111110; // Configura TMR2; Prescaler 1:16; Poscaler 1:16
+	PR2=255; 
 }
 
 void setPosicaoAtual(uint16_t posicao_atual){
-    // seta o valor da posição atual (inicial)
+    position = posicao_atual/5.525;
 }
 
 uint16_t getPosicaoAtual(){
-    // retorna o valor da posição atual do motor
+    return position*5.525;
 }
 
 void setPosicaoDesejada(uint16_t posicao_desejada){
-    // seta a posição desejada para o motor de passo
+    setpoint = posicao_desejada/5.525;
+}
+
+void calculaErro(void){
+    error = abs(position - setpoint);
+
+    if(setpoint > position && error > 32)
+        error = -error;	
+
+    if(setpoint < position && error < 32)
+        error = -error;
 }

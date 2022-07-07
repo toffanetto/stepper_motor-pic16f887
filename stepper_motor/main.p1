@@ -1,5 +1,19 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"350 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f887.h
+"77 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f887.h
+[s S2 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S2 . C DC Z nPD nTO RP IRP ]
+"86
+[s S3 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S3 . . RP0 RP1 ]
+"91
+[s S4 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S4 . CARRY . ZERO ]
+"76
+[u S1 `S2 1 `S3 1 `S4 1 ]
+[n S1 . . . . ]
+"97
+[v _STATUSbits `VS1 ~T0 @X0 0 e@3 ]
+"350
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "541
 [s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -9,33 +23,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S18 . . ]
 "551
 [v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
-"1600
-[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"463
-[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
-"473
-[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S17 . . TMR0IF . TMR0IE ]
-"462
-[u S15 `S16 1 `S17 1 ]
-[n S15 . . . ]
-"480
-[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
-"1706
-[s S63 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S63 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE ]
-"1705
-[u S62 `S63 1 ]
-[n S62 . . ]
-"1716
-[v _PIE1bits `VS62 ~T0 @X0 0 e@140 ]
-"770
-[v _T2CON `Vuc ~T0 @X0 0 e@18 ]
-"2039
-[v _PR2 `Vuc ~T0 @X0 0 e@146 ]
+"10 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h
+[v _setupStepper `(v ~T0 @X0 0 ef ]
+"12
+[v _setPosicaoAtual `(v ~T0 @X0 0 ef1`ui ]
 [p mainexit ]
-"356
+"356 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f887.h
 [s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S12 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
 "355
@@ -43,8 +36,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S11 . . ]
 "367
 [v _PORTDbits `VS11 ~T0 @X0 0 e@8 ]
-"92 C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h
-[v _abs `(i ~T0 @X0 0 ef1`i ]
+"16 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h
+[v _setPosicaoDesejada `(v ~T0 @X0 0 ef1`ui ]
+"18
+[v _calculaErro `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -1557,62 +1552,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stdlib.h: 7: typedef unsigned short wchar_t;
-[; ;stdlib.h: 15: typedef struct {
-[; ;stdlib.h: 16: int rem;
-[; ;stdlib.h: 17: int quot;
-[; ;stdlib.h: 18: } div_t;
-[; ;stdlib.h: 19: typedef struct {
-[; ;stdlib.h: 20: unsigned rem;
-[; ;stdlib.h: 21: unsigned quot;
-[; ;stdlib.h: 22: } udiv_t;
-[; ;stdlib.h: 23: typedef struct {
-[; ;stdlib.h: 24: long quot;
-[; ;stdlib.h: 25: long rem;
-[; ;stdlib.h: 26: } ldiv_t;
-[; ;stdlib.h: 27: typedef struct {
-[; ;stdlib.h: 28: unsigned long quot;
-[; ;stdlib.h: 29: unsigned long rem;
-[; ;stdlib.h: 30: } uldiv_t;
-[; ;stdlib.h: 53: extern double atof(const char *);
-[; ;stdlib.h: 54: extern double strtod(const char *, const char **);
-[; ;stdlib.h: 55: extern int atoi(const char *);
-[; ;stdlib.h: 56: extern unsigned xtoi(const char *);
-[; ;stdlib.h: 57: extern long atol(const char *);
-[; ;stdlib.h: 58: extern long strtol(const char *, char **, int);
-[; ;stdlib.h: 60: extern int rand(void);
-[; ;stdlib.h: 61: extern void srand(unsigned int);
-[; ;stdlib.h: 62: extern void * calloc(size_t, size_t);
-[; ;stdlib.h: 63: extern div_t div(int numer, int denom);
-[; ;stdlib.h: 64: extern udiv_t udiv(unsigned numer, unsigned denom);
-[; ;stdlib.h: 65: extern ldiv_t ldiv(long numer, long denom);
-[; ;stdlib.h: 66: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-[; ;stdlib.h: 67: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 68: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 69: extern unsigned int _rotl(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 70: extern unsigned int _rotr(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 75: extern void * malloc(size_t);
-[; ;stdlib.h: 76: extern void free(void *);
-[; ;stdlib.h: 77: extern void * realloc(void *, size_t);
-[; ;stdlib.h: 86: extern int atexit(void (*)(void));
-[; ;stdlib.h: 87: extern char * getenv(const char *);
-[; ;stdlib.h: 88: extern char ** environ;
-[; ;stdlib.h: 89: extern int system(char *);
-[; ;stdlib.h: 90: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-[; ;stdlib.h: 91: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-[; ;stdlib.h: 92: extern int abs(int);
-[; ;stdlib.h: 93: extern long labs(long);
-[; ;stdlib.h: 95: extern char * itoa(char * buf, int val, int base);
-[; ;stdlib.h: 96: extern char * utoa(char * buf, unsigned val, int base);
-[; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
-[; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-[; ;stepper.h: 6: void setupStepper(void);
-[; ;stepper.h: 8: void setPosicaoAtual(uint16_t posicao_atual);
-[; ;stepper.h: 10: uint16_t getPosicaoAtual();
-[; ;stepper.h: 12: void setPosicaoDesejada(uint16_t posicao_desejada);
-"8 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor\main.c
+"6 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h
+[v _setpoint `uc ~T0 @X0 1 e ]
+[i _setpoint
+-> -> 0 `i `uc
+]
+[; ;stepper.h: 6: uint8_t setpoint = 0;
+"7
+[v _position `uc ~T0 @X0 1 e ]
+[i _position
+-> -> 0 `i `uc
+]
+[; ;stepper.h: 7: uint8_t position = 0;
+"8
+[v _error `c ~T0 @X0 1 e ]
+[i _error
+-> -> 0 `i `c
+]
+[; ;stepper.h: 8: int8_t error = 0;
+[; ;stepper.h: 10: void setupStepper(void);
+[; ;stepper.h: 12: void setPosicaoAtual(uint16_t posicao_atual);
+[; ;stepper.h: 14: uint16_t getPosicaoAtual();
+[; ;stepper.h: 16: void setPosicaoDesejada(uint16_t posicao_desejada);
+[; ;stepper.h: 18: void calculaErro(void);
+"7 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
 [p x FOSC=INTRC_NOCLKOUT ]
 [p x WDTE=OFF ]
 [p x PWRTE=OFF ]
@@ -1624,89 +1587,83 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x FCMEN=ON ]
 [p x LVP=OFF ]
 [p x DEBUG=OFF ]
-"9
+"8
 [p x BOR4V=BOR40V ]
 [p x WRT=OFF ]
-"15
-[v _error `c ~T0 @X0 1 e ]
-[i _error
--> -> 1 `i `c
-]
-[; ;main.c: 15: int8_t error = 1;
-"16
+"14
 [v _phase `uc ~T0 @X0 1 e ]
 [i _phase
--> -> 1 `i `uc
-]
-[; ;main.c: 16: uint8_t phase = 1;
-"17
-[v _setpoint `uc ~T0 @X0 1 e ]
-[i _setpoint
 -> -> 0 `i `uc
 ]
-[; ;main.c: 17: uint8_t setpoint = 0;
-"18
-[v _position `uc ~T0 @X0 1 e ]
-[i _position
--> -> 0 `i `uc
-]
-[; ;main.c: 18: uint8_t position = 0;
-"19
+[; ;main.c: 14: uint8_t phase = 0;
+"15
 [v _poscaler2 `uc ~T0 @X0 1 e ]
 [i _poscaler2
 -> -> 0 `i `uc
 ]
-[; ;main.c: 19: uint8_t poscaler2 = 0;
+[; ;main.c: 15: uint8_t poscaler2 = 0;
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-[v F1805 `(v ~T0 @X0 1 tf ]
-"21
-[v _ISR `IF1805 ~T0 @X0 1 e ]
+[v F1687 `(v ~T0 @X0 1 tf ]
+"17
+[v _ISR `IF1687 ~T0 @X0 1 e ]
 {
-[; ;main.c: 21: void __interrupt ISR(){
+[; ;main.c: 17: void __interrupt ISR(){
 [e :U _ISR ]
 [f ]
-[; ;main.c: 23: if(poscaler2 >= 10){
+[; ;main.c: 19: if(poscaler2 >= 5){
+"19
+[e $ ! >= -> _poscaler2 `i -> 5 `i 139  ]
+{
+[; ;main.c: 21: if(error > 0){
+"21
+[e $ ! > -> _error `i -> 0 `i 140  ]
+{
+[; ;main.c: 22: STATUSbits.C = 0;
+"22
+[e = . . _STATUSbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 23: phase = (phase == 0) ? 1 : phase;
 "23
-[e $ ! >= -> _poscaler2 `i -> 10 `i 143  ]
-{
-[; ;main.c: 24: if(error > 0){
+[e = _phase -> ? == -> _phase `i -> 0 `i : -> 1 `i -> _phase `i `uc ]
+[; ;main.c: 24: phase = (phase == 8) ? phase >> 3 : phase << 1;
 "24
-[e $ ! > -> _error `i -> 0 `i 144  ]
-{
-[; ;main.c: 25: phase = (phase == 8) ? phase >> 3 : phase << 1;
-"25
 [e = _phase -> ? == -> _phase `i -> 8 `i : >> -> _phase `i -> 3 `i << -> _phase `i -> 1 `i `uc ]
-[; ;main.c: 26: position = ((position + 1)== 64) ? 0 : (position + 1);
-"26
+[; ;main.c: 25: position = ((position + 1)== 64) ? 0 : (position + 1);
+"25
 [e = _position -> ? == + -> _position `i -> 1 `i -> 64 `i : -> 0 `i + -> _position `i -> 1 `i `uc ]
-"27
+"26
 }
-[e :U 144 ]
-[; ;main.c: 27: }
-[; ;main.c: 29: if(error < 0){
-"29
-[e $ ! < -> _error `i -> 0 `i 145  ]
+[e :U 140 ]
+[; ;main.c: 26: }
+[; ;main.c: 28: if(error < 0){
+"28
+[e $ ! < -> _error `i -> 0 `i 141  ]
 {
-[; ;main.c: 30: phase = (phase == 1) ? phase << 3 : phase >> 1;
+[; ;main.c: 29: STATUSbits.C = 0;
+"29
+[e = . . _STATUSbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 30: phase = (phase == 0) ? 8 : phase;
 "30
-[e = _phase -> ? == -> _phase `i -> 1 `i : << -> _phase `i -> 3 `i >> -> _phase `i -> 1 `i `uc ]
-[; ;main.c: 31: position = ((position - 1)== -1) ? 63 : (position - 1);
+[e = _phase -> ? == -> _phase `i -> 0 `i : -> 8 `i -> _phase `i `uc ]
+[; ;main.c: 31: phase = (phase == 1) ? phase << 3 : phase >> 1;
 "31
-[e = _position -> ? == - -> _position `i -> 1 `i -U -> 1 `i : -> 63 `i - -> _position `i -> 1 `i `uc ]
+[e = _phase -> ? == -> _phase `i -> 1 `i : << -> _phase `i -> 3 `i >> -> _phase `i -> 1 `i `uc ]
+[; ;main.c: 32: position = ((position - 1)== -1) ? 63 : (position - 1);
 "32
-}
-[e :U 145 ]
-[; ;main.c: 32: }
-[; ;main.c: 33: poscaler2 = 0;
+[e = _position -> ? == - -> _position `i -> 1 `i -U -> 1 `i : -> 63 `i - -> _position `i -> 1 `i `uc ]
 "33
-[e = _poscaler2 -> -> 0 `i `uc ]
-"34
 }
-[e :U 143 ]
-[; ;main.c: 34: }
-[; ;main.c: 36: PORTD = phase;
-"36
+[e :U 141 ]
+[; ;main.c: 33: }
+[; ;main.c: 34: poscaler2 = 0;
+"34
+[e = _poscaler2 -> -> 0 `i `uc ]
+[; ;main.c: 35: PORTD = phase;
+"35
 [e = _PORTD _phase ]
+"36
+}
+[e :U 139 ]
+[; ;main.c: 36: }
 [; ;main.c: 38: poscaler2++;
 "38
 [e ++ _poscaler2 -> -> 1 `i `uc ]
@@ -1715,7 +1672,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 [; ;main.c: 41: }
 "41
-[e :UE 142 ]
+[e :UE 138 ]
 }
 "43
 [v _setup `(v ~T0 @X0 1 ef ]
@@ -1723,91 +1680,62 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 43: void setup (void){
 [e :U _setup ]
 [f ]
-[; ;main.c: 45: TRISD = 0b11110000;
+[; ;main.c: 45: setupStepper();
 "45
-[e = _TRISD -> -> 240 `i `uc ]
-[; ;main.c: 47: INTCONbits.GIE = 1;
-"47
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 48: INTCONbits.PEIE = 1;
+[e ( _setupStepper ..  ]
+[; ;main.c: 46: setPosicaoAtual(0);
+"46
+[e ( _setPosicaoAtual (1 -> -> 0 `i `ui ]
+[; ;main.c: 48: }
 "48
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 50: PIE1bits.TMR2IE = 1;
-"50
-[e = . . _PIE1bits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 51: PIR1bits.TMR2IF = 0;
-"51
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 52: T2CON = 0b01111110;
-"52
-[e = _T2CON -> -> 126 `i `uc ]
-[; ;main.c: 53: PR2=255;
-"53
-[e = _PR2 -> -> 255 `i `uc ]
-[; ;main.c: 55: }
-"55
-[e :UE 146 ]
+[e :UE 142 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"57
+"50
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 57: void main (void){
+[; ;main.c: 50: void main (void){
 [e :U _main ]
 [f ]
-[; ;main.c: 59: setup();
-"59
+[; ;main.c: 52: setup();
+"52
 [e ( _setup ..  ]
-[; ;main.c: 61: while(1){
-"61
-[e :U 149 ]
+[; ;main.c: 54: while(1){
+"54
+[e :U 145 ]
 {
-[; ;main.c: 63: if(PORTDbits.RD4==1)
-"63
-[e $ ! == -> . . _PORTDbits 0 4 `i -> 1 `i 151  ]
-[; ;main.c: 64: setpoint = 0;
-"64
-[e = _setpoint -> -> 0 `i `uc ]
-[e :U 151 ]
-[; ;main.c: 65: if(PORTDbits.RD5==1)
-"65
-[e $ ! == -> . . _PORTDbits 0 5 `i -> 1 `i 152  ]
-[; ;main.c: 66: setpoint = 20;
-"66
-[e = _setpoint -> -> 20 `i `uc ]
-[e :U 152 ]
-[; ;main.c: 67: if(PORTDbits.RD6==1)
-"67
-[e $ ! == -> . . _PORTDbits 0 6 `i -> 1 `i 153  ]
-[; ;main.c: 68: setpoint = 40;
-"68
-[e = _setpoint -> -> 40 `i `uc ]
-[e :U 153 ]
-[; ;main.c: 70: error = abs(position - setpoint);
-"70
-[e = _error -> ( _abs (1 - -> _position `i -> _setpoint `i `c ]
-[; ;main.c: 72: if(setpoint > position && error > 32)
-"72
-[e $ ! && > -> _setpoint `i -> _position `i > -> _error `i -> 32 `i 154  ]
-[; ;main.c: 73: error = -error;
-"73
-[e = _error -> -U -> _error `i `c ]
-[e :U 154 ]
-[; ;main.c: 75: if(setpoint < position && error < 32)
-"75
-[e $ ! && < -> _setpoint `i -> _position `i < -> _error `i -> 32 `i 155  ]
-[; ;main.c: 76: error = -error;
-"76
-[e = _error -> -U -> _error `i `c ]
-[e :U 155 ]
-"78
-}
+[; ;main.c: 56: if(PORTDbits.RD4==1)
+"56
+[e $ ! == -> . . _PORTDbits 0 4 `i -> 1 `i 147  ]
+[; ;main.c: 57: setPosicaoDesejada(0);
+"57
+[e ( _setPosicaoDesejada (1 -> -> 0 `i `ui ]
+[e :U 147 ]
+[; ;main.c: 58: if(PORTDbits.RD5==1)
+"58
+[e $ ! == -> . . _PORTDbits 0 5 `i -> 1 `i 148  ]
+[; ;main.c: 59: setPosicaoDesejada(120);
+"59
+[e ( _setPosicaoDesejada (1 -> -> 120 `i `ui ]
 [e :U 148 ]
+[; ;main.c: 60: if(PORTDbits.RD6==1)
+"60
+[e $ ! == -> . . _PORTDbits 0 6 `i -> 1 `i 149  ]
+[; ;main.c: 61: setPosicaoDesejada(240);
 "61
-[e $U 149  ]
-[e :U 150 ]
-[; ;main.c: 78: }
-[; ;main.c: 79: }
-"79
-[e :UE 147 ]
+[e ( _setPosicaoDesejada (1 -> -> 240 `i `ui ]
+[e :U 149 ]
+[; ;main.c: 63: calculaErro();
+"63
+[e ( _calculaErro ..  ]
+"65
+}
+[e :U 144 ]
+"54
+[e $U 145  ]
+[e :U 146 ]
+[; ;main.c: 65: }
+[; ;main.c: 66: }
+"66
+[e :UE 143 ]
 }
