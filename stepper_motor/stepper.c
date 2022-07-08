@@ -13,27 +13,27 @@ void setupStepper(void){
 	PIE1bits.TMR2IE = 1; // Interrução TMR2
 	PIR1bits.TMR2IF = 0; // Interrupt flag bit
 	T2CON = 0b01111110; // Configura TMR2; Prescaler 1:16; Poscaler 1:16
-	PR2=255; 
+	PR2=50; 
 }
 
 void setPosicaoAtual(uint16_t posicao_atual){
-    position = posicao_atual/5.525;
+    position = posicao_atual/(5.625/32);
 }
 
 uint16_t getPosicaoAtual(){
-    return position*5.525;
+    return position*(5.625/32);
 }
 
 void setPosicaoDesejada(uint16_t posicao_desejada){
-    setpoint = posicao_desejada/5.525;
+    setpoint = posicao_desejada/(5.625/32);
 }
 
 void calculaErro(void){
     error = abs(position - setpoint);
 
-    if(setpoint > position && error > 32)
+    if(setpoint > position && error > 2048)
         error = -error;	
 
-    if(setpoint < position && error < 32)
+    if(setpoint < position && error < 2048)
         error = -error;
 }

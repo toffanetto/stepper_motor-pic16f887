@@ -1,5 +1,5 @@
 
-# 1 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c"
+# 1 "C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c"
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
 typedef signed char int8_t;
@@ -91,10 +91,10 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 6 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h"
-uint8_t setpoint = 0;
-uint8_t position = 0;
-int8_t error = 0;
+# 6 "C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.h"
+uint16_t setpoint = 0;
+uint16_t position = 0;
+int16_t error = 0;
 
 void setupStepper(void);
 
@@ -2291,7 +2291,7 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 6 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c"
+# 6 "C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c"
 void setupStepper(void){
 
 TRISD = 0b11110000;
@@ -2302,27 +2302,27 @@ INTCONbits.PEIE = 1;
 PIE1bits.TMR2IE = 1;
 PIR1bits.TMR2IF = 0;
 T2CON = 0b01111110;
-PR2=255;
+PR2=50;
 }
 
 void setPosicaoAtual(uint16_t posicao_atual){
-position = posicao_atual/5.525;
+position = posicao_atual/(5.625/32);
 }
 
 uint16_t getPosicaoAtual(){
-return position*5.525;
+return position*(5.625/32);
 }
 
 void setPosicaoDesejada(uint16_t posicao_desejada){
-setpoint = posicao_desejada/5.525;
+setpoint = posicao_desejada/(5.625/32);
 }
 
 void calculaErro(void){
 error = abs(position - setpoint);
 
-if(setpoint > position && error > 32)
+if(setpoint > position && error > 2048)
 error = -error;
 
-if(setpoint < position && error < 32)
+if(setpoint < position && error < 2048)
 error = -error;
 }

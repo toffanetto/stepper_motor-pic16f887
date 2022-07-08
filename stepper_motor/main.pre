@@ -1,5 +1,5 @@
 
-# 1 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c"
+# 1 "C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\main.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2204,10 +2204,10 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 6 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h"
-uint8_t setpoint = 0;
-uint8_t position = 0;
-int8_t error = 0;
+# 6 "C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.h"
+uint16_t setpoint = 0;
+uint16_t position = 0;
+int16_t error = 0;
 
 void setupStepper(void);
 
@@ -2220,36 +2220,34 @@ void setPosicaoDesejada(uint16_t posicao_desejada);
 void calculaErro(void);
 
 
-# 7 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c"
+# 7 "C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\main.c"
 #pragma config CONFIG1=0x2FF4
 #pragma config CONFIG2=0x3FFF
 
-# 14
+
+
+
 uint8_t phase = 0;
-uint8_t poscaler2 = 0;
 
 void __interrupt ISR(){
 
-if(poscaler2 >= 5){
+calculaErro();
 
 if(error > 0){
 STATUSbits.C = 0;
 phase = (phase == 0) ? 1 : phase;
 phase = (phase == 8) ? phase >> 3 : phase << 1;
-position = ((position + 1)== 64) ? 0 : (position + 1);
+position = ((position + 1)== 2048) ? 0 : (position + 1);
 }
 
 if(error < 0){
 STATUSbits.C = 0;
 phase = (phase == 0) ? 8 : phase;
 phase = (phase == 1) ? phase << 3 : phase >> 1;
-position = ((position - 1)== -1) ? 63 : (position - 1);
-}
-poscaler2 = 0;
-PORTD = phase;
+position = ((position - 1)== -1) ? 2047 : (position - 1);
 }
 
-poscaler2++;
+PORTD = phase;
 
 PIR1bits.TMR2IF = 0;
 }
@@ -2270,11 +2268,9 @@ while(1){
 if(PORTDbits.RD4==1)
 setPosicaoDesejada(0);
 if(PORTDbits.RD5==1)
-setPosicaoDesejada(120);
+setPosicaoDesejada(90);
 if(PORTDbits.RD6==1)
-setPosicaoDesejada(240);
-
-calculaErro();
+setPosicaoDesejada(180);
 
 }
 }

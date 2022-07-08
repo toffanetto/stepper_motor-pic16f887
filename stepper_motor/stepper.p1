@@ -62,24 +62,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-"6 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h
-[v _setpoint `uc ~T0 @X0 1 e ]
+"6 C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.h
+[v _setpoint `ui ~T0 @X0 1 e ]
 [i _setpoint
--> -> 0 `i `uc
+-> -> 0 `i `ui
 ]
-[; ;stepper.h: 6: uint8_t setpoint = 0;
+[; ;stepper.h: 6: uint16_t setpoint = 0;
 "7
-[v _position `uc ~T0 @X0 1 e ]
+[v _position `ui ~T0 @X0 1 e ]
 [i _position
--> -> 0 `i `uc
+-> -> 0 `i `ui
 ]
-[; ;stepper.h: 7: uint8_t position = 0;
+[; ;stepper.h: 7: uint16_t position = 0;
 "8
-[v _error `c ~T0 @X0 1 e ]
+[v _error `i ~T0 @X0 1 e ]
 [i _error
--> -> 0 `i `c
+-> 0 `i
 ]
-[; ;stepper.h: 8: int8_t error = 0;
+[; ;stepper.h: 8: int16_t error = 0;
 [; ;stepper.h: 10: void setupStepper(void);
 [; ;stepper.h: 12: void setPosicaoAtual(uint16_t posicao_atual);
 [; ;stepper.h: 14: uint16_t getPosicaoAtual();
@@ -1620,7 +1620,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-"6 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
+"6 C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c
 [v _setupStepper `(v ~T0 @X0 1 ef ]
 {
 [; ;stepper.c: 6: void setupStepper(void){
@@ -1644,9 +1644,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stepper.c: 15: T2CON = 0b01111110;
 "15
 [e = _T2CON -> -> 126 `i `uc ]
-[; ;stepper.c: 16: PR2=255;
+[; ;stepper.c: 16: PR2=50;
 "16
-[e = _PR2 -> -> 255 `i `uc ]
+[e = _PR2 -> -> 50 `i `uc ]
 [; ;stepper.c: 17: }
 "17
 [e :UE 142 ]
@@ -1658,9 +1658,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _setPosicaoAtual ]
 [v _posicao_atual `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;stepper.c: 20: position = posicao_atual/5.525;
+[; ;stepper.c: 20: position = posicao_atual/(5.625/32);
 "20
-[e = _position -> / -> _posicao_atual `d .5.525 `uc ]
+[e = _position -> / -> _posicao_atual `d / .5.625 -> -> 32 `i `d `ui ]
 [; ;stepper.c: 21: }
 "21
 [e :UE 143 ]
@@ -1671,9 +1671,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stepper.c: 23: uint16_t getPosicaoAtual(){
 [e :U _getPosicaoAtual ]
 [f ]
-[; ;stepper.c: 24: return position*5.525;
+[; ;stepper.c: 24: return position*(5.625/32);
 "24
-[e ) -> * -> _position `d .5.525 `ui ]
+[e ) -> * -> _position `d / .5.625 -> -> 32 `i `d `ui ]
 [e $UE 144  ]
 [; ;stepper.c: 25: }
 "25
@@ -1686,9 +1686,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _setPosicaoDesejada ]
 [v _posicao_desejada `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;stepper.c: 28: setpoint = posicao_desejada/5.525;
+[; ;stepper.c: 28: setpoint = posicao_desejada/(5.625/32);
 "28
-[e = _setpoint -> / -> _posicao_desejada `d .5.525 `uc ]
+[e = _setpoint -> / -> _posicao_desejada `d / .5.625 -> -> 32 `i `d `ui ]
 [; ;stepper.c: 29: }
 "29
 [e :UE 145 ]
@@ -1701,20 +1701,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;stepper.c: 32: error = abs(position - setpoint);
 "32
-[e = _error -> ( _abs (1 - -> _position `i -> _setpoint `i `c ]
-[; ;stepper.c: 34: if(setpoint > position && error > 32)
+[e = _error ( _abs (1 -> - _position _setpoint `i ]
+[; ;stepper.c: 34: if(setpoint > position && error > 2048)
 "34
-[e $ ! && > -> _setpoint `i -> _position `i > -> _error `i -> 32 `i 147  ]
+[e $ ! && > _setpoint _position > _error -> 2048 `i 147  ]
 [; ;stepper.c: 35: error = -error;
 "35
-[e = _error -> -U -> _error `i `c ]
+[e = _error -U _error ]
 [e :U 147 ]
-[; ;stepper.c: 37: if(setpoint < position && error < 32)
+[; ;stepper.c: 37: if(setpoint < position && error < 2048)
 "37
-[e $ ! && < -> _setpoint `i -> _position `i < -> _error `i -> 32 `i 148  ]
+[e $ ! && < _setpoint _position < _error -> 2048 `i 148  ]
 [; ;stepper.c: 38: error = -error;
 "38
-[e = _error -> -U -> _error `i `c ]
+[e = _error -U _error ]
 [e :U 148 ]
 [; ;stepper.c: 39: }
 "39

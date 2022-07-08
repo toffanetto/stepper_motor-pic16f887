@@ -3,9 +3,9 @@
 
 #include <stdint.h>
 
-uint8_t setpoint = 0;
-uint8_t position = 0;
-int8_t error = 0;
+uint16_t setpoint = 0;
+uint16_t position = 0;
+int16_t error = 0;
 
 void setupStepper(void);
 
