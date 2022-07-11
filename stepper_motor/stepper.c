@@ -37,3 +37,9 @@ void calculaErro(void){
     if(setpoint < position && error < 2048)
         error = -error;
 }
+
+uint16_t setVelocidade(uint16_t speed_param){
+    // Transforma de % para tempo
+    // Calcula a velocidade
+    // Seta o PR2
+}

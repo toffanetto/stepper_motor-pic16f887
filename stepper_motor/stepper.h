@@ -6,6 +6,7 @@
 uint16_t setpoint = 0;
 uint16_t position = 0;
 int16_t error = 0;
+uint16_t speed = 0;
 
 void setupStepper(void);
 
@@ -16,6 +17,8 @@ uint16_t getPosicaoAtual();
 void setPosicaoDesejada(uint16_t posicao_desejada);
 
 void calculaErro(void);
+
+uint16_t setVelocidade(uint16_t speed_param);
 
 
 #endif
