@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c"
+# 1 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c"
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
 typedef signed char int8_t;
@@ -91,10 +91,11 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 6 "C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.h"
+# 6 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h"
 uint16_t setpoint = 0;
 uint16_t position = 0;
 int16_t error = 0;
+uint16_t speed = 0;
 
 void setupStepper(void);
 
@@ -105,6 +106,10 @@ uint16_t getPosicaoAtual();
 void setPosicaoDesejada(uint16_t posicao_desejada);
 
 void calculaErro(void);
+
+uint16_t getVelocidade();
+
+void calculaVelocidade(uint8_t poscaler_virtual_pv);
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2291,7 +2296,7 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 6 "C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c"
+# 6 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c"
 void setupStepper(void){
 
 TRISD = 0b11110000;
@@ -2325,4 +2330,12 @@ error = -error;
 
 if(setpoint < position && error < 2048)
 error = -error;
+}
+
+uint16_t getVelocidade(){
+return speed;
+}
+
+void calculaVelocidade(uint8_t poscaler_virtual_pv){
+speed = (5.625/32.0*2*3.14156)/((poscaler_virtual_pv*PR2*16*16*4)/4000000.0);
 }

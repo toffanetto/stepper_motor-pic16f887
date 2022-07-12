@@ -18,7 +18,9 @@ void setPosicaoDesejada(uint16_t posicao_desejada);
 
 void calculaErro(void);
 
-uint16_t setVelocidade(uint16_t speed_param);
+uint16_t getVelocidade();
+
+void calculaVelocidade(uint8_t poscaler_virtual_pv);
 
 
 #endif

@@ -38,8 +38,10 @@ void calculaErro(void){
         error = -error;
 }
 
-uint16_t setVelocidade(uint16_t speed_param){
-    // Transforma de % para tempo
-    // Calcula a velocidade
-    // Seta o PR2
+uint16_t getVelocidade(){
+    return speed;
+}
+
+void calculaVelocidade(uint8_t poscaler_virtual_pv){
+    speed = (5.625/32.0*2*3.14156)/((poscaler_virtual_pv*PR2*16*16*4)/4000000.0);
 }

@@ -62,7 +62,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-"6 C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.h
+"6 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h
 [v _setpoint `ui ~T0 @X0 1 e ]
 [i _setpoint
 -> -> 0 `i `ui
@@ -80,11 +80,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;stepper.h: 8: int16_t error = 0;
-[; ;stepper.h: 10: void setupStepper(void);
-[; ;stepper.h: 12: void setPosicaoAtual(uint16_t posicao_atual);
-[; ;stepper.h: 14: uint16_t getPosicaoAtual();
-[; ;stepper.h: 16: void setPosicaoDesejada(uint16_t posicao_desejada);
-[; ;stepper.h: 18: void calculaErro(void);
+"9
+[v _speed `ui ~T0 @X0 1 e ]
+[i _speed
+-> -> 0 `i `ui
+]
+[; ;stepper.h: 9: uint16_t speed = 0;
+[; ;stepper.h: 11: void setupStepper(void);
+[; ;stepper.h: 13: void setPosicaoAtual(uint16_t posicao_atual);
+[; ;stepper.h: 15: uint16_t getPosicaoAtual();
+[; ;stepper.h: 17: void setPosicaoDesejada(uint16_t posicao_desejada);
+[; ;stepper.h: 19: void calculaErro(void);
+[; ;stepper.h: 21: uint16_t getVelocidade();
+[; ;stepper.h: 23: void calculaVelocidade(uint8_t poscaler_virtual_pv);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -1620,7 +1628,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-"6 C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c
+"6 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
 [v _setupStepper `(v ~T0 @X0 1 ef ]
 {
 [; ;stepper.c: 6: void setupStepper(void){
@@ -1719,4 +1727,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stepper.c: 39: }
 "39
 [e :UE 146 ]
+}
+"41
+[v _getVelocidade `(ui ~T0 @X0 1 ef ]
+{
+[; ;stepper.c: 41: uint16_t getVelocidade(){
+[e :U _getVelocidade ]
+[f ]
+[; ;stepper.c: 42: return speed;
+"42
+[e ) _speed ]
+[e $UE 149  ]
+[; ;stepper.c: 43: }
+"43
+[e :UE 149 ]
+}
+"45
+[v _calculaVelocidade `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;stepper.c: 45: void calculaVelocidade(uint8_t poscaler_virtual_pv){
+[e :U _calculaVelocidade ]
+[v _poscaler_virtual_pv `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;stepper.c: 46: speed = (5.625/32.0*2*3.14156)/((poscaler_virtual_pv*PR2*16*16*4)/4000000.0);
+"46
+[e = _speed -> / * * / .5.625 .32.0 -> -> 2 `i `d .3.14156 / -> * * * * -> _poscaler_virtual_pv `i -> _PR2 `i -> 16 `i -> 16 `i -> 4 `i `d .4000000.0 `ui ]
+[; ;stepper.c: 47: }
+"47
+[e :UE 150 ]
 }

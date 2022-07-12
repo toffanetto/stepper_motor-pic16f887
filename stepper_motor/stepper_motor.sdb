@@ -5,6 +5,8 @@
 [d frameptr 6 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
+"32 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
@@ -17,17 +19,19 @@
 [v ___fttol __fttol `(l  1 e 4 0 ]
 "28 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwtoft.c
 [v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 "6 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\pic\eeprom.c
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"15 C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\main.c
+"18 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"38
+"55
 [v _setup setup `(v  1 e 1 0 ]
-"45
+"62
 [v _main main `(v  1 e 1 0 ]
-"6 C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c
+"6 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
 [v _setupStepper setupStepper `(v  1 e 1 0 ]
 "19
 [v _setPosicaoAtual setPosicaoAtual `(v  1 e 1 0 ]
@@ -35,7 +39,7 @@
 [v _setPosicaoDesejada setPosicaoDesejada `(v  1 e 1 0 ]
 "31
 [v _calculaErro calculaErro `(v  1 e 1 0 ]
-[s S130 . 1 `uc 1 C 1 0 :1:0 
+[s S135 . 1 `uc 1 C 1 0 :1:0 
 `uc 1 DC 1 0 :1:1 
 `uc 1 Z 1 0 :1:2 
 `uc 1 nPD 1 0 :1:3 
@@ -44,19 +48,19 @@
 `uc 1 IRP 1 0 :1:7 
 ]
 "97 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f887.h
-[s S138 . 1 `uc 1 . 1 0 :5:0 
+[s S143 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RP0 1 0 :1:5 
 `uc 1 RP1 1 0 :1:6 
 ]
-[s S142 . 1 `uc 1 CARRY 1 0 :1:0 
+[s S147 . 1 `uc 1 CARRY 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ZERO 1 0 :1:2 
 ]
-[u S146 . 1 `S130 1 . 1 0 `S138 1 . 1 0 `S142 1 . 1 0 ]
-[v _STATUSbits STATUSbits `VES146  1 e 1 @3 ]
+[u S151 . 1 `S135 1 . 1 0 `S143 1 . 1 0 `S147 1 . 1 0 ]
+[v _STATUSbits STATUSbits `VES151  1 e 1 @3 ]
 "350
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S181 . 1 `uc 1 RD0 1 0 :1:0 
+[s S186 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -66,8 +70,8 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "367
-[u S190 . 1 `S181 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES190  1 e 1 @8 ]
+[u S195 . 1 `S186 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES195  1 e 1 @8 ]
 [s S20 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -113,25 +117,33 @@
 [v _PIE1bits PIE1bits `VES60  1 e 1 @140 ]
 "2039
 [v _PR2 PR2 `VEuc  1 e 1 @146 ]
-"13 C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\main.c
+"13 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
 [v _phase phase `uc  1 e 1 0 ]
-"6 C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.h
+"14
+[v _speed_ramp speed_ramp `uc  1 e 1 0 ]
+"15
+[v _poscaler_virtual poscaler_virtual `uc  1 e 1 0 ]
+"16
+[v _poscaler_virtual_pv poscaler_virtual_pv `uc  1 e 1 0 ]
+"6 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h
 [v _setpoint setpoint `ui  1 e 2 0 ]
 "7
 [v _position position `ui  1 e 2 0 ]
 "8
 [v _error error `i  1 e 2 0 ]
-"45 C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\main.c
+"9
+[v _speed speed `ui  1 e 2 0 ]
+"62 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"59
+"76
 } 0
-"38
+"55
 [v _setup setup `(v  1 e 1 0 ]
 {
-"43
+"60
 } 0
-"6 C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c
+"6 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
 [v _setupStepper setupStepper `(v  1 e 1 0 ]
 {
 "17
@@ -139,61 +151,61 @@
 "19
 [v _setPosicaoAtual setPosicaoAtual `(v  1 e 1 0 ]
 {
-[v setPosicaoAtual@posicao_atual posicao_atual `ui  1 p 2 50 ]
+[v setPosicaoAtual@posicao_atual posicao_atual `ui  1 p 2 52 ]
 "21
 } 0
 "27
 [v _setPosicaoDesejada setPosicaoDesejada `(v  1 e 1 0 ]
 {
-[v setPosicaoDesejada@posicao_desejada posicao_desejada `ui  1 p 2 50 ]
+[v setPosicaoDesejada@posicao_desejada posicao_desejada `ui  1 p 2 52 ]
 "29
 } 0
 "28 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwtoft.c
 [v ___lwtoft __lwtoft `(f  1 e 3 0 ]
 {
-[v ___lwtoft@c c `ui  1 p 2 16 ]
+[v ___lwtoft@c c `ui  1 p 2 18 ]
 "31
 } 0
 "44 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
 [v ___fttol __fttol `(l  1 e 4 0 ]
 {
 "47
-[v ___fttol@lval lval `ul  1 a 4 45 ]
+[v ___fttol@lval lval `ul  1 a 4 47 ]
 "46
-[v ___fttol@exp1 exp1 `uc  1 a 1 49 ]
-[v ___fttol@sign1 sign1 `uc  1 a 1 44 ]
+[v ___fttol@exp1 exp1 `uc  1 a 1 51 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 46 ]
 "44
-[v ___fttol@f1 f1 `f  1 p 3 36 ]
+[v ___fttol@f1 f1 `f  1 p 3 38 ]
 "73
 } 0
 "56 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 3 0 ]
 {
 "60
-[v ___ftdiv@f3 f3 `f  1 a 3 31 ]
+[v ___ftdiv@f3 f3 `f  1 a 3 33 ]
 "59
-[v ___ftdiv@sign sign `uc  1 a 1 35 ]
-[v ___ftdiv@exp exp `uc  1 a 1 34 ]
-[v ___ftdiv@cntr cntr `uc  1 a 1 30 ]
+[v ___ftdiv@sign sign `uc  1 a 1 37 ]
+[v ___ftdiv@exp exp `uc  1 a 1 36 ]
+[v ___ftdiv@cntr cntr `uc  1 a 1 32 ]
 "56
-[v ___ftdiv@f2 f2 `f  1 p 3 20 ]
-[v ___ftdiv@f1 f1 `f  1 p 3 23 ]
+[v ___ftdiv@f2 f2 `f  1 p 3 22 ]
+[v ___ftdiv@f1 f1 `f  1 p 3 25 ]
 "86
 } 0
 "62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 {
-[v ___ftpack@arg arg `um  1 p 3 8 ]
-[v ___ftpack@exp exp `uc  1 p 1 11 ]
-[v ___ftpack@sign sign `uc  1 p 1 12 ]
+[v ___ftpack@arg arg `um  1 p 3 10 ]
+[v ___ftpack@exp exp `uc  1 p 1 13 ]
+[v ___ftpack@sign sign `uc  1 p 1 14 ]
 "86
 } 0
-"15 C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\main.c
+"18 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"36
+"53
 } 0
-"31 C:\Users\Aluno.PC-15\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c
+"31 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
 [v _calculaErro calculaErro `(v  1 e 1 0 ]
 {
 "39
