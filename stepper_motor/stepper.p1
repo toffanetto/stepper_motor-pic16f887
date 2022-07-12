@@ -1,6 +1,8 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "1600 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f887.h
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"350
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "463
 [s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
@@ -62,7 +64,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-"6 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h
+"6 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.h
 [v _setpoint `ui ~T0 @X0 1 e ]
 [i _setpoint
 -> -> 0 `i `ui
@@ -92,7 +94,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stepper.h: 17: void setPosicaoDesejada(uint16_t posicao_desejada);
 [; ;stepper.h: 19: void calculaErro(void);
 [; ;stepper.h: 21: uint16_t getVelocidade();
-[; ;stepper.h: 23: void calculaVelocidade(uint8_t poscaler_virtual_pv);
+[; ;stepper.h: 23: void calculaVelocidade();
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -1628,7 +1630,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-"6 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
+"6 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c
 [v _setupStepper `(v ~T0 @X0 1 ef ]
 {
 [; ;stepper.c: 6: void setupStepper(void){
@@ -1637,122 +1639,124 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stepper.c: 8: TRISD = 0b11110000;
 "8
 [e = _TRISD -> -> 240 `i `uc ]
-[; ;stepper.c: 10: INTCONbits.GIE = 1;
-"10
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;stepper.c: 11: INTCONbits.PEIE = 1;
+[; ;stepper.c: 9: PORTD = 0;
+"9
+[e = _PORTD -> -> 0 `i `uc ]
+[; ;stepper.c: 11: INTCONbits.GIE = 1;
 "11
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;stepper.c: 12: INTCONbits.PEIE = 1;
+"12
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;stepper.c: 13: PIE1bits.TMR2IE = 1;
-"13
-[e = . . _PIE1bits 0 1 -> -> 1 `i `uc ]
-[; ;stepper.c: 14: PIR1bits.TMR2IF = 0;
+[; ;stepper.c: 14: PIE1bits.TMR2IE = 1;
 "14
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-[; ;stepper.c: 15: T2CON = 0b01111110;
+[e = . . _PIE1bits 0 1 -> -> 1 `i `uc ]
+[; ;stepper.c: 15: PIR1bits.TMR2IF = 0;
 "15
-[e = _T2CON -> -> 126 `i `uc ]
-[; ;stepper.c: 16: PR2=50;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+[; ;stepper.c: 16: T2CON = 0b01111110;
 "16
-[e = _PR2 -> -> 50 `i `uc ]
-[; ;stepper.c: 17: }
+[e = _T2CON -> -> 126 `i `uc ]
+[; ;stepper.c: 17: PR2=255;
 "17
+[e = _PR2 -> -> 255 `i `uc ]
+[; ;stepper.c: 18: }
+"18
 [e :UE 142 ]
 }
-"19
+"20
 [v _setPosicaoAtual `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;stepper.c: 19: void setPosicaoAtual(uint16_t posicao_atual){
+[; ;stepper.c: 20: void setPosicaoAtual(uint16_t posicao_atual){
 [e :U _setPosicaoAtual ]
 [v _posicao_atual `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;stepper.c: 20: position = posicao_atual/(5.625/32);
-"20
-[e = _position -> / -> _posicao_atual `d / .5.625 -> -> 32 `i `d `ui ]
-[; ;stepper.c: 21: }
+[; ;stepper.c: 21: position = posicao_atual/(5.625/32);
 "21
+[e = _position -> / -> _posicao_atual `d / .5.625 -> -> 32 `i `d `ui ]
+[; ;stepper.c: 22: }
+"22
 [e :UE 143 ]
 }
-"23
+"24
 [v _getPosicaoAtual `(ui ~T0 @X0 1 ef ]
 {
-[; ;stepper.c: 23: uint16_t getPosicaoAtual(){
+[; ;stepper.c: 24: uint16_t getPosicaoAtual(){
 [e :U _getPosicaoAtual ]
 [f ]
-[; ;stepper.c: 24: return position*(5.625/32);
-"24
+[; ;stepper.c: 25: return position*(5.625/32);
+"25
 [e ) -> * -> _position `d / .5.625 -> -> 32 `i `d `ui ]
 [e $UE 144  ]
-[; ;stepper.c: 25: }
-"25
+[; ;stepper.c: 26: }
+"26
 [e :UE 144 ]
 }
-"27
+"28
 [v _setPosicaoDesejada `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;stepper.c: 27: void setPosicaoDesejada(uint16_t posicao_desejada){
+[; ;stepper.c: 28: void setPosicaoDesejada(uint16_t posicao_desejada){
 [e :U _setPosicaoDesejada ]
 [v _posicao_desejada `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;stepper.c: 28: setpoint = posicao_desejada/(5.625/32);
-"28
-[e = _setpoint -> / -> _posicao_desejada `d / .5.625 -> -> 32 `i `d `ui ]
-[; ;stepper.c: 29: }
+[; ;stepper.c: 29: setpoint = posicao_desejada/(5.625/32);
 "29
+[e = _setpoint -> / -> _posicao_desejada `d / .5.625 -> -> 32 `i `d `ui ]
+[; ;stepper.c: 30: }
+"30
 [e :UE 145 ]
 }
-"31
+"32
 [v _calculaErro `(v ~T0 @X0 1 ef ]
 {
-[; ;stepper.c: 31: void calculaErro(void){
+[; ;stepper.c: 32: void calculaErro(void){
 [e :U _calculaErro ]
 [f ]
-[; ;stepper.c: 32: error = abs(position - setpoint);
-"32
+[; ;stepper.c: 33: error = abs(position - setpoint);
+"33
 [e = _error ( _abs (1 -> - _position _setpoint `i ]
-[; ;stepper.c: 34: if(setpoint > position && error > 2048)
-"34
-[e $ ! && > _setpoint _position > _error -> 2048 `i 147  ]
-[; ;stepper.c: 35: error = -error;
+[; ;stepper.c: 35: if(setpoint > position && error > 2048)
 "35
+[e $ ! && > _setpoint _position > _error -> 2048 `i 147  ]
+[; ;stepper.c: 36: error = -error;
+"36
 [e = _error -U _error ]
 [e :U 147 ]
-[; ;stepper.c: 37: if(setpoint < position && error < 2048)
-"37
-[e $ ! && < _setpoint _position < _error -> 2048 `i 148  ]
-[; ;stepper.c: 38: error = -error;
+[; ;stepper.c: 38: if(setpoint < position && error < 2048)
 "38
+[e $ ! && < _setpoint _position < _error -> 2048 `i 148  ]
+[; ;stepper.c: 39: error = -error;
+"39
 [e = _error -U _error ]
 [e :U 148 ]
-[; ;stepper.c: 39: }
-"39
+[; ;stepper.c: 40: }
+"40
 [e :UE 146 ]
 }
-"41
+"42
 [v _getVelocidade `(ui ~T0 @X0 1 ef ]
 {
-[; ;stepper.c: 41: uint16_t getVelocidade(){
+[; ;stepper.c: 42: uint16_t getVelocidade(){
 [e :U _getVelocidade ]
 [f ]
-[; ;stepper.c: 42: return speed;
-"42
+[; ;stepper.c: 43: return speed;
+"43
 [e ) _speed ]
 [e $UE 149  ]
-[; ;stepper.c: 43: }
-"43
+[; ;stepper.c: 44: }
+"44
 [e :UE 149 ]
 }
-"45
-[v _calculaVelocidade `(v ~T0 @X0 1 ef1`uc ]
-{
-[; ;stepper.c: 45: void calculaVelocidade(uint8_t poscaler_virtual_pv){
-[e :U _calculaVelocidade ]
-[v _poscaler_virtual_pv `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;stepper.c: 46: speed = (5.625/32.0*2*3.14156)/((poscaler_virtual_pv*PR2*16*16*4)/4000000.0);
 "46
-[e = _speed -> / * * / .5.625 .32.0 -> -> 2 `i `d .3.14156 / -> * * * * -> _poscaler_virtual_pv `i -> _PR2 `i -> 16 `i -> 16 `i -> 4 `i `d .4000000.0 `ui ]
-[; ;stepper.c: 47: }
+[v _calculaVelocidade `(v ~T0 @X0 1 ef ]
+{
+[; ;stepper.c: 46: void calculaVelocidade(){
+[e :U _calculaVelocidade ]
+[f ]
+[; ;stepper.c: 47: speed = (error == 0) ? 0 : (4314/PR2)*100/81;
 "47
+[e = _speed -> ? == _error -> 0 `i : -> 0 `i / * / -> 4314 `i -> _PR2 `i -> 100 `i -> 81 `i `ui ]
+[; ;stepper.c: 49: }
+"49
 [e :UE 150 ]
 }

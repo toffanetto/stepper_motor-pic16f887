@@ -9,7 +9,7 @@
 	;
 	; -ostepper_motor.cof -mstepper_motor.map --summary=default \
 	; --output=default stepper.p1 main.p1 --chip=16F887 -P \
-	; --runtime=default --opt=default -N-1 -g --asmlist \
+	; --runtime=default --opt=default -N-1 --debugger=icd2 -g --asmlist \
 	; --errformat=Error   [%n] %f; %l.%c %s --msgformat=Advisory[%n] %s \
 	; --warnformat=Warning [%n] %f; %l.%c %s
 	;
@@ -62,6 +62,8 @@ intlevel5:
 	___int_sp:
 	psect	reset_vec
 reset_vec:
+	nop	; NOP inserted due to debugger requirements
+
 	; No powerup routine
 	global start
 

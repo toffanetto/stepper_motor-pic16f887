@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"19 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h
+"19 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.h
 [v _calculaErro `(v ~T0 @X0 0 ef ]
 "2039 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f887.h
 [v _PR2 `Vuc ~T0 @X0 0 e@146 ]
@@ -27,7 +27,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S18 . . ]
 "551
 [v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
-"11 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h
+"11 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.h
 [v _setupStepper `(v ~T0 @X0 0 ef ]
 "13
 [v _setPosicaoAtual `(v ~T0 @X0 0 ef1`ui ]
@@ -40,8 +40,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S11 . . ]
 "367
 [v _PORTDbits `VS11 ~T0 @X0 0 e@8 ]
-"17 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h
+"17 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.h
 [v _setPosicaoDesejada `(v ~T0 @X0 0 ef1`ui ]
+"23
+[v _calculaVelocidade `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -1554,7 +1556,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-"6 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h
+"6 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.h
 [v _setpoint `ui ~T0 @X0 1 e ]
 [i _setpoint
 -> -> 0 `i `ui
@@ -1584,8 +1586,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stepper.h: 17: void setPosicaoDesejada(uint16_t posicao_desejada);
 [; ;stepper.h: 19: void calculaErro(void);
 [; ;stepper.h: 21: uint16_t getVelocidade();
-[; ;stepper.h: 23: void calculaVelocidade(uint8_t poscaler_virtual_pv);
-"7 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
+[; ;stepper.h: 23: void calculaVelocidade();
+"7 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\main.c
 [p x FOSC=INTRC_NOCLKOUT ]
 [p x WDTE=OFF ]
 [p x PWRTE=OFF ]
@@ -1612,177 +1614,157 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [; ;main.c: 14: uint8_t speed_ramp = 0;
-"15
-[v _poscaler_virtual `uc ~T0 @X0 1 e ]
-[i _poscaler_virtual
--> -> 0 `i `uc
-]
-[; ;main.c: 15: uint8_t poscaler_virtual = 0;
-"16
-[v _poscaler_virtual_pv `uc ~T0 @X0 1 e ]
-[i _poscaler_virtual_pv
--> -> 6 `i `uc
-]
-[; ;main.c: 16: uint8_t poscaler_virtual_pv = 6;
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-[v F1693 `(v ~T0 @X0 1 tf ]
-"18
-[v _ISR `IF1693 ~T0 @X0 1 e ]
+[v F1690 `(v ~T0 @X0 1 tf ]
+"16
+[v _ISR `IF1690 ~T0 @X0 1 e ]
 {
-[; ;main.c: 18: void __interrupt ISR(){
+[; ;main.c: 16: void __interrupt ISR(){
 [e :U _ISR ]
 [f ]
-[; ;main.c: 20: calculaErro();
-"20
+[; ;main.c: 18: calculaErro();
+"18
 [e ( _calculaErro ..  ]
-[; ;main.c: 22: if(speed_ramp > 10){
+[; ;main.c: 20: if(speed_ramp <= 100 && error !=0){
+"20
+[e $ ! && <= -> _speed_ramp `i -> 100 `i != _error -> 0 `i 139  ]
+{
+[; ;main.c: 21: PR2-= 2;
+"21
+[e =- _PR2 -> -> 2 `i `uc ]
+[; ;main.c: 22: speed_ramp++;
 "22
-[e $ ! > -> _speed_ramp `i -> 10 `i 139  ]
-{
-[; ;main.c: 23: poscaler_virtual_pv = (poscaler_virtual_pv == 1) ? 1 : poscaler_virtual_pv-1;
-"23
-[e = _poscaler_virtual_pv -> ? == -> _poscaler_virtual_pv `i -> 1 `i : -> 1 `i - -> _poscaler_virtual_pv `i -> 1 `i `uc ]
-[; ;main.c: 24: if(!poscaler_virtual_pv ){
-"24
-[e $ ! ! != -> _poscaler_virtual_pv `i -> -> -> 0 `i `uc `i 140  ]
-{
-[; ;main.c: 25: PR2-= 50;
-"25
-[e =- _PR2 -> -> 50 `i `uc ]
-"26
-}
-[e :U 140 ]
-[; ;main.c: 26: }
-[; ;main.c: 27: speed_ramp++;
-"27
 [e ++ _speed_ramp -> -> 1 `i `uc ]
-"28
+"23
 }
 [e :U 139 ]
+[; ;main.c: 23: }
+[; ;main.c: 25: if(error == 0){
+"25
+[e $ ! == _error -> 0 `i 140  ]
+{
+[; ;main.c: 26: speed_ramp=0;
+"26
+[e = _speed_ramp -> -> 0 `i `uc ]
+[; ;main.c: 27: PR2 = 255;
+"27
+[e = _PR2 -> -> 255 `i `uc ]
+"28
+}
+[e :U 140 ]
 [; ;main.c: 28: }
-[; ;main.c: 30: if(poscaler_virtual == poscaler_virtual_pv-1 || poscaler_virtual_pv == 1){
+[; ;main.c: 30: if(error > 0){
 "30
-[e $ ! || == -> _poscaler_virtual `i - -> _poscaler_virtual_pv `i -> 1 `i == -> _poscaler_virtual_pv `i -> 1 `i 141  ]
+[e $ ! > _error -> 0 `i 141  ]
 {
-[; ;main.c: 31: if(error > 0){
+[; ;main.c: 31: STATUSbits.C = 0;
 "31
-[e $ ! > _error -> 0 `i 142  ]
-{
-[; ;main.c: 32: STATUSbits.C = 0;
+[e = . . _STATUSbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 32: phase = (phase == 0) ? 1 : phase;
 "32
-[e = . . _STATUSbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 33: phase = (phase == 0) ? 1 : phase;
-"33
 [e = _phase -> ? == -> _phase `i -> 0 `i : -> 1 `i -> _phase `i `uc ]
-[; ;main.c: 34: phase = (phase == 8) ? phase >> 3 : phase << 1;
-"34
+[; ;main.c: 33: phase = (phase == 8) ? phase >> 3 : phase << 1;
+"33
 [e = _phase -> ? == -> _phase `i -> 8 `i : >> -> _phase `i -> 3 `i << -> _phase `i -> 1 `i `uc ]
-[; ;main.c: 35: position = ((position + 1)== 2048) ? 0 : (position + 1);
-"35
+[; ;main.c: 34: position = ((position + 1)== 2048) ? 0 : (position + 1);
+"34
 [e = _position ? == + _position -> -> 1 `i `ui -> -> 2048 `i `ui : -> -> 0 `i `ui + _position -> -> 1 `i `ui ]
-"36
-}
-[e :U 142 ]
-[; ;main.c: 36: }
-[; ;main.c: 38: if(error < 0){
-"38
-[e $ ! < _error -> 0 `i 143  ]
-{
-[; ;main.c: 39: STATUSbits.C = 0;
-"39
-[e = . . _STATUSbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 40: phase = (phase == 0) ? 8 : phase;
-"40
-[e = _phase -> ? == -> _phase `i -> 0 `i : -> 8 `i -> _phase `i `uc ]
-[; ;main.c: 41: phase = (phase == 1) ? phase << 3 : phase >> 1;
-"41
-[e = _phase -> ? == -> _phase `i -> 1 `i : << -> _phase `i -> 3 `i >> -> _phase `i -> 1 `i `uc ]
-[; ;main.c: 42: position = ((position - 1)== -1) ? 2047 : (position - 1);
-"42
-[e = _position ? == - _position -> -> 1 `i `ui -> -U -> 1 `i `ui : -> -> 2047 `i `ui - _position -> -> 1 `i `ui ]
-"43
-}
-[e :U 143 ]
-[; ;main.c: 43: }
-[; ;main.c: 45: poscaler_virtual = 0;
-"45
-[e = _poscaler_virtual -> -> 0 `i `uc ]
-[; ;main.c: 47: PORTD = phase;
-"47
-[e = _PORTD _phase ]
-"48
+"35
 }
 [e :U 141 ]
-[; ;main.c: 48: }
-[; ;main.c: 50: poscaler_virtual++;
-"50
-[e ++ _poscaler_virtual -> -> 1 `i `uc ]
-[; ;main.c: 52: PIR1bits.TMR2IF = 0;
-"52
+[; ;main.c: 35: }
+[; ;main.c: 37: if(error < 0){
+"37
+[e $ ! < _error -> 0 `i 142  ]
+{
+[; ;main.c: 38: STATUSbits.C = 0;
+"38
+[e = . . _STATUSbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 39: phase = (phase == 0) ? 8 : phase;
+"39
+[e = _phase -> ? == -> _phase `i -> 0 `i : -> 8 `i -> _phase `i `uc ]
+[; ;main.c: 40: phase = (phase == 1) ? phase << 3 : phase >> 1;
+"40
+[e = _phase -> ? == -> _phase `i -> 1 `i : << -> _phase `i -> 3 `i >> -> _phase `i -> 1 `i `uc ]
+[; ;main.c: 41: position = ((position - 1)== -1) ? 2047 : (position - 1);
+"41
+[e = _position ? == - _position -> -> 1 `i `ui -> -U -> 1 `i `ui : -> -> 2047 `i `ui - _position -> -> 1 `i `ui ]
+"42
+}
+[e :U 142 ]
+[; ;main.c: 42: }
+[; ;main.c: 44: PORTD = phase;
+"44
+[e = _PORTD _phase ]
+[; ;main.c: 46: PIR1bits.TMR2IF = 0;
+"46
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 53: }
-"53
+[; ;main.c: 47: }
+"47
 [e :UE 138 ]
 }
-"55
+"49
 [v _setup `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 55: void setup (void){
+[; ;main.c: 49: void setup (void){
 [e :U _setup ]
 [f ]
-[; ;main.c: 57: setupStepper();
-"57
+[; ;main.c: 51: setupStepper();
+"51
 [e ( _setupStepper ..  ]
-[; ;main.c: 58: setPosicaoAtual(0);
-"58
+[; ;main.c: 52: setPosicaoAtual(0);
+"52
 [e ( _setPosicaoAtual (1 -> -> 0 `i `ui ]
-[; ;main.c: 60: }
-"60
-[e :UE 144 ]
+[; ;main.c: 54: }
+"54
+[e :UE 143 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"62
+"56
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 62: void main (void){
+[; ;main.c: 56: void main (void){
 [e :U _main ]
 [f ]
-[; ;main.c: 64: setup();
-"64
+[; ;main.c: 58: setup();
+"58
 [e ( _setup ..  ]
-[; ;main.c: 66: while(1){
-"66
-[e :U 147 ]
-{
-[; ;main.c: 68: if(PORTDbits.RD4==1)
-"68
-[e $ ! == -> . . _PORTDbits 0 4 `i -> 1 `i 149  ]
-[; ;main.c: 69: setPosicaoDesejada(0);
-"69
-[e ( _setPosicaoDesejada (1 -> -> 0 `i `ui ]
-[e :U 149 ]
-[; ;main.c: 70: if(PORTDbits.RD5==1)
-"70
-[e $ ! == -> . . _PORTDbits 0 5 `i -> 1 `i 150  ]
-[; ;main.c: 71: setPosicaoDesejada(90);
-"71
-[e ( _setPosicaoDesejada (1 -> -> 90 `i `ui ]
-[e :U 150 ]
-[; ;main.c: 72: if(PORTDbits.RD6==1)
-"72
-[e $ ! == -> . . _PORTDbits 0 6 `i -> 1 `i 151  ]
-[; ;main.c: 73: setPosicaoDesejada(180);
-"73
-[e ( _setPosicaoDesejada (1 -> -> 180 `i `ui ]
-[e :U 151 ]
-"75
-}
+[; ;main.c: 60: while(1){
+"60
 [e :U 146 ]
-"66
-[e $U 147  ]
+{
+[; ;main.c: 62: if(PORTDbits.RD4==1)
+"62
+[e $ ! == -> . . _PORTDbits 0 4 `i -> 1 `i 148  ]
+[; ;main.c: 63: setPosicaoDesejada(0);
+"63
+[e ( _setPosicaoDesejada (1 -> -> 0 `i `ui ]
 [e :U 148 ]
-[; ;main.c: 75: }
-[; ;main.c: 76: }
-"76
-[e :UE 145 ]
+[; ;main.c: 64: if(PORTDbits.RD5==1)
+"64
+[e $ ! == -> . . _PORTDbits 0 5 `i -> 1 `i 149  ]
+[; ;main.c: 65: setPosicaoDesejada(90);
+"65
+[e ( _setPosicaoDesejada (1 -> -> 90 `i `ui ]
+[e :U 149 ]
+[; ;main.c: 66: if(PORTDbits.RD6==1)
+"66
+[e $ ! == -> . . _PORTDbits 0 6 `i -> 1 `i 150  ]
+[; ;main.c: 67: setPosicaoDesejada(180);
+"67
+[e ( _setPosicaoDesejada (1 -> -> 180 `i `ui ]
+[e :U 150 ]
+[; ;main.c: 69: calculaVelocidade();
+"69
+[e ( _calculaVelocidade ..  ]
+"70
+}
+[e :U 145 ]
+"60
+[e $U 146  ]
+[e :U 147 ]
+[; ;main.c: 70: }
+[; ;main.c: 71: }
+"71
+[e :UE 144 ]
 }

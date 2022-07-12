@@ -20,7 +20,7 @@ void calculaErro(void);
 
 uint16_t getVelocidade();
 
-void calculaVelocidade(uint8_t poscaler_virtual_pv);
+void calculaVelocidade();
 
 
 #endif
