@@ -2,6 +2,7 @@
 #include <stdint.h>
 
 #include "stepper.h"
+#include "lcd.h"
 
 
 #pragma config CONFIG1=0x2FF4
@@ -47,6 +48,7 @@ void __interrupt ISR(){
 }
 
 void setup (void){
+	LCD_Setup();
 
 	setupStepper();
 	setPosicaoAtual(0);
@@ -59,13 +61,24 @@ void main (void){
 	
 	while(1){	
 
-		if(PORTDbits.RD4==1)
-			setPosicaoDesejada(0);
-		if(PORTDbits.RD5==1)
-			setPosicaoDesejada(90);
-		if(PORTDbits.RD6==1)
-			setPosicaoDesejada(180);
+	if(PORTDbits.RD4==1)
+		setPosicaoDesejada(0);
+	if(PORTDbits.RD5==1)
+		setPosicaoDesejada(90);
+	if(PORTDbits.RD6==1)
+		setPosicaoDesejada(180);
 
-		 calculaVelocidade();
+	calculaVelocidade();
+		 
+	LCD_sendString("PF:", 1, 1);
+	int2char(setpoint*(5.625/32));
+	LCD_sendString(c_int_value, 1, 4);
+	LCD_sendString("PA:", 1, 9);
+	int2char(getPosicaoAtual());
+	LCD_sendString(c_int_value, 1,12);
+	LCD_sendString("Vel:", 2, 6);
+	int2char(getVelocidade());
+	LCD_sendString(c_int_value,2,10);
+	
 	}
 }

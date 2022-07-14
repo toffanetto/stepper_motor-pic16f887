@@ -17,6 +17,8 @@
 [v ___ftmul __ftmul `(f  1 e 3 0 ]
 "44 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
 [v ___fttol __fttol `(l  1 e 4 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "28 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwtoft.c
 [v ___lwtoft __lwtoft `(f  1 e 3 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
@@ -25,20 +27,40 @@
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"16 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\main.c
+"22 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\lcd.c
+[v _LCD_Setup LCD_Setup `(v  1 e 1 0 ]
+"65
+[v _LCD_DisplayOn LCD_DisplayOn `(v  1 e 1 0 ]
+"70
+[v _LCD_DisplayOff LCD_DisplayOff `(v  1 e 1 0 ]
+"98
+[v _LCD_SendNb LCD_SendNb `(v  1 e 1 0 ]
+"113
+[v _LCD_SendByte LCD_SendByte `(v  1 e 1 0 ]
+"123
+[v _LCD_SetCursor LCD_SetCursor `(v  1 e 1 0 ]
+"143
+[v _LCD_sendString LCD_sendString `(v  1 e 1 0 ]
+"160
+[v _int2char int2char `(v  1 e 1 0 ]
+"17 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"49
+"50
 [v _setup setup `(v  1 e 1 0 ]
-"56
+"58
 [v _main main `(v  1 e 1 0 ]
 "6 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c
 [v _setupStepper setupStepper `(v  1 e 1 0 ]
 "20
 [v _setPosicaoAtual setPosicaoAtual `(v  1 e 1 0 ]
+"24
+[v _getPosicaoAtual getPosicaoAtual `(ui  1 e 2 0 ]
 "28
 [v _setPosicaoDesejada setPosicaoDesejada `(v  1 e 1 0 ]
 "32
 [v _calculaErro calculaErro `(v  1 e 1 0 ]
+"42
+[v _getVelocidade getVelocidade `(ui  1 e 2 0 ]
 "46
 [v _calculaVelocidade calculaVelocidade `(v  1 e 1 0 ]
 [s S135 . 1 `uc 1 C 1 0 :1:0 
@@ -60,9 +82,11 @@
 ]
 [u S151 . 1 `S135 1 . 1 0 `S143 1 . 1 0 `S147 1 . 1 0 ]
 [v _STATUSbits STATUSbits `VES151  1 e 1 @3 ]
+"226
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "350
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S186 . 1 `uc 1 RD0 1 0 :1:0 
+[s S190 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -72,8 +96,8 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "367
-[u S195 . 1 `S186 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES195  1 e 1 @8 ]
+[u S199 . 1 `S190 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES199  1 e 1 @8 ]
 [s S21 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -104,6 +128,8 @@
 [v _PIR1bits PIR1bits `VES80  1 e 1 @12 ]
 "770
 [v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"1476
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1600
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 [s S53 . 1 `uc 1 TMR1IE 1 0 :1:0 
@@ -119,9 +145,23 @@
 [v _PIE1bits PIE1bits `VES61  1 e 1 @140 ]
 "2039
 [v _PR2 PR2 `VEuc  1 e 1 @146 ]
-"13 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\main.c
+"3447
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"10 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\lcd.c
+[v _LCD_PORT LCD_PORT `*.39VEui  1 e 2 0 ]
+"11
+[v _LCD_TRIS LCD_TRIS `*.39VEui  1 e 2 0 ]
+"27 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\LCD.h
+[v _LCD_Entrada LCD_Entrada `uc  1 e 1 0 ]
+"28
+[v _LCD_Controle LCD_Controle `uc  1 e 1 0 ]
+"29
+[v _LCD_ShiftDisplay LCD_ShiftDisplay `uc  1 e 1 0 ]
+"31
+[v _c_int_value c_int_value `[2]uc  1 e 2 0 ]
+"14 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\main.c
 [v _phase phase `uc  1 e 1 0 ]
-"14
+"15
 [v _speed_ramp speed_ramp `uc  1 e 1 0 ]
 "6 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.h
 [v _setpoint setpoint `ui  1 e 2 0 ]
@@ -131,15 +171,15 @@
 [v _error error `i  1 e 2 0 ]
 "9
 [v _speed speed `ui  1 e 2 0 ]
-"56 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\main.c
+"58 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"71
+"84
 } 0
-"49
+"50
 [v _setup setup `(v  1 e 1 0 ]
 {
-"54
+"56
 } 0
 "6 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c
 [v _setupStepper setupStepper `(v  1 e 1 0 ]
@@ -152,11 +192,65 @@
 [v setPosicaoAtual@posicao_atual posicao_atual `ui  1 p 2 50 ]
 "22
 } 0
-"28
+"22 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\lcd.c
+[v _LCD_Setup LCD_Setup `(v  1 e 1 0 ]
+{
+"40
+} 0
+"28 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c
 [v _setPosicaoDesejada setPosicaoDesejada `(v  1 e 1 0 ]
 {
 [v setPosicaoDesejada@posicao_desejada posicao_desejada `ui  1 p 2 50 ]
 "30
+} 0
+"56 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+{
+"60
+[v ___ftdiv@f3 f3 `f  1 a 3 31 ]
+"59
+[v ___ftdiv@sign sign `uc  1 a 1 35 ]
+[v ___ftdiv@exp exp `uc  1 a 1 34 ]
+[v ___ftdiv@cntr cntr `uc  1 a 1 30 ]
+"56
+[v ___ftdiv@f2 f2 `f  1 p 3 20 ]
+[v ___ftdiv@f1 f1 `f  1 p 3 23 ]
+"86
+} 0
+"160 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\lcd.c
+[v _int2char int2char `(v  1 e 1 0 ]
+{
+"163
+[v int2char@int_value2 int_value2 `ui  1 a 2 4 ]
+"162
+[v int2char@int_value1 int_value1 `ui  1 a 2 2 ]
+"161
+[v int2char@int_value0 int_value0 `ui  1 a 2 0 ]
+"160
+[v int2char@int_value int_value `ui  1 p 2 52 ]
+"172
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwdiv@quotient quotient `ui  1 a 2 14 ]
+"12
+[v ___lwdiv@counter counter `uc  1 a 1 13 ]
+"6
+[v ___lwdiv@divisor divisor `ui  1 p 2 8 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 10 ]
+"31
+} 0
+"42 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c
+[v _getVelocidade getVelocidade `(ui  1 e 2 0 ]
+{
+"44
+} 0
+"24
+[v _getPosicaoAtual getPosicaoAtual `(ui  1 e 2 0 ]
+{
+"26
 } 0
 "28 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwtoft.c
 [v ___lwtoft __lwtoft `(f  1 e 3 0 ]
@@ -176,19 +270,19 @@
 [v ___fttol@f1 f1 `f  1 p 3 36 ]
 "73
 } 0
-"56 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
 {
-"60
-[v ___ftdiv@f3 f3 `f  1 a 3 31 ]
-"59
-[v ___ftdiv@sign sign `uc  1 a 1 35 ]
-[v ___ftdiv@exp exp `uc  1 a 1 34 ]
-[v ___ftdiv@cntr cntr `uc  1 a 1 30 ]
-"56
-[v ___ftdiv@f2 f2 `f  1 p 3 20 ]
-[v ___ftdiv@f1 f1 `f  1 p 3 23 ]
-"86
+"65
+[v ___ftmul@f3_as_product f3_as_product `um  1 a 3 31 ]
+"64
+[v ___ftmul@sign sign `uc  1 a 1 35 ]
+[v ___ftmul@cntr cntr `uc  1 a 1 34 ]
+[v ___ftmul@exp exp `uc  1 a 1 30 ]
+"62
+[v ___ftmul@f1 f1 `f  1 p 3 20 ]
+[v ___ftmul@f2 f2 `f  1 p 3 23 ]
+"157
 } 0
 "62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
@@ -226,10 +320,56 @@
 [v ___awdiv@dividend dividend `i  1 p 2 10 ]
 "42
 } 0
-"16 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\main.c
+"143 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\lcd.c
+[v _LCD_sendString LCD_sendString `(v  1 e 1 0 ]
+{
+"145
+[v LCD_sendString@i i `uc  1 a 1 39 ]
+"154
+[v LCD_sendString@i_352 i `uc  1 a 1 40 ]
+"148
+[v LCD_sendString@col col `uc  1 a 1 38 ]
+"143
+[v LCD_sendString@string string `*.26uc  1 p 2 33 ]
+[v LCD_sendString@linha linha `uc  1 p 1 35 ]
+[v LCD_sendString@coluna coluna `uc  1 p 1 36 ]
+"158
+} 0
+"123
+[v _LCD_SetCursor LCD_SetCursor `(v  1 e 1 0 ]
+{
+[v LCD_SetCursor@linha linha `uc  1 a 1 wreg ]
+"124
+[v LCD_SetCursor@aux aux `uc  1 a 1 32 ]
+"123
+[v LCD_SetCursor@linha linha `uc  1 a 1 wreg ]
+[v LCD_SetCursor@coluna coluna `uc  1 p 1 29 ]
+"126
+[v LCD_SetCursor@linha linha `uc  1 a 1 31 ]
+"134
+} 0
+"113
+[v _LCD_SendByte LCD_SendByte `(v  1 e 1 0 ]
+{
+[v LCD_SendByte@reg reg `uc  1 a 1 wreg ]
+[v LCD_SendByte@reg reg `uc  1 a 1 wreg ]
+[v LCD_SendByte@byte byte `uc  1 p 1 21 ]
+[v LCD_SendByte@reg reg `uc  1 a 1 26 ]
+"120
+} 0
+"98
+[v _LCD_SendNb LCD_SendNb `(v  1 e 1 0 ]
+{
+[v LCD_SendNb@NB NB `uc  1 a 1 wreg ]
+[v LCD_SendNb@NB NB `uc  1 a 1 wreg ]
+"101
+[v LCD_SendNb@NB NB `uc  1 a 1 20 ]
+"110
+} 0
+"17 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"47
+"48
 } 0
 "32 C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c
 [v _calculaErro calculaErro `(v  1 e 1 0 ]

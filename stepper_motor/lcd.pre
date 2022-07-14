@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\main.c"
+# 1 "C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\lcd.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2204,28 +2204,8 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 6 "C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.h"
-uint16_t setpoint = 0;
-uint16_t position = 0;
-int16_t error = 0;
-uint16_t speed = 0;
 
-void setupStepper(void);
-
-void setPosicaoAtual(uint16_t posicao_atual);
-
-uint16_t getPosicaoAtual();
-
-void setPosicaoDesejada(uint16_t posicao_desejada);
-
-void calculaErro(void);
-
-uint16_t getVelocidade();
-
-void calculaVelocidade();
-
-
-# 4 "C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\lcd.h"
+# 4 "C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\LCD.h"
 #pragma config CONFIG1=0x2FF4
 #pragma config CONFIG2=0x3FFF
 
@@ -2275,81 +2255,164 @@ void LCD_sendString(uint8_t *string, uint8_t linha, uint8_t coluna);
 void int2char(uint16_t int_value);
 
 
-# 8 "C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\main.c"
+# 5 "C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\lcd.c"
 #pragma config CONFIG1=0x2FF4
 #pragma config CONFIG2=0x3FFF
 
 
 
+volatile unsigned *LCD_PORT = & PORTB;
+volatile unsigned *LCD_TRIS = & TRISB;
 
-uint8_t phase = 0;
-uint8_t speed_ramp = 0;
+# 22
+void LCD_Setup(){
+PORTB = 0x00;
+TRISB = 0x00;
+ANSELH = 0x00;
+*LCD_TRIS = 0x00;
+*LCD_PORT = 0x00;
 
-void __interrupt ISR(){
+_delay((unsigned long)((50)*(4000000/4000.0)));
 
-calculaErro();
 
-if(speed_ramp <= 100 && error !=0){
-PR2-= 2;
-speed_ramp++;
+LCD_SendNb(0x03);
+LCD_SendNb(0x03);
+LCD_SendNb(0x03);
+LCD_SendNb(0x02);
+LCD_SendByte(0, 0x28);
+LCD_SendByte(0, LCD_Controle);
+LCD_SendByte(0, 0x01);
+LCD_SendByte(0, LCD_Entrada);
 }
 
-if(error == 0){
-speed_ramp=0;
-PR2 = 255;
+void LCD_ClearDisplay(void){
+LCD_SendByte(0, 0x01);
+_delay((unsigned long)((2)*(4000000/4000.0)));
 }
 
-if(error > 0){
-STATUSbits.C = 0;
-phase = (phase == 0) ? 1 : phase;
-phase = (phase == 8) ? phase >> 3 : phase << 1;
-position = ((position + 1)== 2048) ? 0 : (position + 1);
+void LCD_Home(void){
+LCD_SendByte(0, 0x02);
+_delay((unsigned long)((2)*(4000000/4000.0)));
 }
 
-if(error < 0){
-STATUSbits.C = 0;
-phase = (phase == 0) ? 8 : phase;
-phase = (phase == 1) ? phase << 3 : phase >> 1;
-position = ((position - 1)== -1) ? 2047 : (position - 1);
+void LCD_Toggle(uint8_t time, uint8_t n){
+for(n; n > 0; n--){
+LCD_DisplayOff();
+for(uint8_t i = time; i > 0; i--){
+_delay((unsigned long)((100)*(4000000/4000.0)));
+}
+LCD_DisplayOn();
+for(uint8_t i = time; i > 0; i--) {
+_delay((unsigned long)((100)*(4000000/4000.0)));
+}
+}
 }
 
-PORTD = phase;
-
-PIR1bits.TMR2IF = 0;
+void LCD_DisplayOn(void){
+LCD_Controle |= 0x04;
+LCD_SendByte(0, LCD_Controle);
 }
 
-void setup (void){
-LCD_Setup();
+void LCD_DisplayOff(void){
+LCD_Controle &= ~0x04;
+LCD_SendByte(0, LCD_Controle);
+}
 
-setupStepper();
-setPosicaoAtual(0);
+void LCD_CursorOn(void){
+LCD_Controle |= 0x02;
+LCD_SendByte(0, LCD_Controle);
 
 }
 
-void main (void){
-
-setup();
-
-while(1){
-
-if(PORTDbits.RD4==1)
-setPosicaoDesejada(0);
-if(PORTDbits.RD5==1)
-setPosicaoDesejada(90);
-if(PORTDbits.RD6==1)
-setPosicaoDesejada(180);
-
-calculaVelocidade();
-
-LCD_sendString("PF:", 1, 1);
-int2char(setpoint*(5.625/32));
-LCD_sendString(c_int_value, 1, 4);
-LCD_sendString("PA:", 1, 9);
-int2char(getPosicaoAtual());
-LCD_sendString(c_int_value, 1,12);
-LCD_sendString("Vel:", 2, 6);
-int2char(getVelocidade());
-LCD_sendString(c_int_value,2,10);
-
+void LCD_CursorOff(void){
+LCD_Controle &= 0x02;
+LCD_SendByte(0, LCD_Controle);
 }
+
+void LCD_DisplayRight(void){
+LCD_ShiftDisplay |= 0x08;
+LCD_ShiftDisplay |= 0x06;
+LCD_SendByte(0, LCD_ShiftDisplay);
+}
+
+void LCD_DisplayLeft(void){
+LCD_ShiftDisplay |= 0x08;
+LCD_ShiftDisplay &= ~0x04;
+LCD_SendByte(0, LCD_ShiftDisplay);
+}
+
+void LCD_SendNb(uint8_t NB){
+
+
+*LCD_PORT = (unsigned)((NB & 0b00000001) >> 0) ? (*LCD_PORT | (1 << 0)) : (*LCD_PORT & ~(1 << 0));
+*LCD_PORT = (unsigned)((NB & 0b00000010) >> 1) ? (*LCD_PORT | (1 << 1)) : (*LCD_PORT & ~(1 << 1));
+*LCD_PORT = (unsigned)((NB & 0b00000100) >> 2) ? (*LCD_PORT | (1 << 2)) : (*LCD_PORT & ~(1 << 2));
+*LCD_PORT = (unsigned)((NB & 0b00001000) >> 3) ? (*LCD_PORT | (1 << 3)) : (*LCD_PORT & ~(1 << 3));
+
+*LCD_PORT |= 1 << 5;
+_delay((unsigned long)((1)*(4000000/4000000.0)));
+*LCD_PORT &= ~(1 << 5);
+_delay((unsigned long)((50)*(4000000/4000000.0)));
+}
+
+
+void LCD_SendByte(uint8_t reg, uint8_t byte) {
+*LCD_PORT = reg ? (*LCD_PORT | (1 << 4)) : (*LCD_PORT & ~(1 << 4));
+
+
+
+LCD_SendNb(byte >> 4);
+LCD_SendNb(byte & 0x0f);
+}
+
+
+void LCD_SetCursor(uint8_t linha, uint8_t coluna){
+uint8_t aux;
+
+if(linha == 2)
+aux = 0x40;
+else
+aux = 0;
+
+aux += coluna - 1;
+
+LCD_SendByte(0, 0x80 | aux);
+}
+
+
+
+void LCD_sendChar(uint8_t ch, uint8_t linha, uint8_t coluna){
+LCD_SetCursor(linha, coluna);
+LCD_SendByte(1, ch);
+}
+
+void LCD_sendString(uint8_t *string, uint8_t linha, uint8_t coluna){
+if(coluna == 0){
+for(uint8_t i = 0; i < 17; i++, coluna++){
+if(string[i] == '\0') break;
+}
+uint8_t col = 18 - coluna;
+LCD_SetCursor(linha, col);
+} else{
+LCD_SetCursor(linha, coluna);
+}
+
+for(uint8_t i = 0; i < 17; i++){
+if(string[i] == '\0') break;
+LCD_SendByte(1, string[i]);
+}
+}
+
+void int2char(uint16_t int_value){
+uint16_t int_value0 = 0;
+uint16_t int_value1 = 0;
+uint16_t int_value2 = 0;
+
+int_value2 = int_value/100;
+int_value1 = int_value/10 - int_value2*10;
+int_value0 = int_value - int_value2*100 - int_value1*10;
+
+c_int_value[2] = int_value0 + 48;
+c_int_value[1] = int_value1 + 48;
+c_int_value[0] = int_value2 + 48;
 }

@@ -8,7 +8,7 @@
 	; Compiler options:
 	;
 	; -ostepper_motor.cof -mstepper_motor.map --summary=default \
-	; --output=default stepper.p1 main.p1 --chip=16F887 -P \
+	; --output=default stepper.p1 main.p1 lcd.p1 --chip=16F887 -P \
 	; --runtime=default --opt=default -N-1 --debugger=icd2 -g --asmlist \
 	; --errformat=Error   [%n] %f; %l.%c %s --msgformat=Advisory[%n] %s \
 	; --warnformat=Warning [%n] %f; %l.%c %s

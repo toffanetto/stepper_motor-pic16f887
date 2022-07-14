@@ -22,12 +22,25 @@ LanguageToolSuiteID={38171385-97B2-4EC5-BF2C-C2C027BA5B04}
 LanguageToolID={B6D1F1C2-3E8A-49F6-9C0A-75F5EBE32222}
 LanguageToolLocation=C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
-SOLK=<src>|stepper.c|main.c||<obj>||<lib>||<lkr>||
+SOLK=<src>|stepper.c|main.c|lcd.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
 [File002]
+Location=C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\lcd.p1
+Folder=Intermediary
+DeviceName=PIC16F887
+LanguageToolSuiteID={38171385-97B2-4EC5-BF2C-C2C027BA5B04}
+LanguageToolID={B6D1F1C2-3E8A-49F6-9C0A-75F5EBE32222}
+LanguageToolLocation=C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|stepper.c|main.c|lcd.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File003]
 Location=C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper_motor.cof
 Folder=Output
 DeviceName=PIC16F887
@@ -35,12 +48,12 @@ LanguageToolSuiteID={38171385-97B2-4EC5-BF2C-C2C027BA5B04}
 LanguageToolID={B6D1F1C2-3E8A-49F6-9C0A-75F5EBE32222}
 LanguageToolLocation=C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
-SOLK=<src>|stepper.c|main.c||<obj>||<lib>||<lkr>||
+SOLK=<src>|stepper.c|main.c|lcd.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File003]
+[File004]
 Location=C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper_motor.hex
 Folder=Output
 DeviceName=PIC16F887
@@ -48,12 +61,12 @@ LanguageToolSuiteID={38171385-97B2-4EC5-BF2C-C2C027BA5B04}
 LanguageToolID={B6D1F1C2-3E8A-49F6-9C0A-75F5EBE32222}
 LanguageToolLocation=C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
-SOLK=<src>|stepper.c|main.c||<obj>||<lib>||<lkr>||
+SOLK=<src>|stepper.c|main.c|lcd.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File004]
+[File005]
 Location=C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper_motor.sym
 Folder=Output
 DeviceName=PIC16F887
@@ -61,12 +74,12 @@ LanguageToolSuiteID={38171385-97B2-4EC5-BF2C-C2C027BA5B04}
 LanguageToolID={B6D1F1C2-3E8A-49F6-9C0A-75F5EBE32222}
 LanguageToolLocation=C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
-SOLK=<src>|stepper.c|main.c||<obj>||<lib>||<lkr>||
+SOLK=<src>|stepper.c|main.c|lcd.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File005]
+[File006]
 Location=C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper_motor.map
 Folder=Output
 DeviceName=PIC16F887
@@ -74,12 +87,12 @@ LanguageToolSuiteID={38171385-97B2-4EC5-BF2C-C2C027BA5B04}
 LanguageToolID={B6D1F1C2-3E8A-49F6-9C0A-75F5EBE32222}
 LanguageToolLocation=C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
-SOLK=<src>|stepper.c|main.c||<obj>||<lib>||<lkr>||
+SOLK=<src>|stepper.c|main.c|lcd.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File006]
+[File007]
 Location=C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper_motor.hxl
 Folder=Output
 DeviceName=PIC16F887
@@ -87,12 +100,12 @@ LanguageToolSuiteID={38171385-97B2-4EC5-BF2C-C2C027BA5B04}
 LanguageToolID={B6D1F1C2-3E8A-49F6-9C0A-75F5EBE32222}
 LanguageToolLocation=C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
-SOLK=<src>|stepper.c|main.c||<obj>||<lib>||<lkr>||
+SOLK=<src>|stepper.c|main.c|lcd.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File007]
+[File008]
 Location=C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\startup.lst
 Folder=Output
 DeviceName=PIC16F887
@@ -100,12 +113,12 @@ LanguageToolSuiteID={38171385-97B2-4EC5-BF2C-C2C027BA5B04}
 LanguageToolID={B6D1F1C2-3E8A-49F6-9C0A-75F5EBE32222}
 LanguageToolLocation=C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
-SOLK=<src>|stepper.c|main.c||<obj>||<lib>||<lkr>||
+SOLK=<src>|stepper.c|main.c|lcd.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File008]
+[File009]
 Location=C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\startup.rlf
 Folder=Output
 DeviceName=PIC16F887
@@ -113,12 +126,12 @@ LanguageToolSuiteID={38171385-97B2-4EC5-BF2C-C2C027BA5B04}
 LanguageToolID={B6D1F1C2-3E8A-49F6-9C0A-75F5EBE32222}
 LanguageToolLocation=C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
-SOLK=<src>|stepper.c|main.c||<obj>||<lib>||<lkr>||
+SOLK=<src>|stepper.c|main.c|lcd.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File009]
+[File010]
 Location=C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\doprnt.p1
 Folder=Output
 DeviceName=PIC16F887
@@ -126,12 +139,12 @@ LanguageToolSuiteID={38171385-97B2-4EC5-BF2C-C2C027BA5B04}
 LanguageToolID={B6D1F1C2-3E8A-49F6-9C0A-75F5EBE32222}
 LanguageToolLocation=C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
-SOLK=<src>|stepper.c|main.c||<obj>||<lib>||<lkr>||
+SOLK=<src>|stepper.c|main.c|lcd.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File010]
+[File011]
 Location=C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\doprnt.pre
 Folder=Output
 DeviceName=PIC16F887
@@ -139,12 +152,12 @@ LanguageToolSuiteID={38171385-97B2-4EC5-BF2C-C2C027BA5B04}
 LanguageToolID={B6D1F1C2-3E8A-49F6-9C0A-75F5EBE32222}
 LanguageToolLocation=C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
-SOLK=<src>|stepper.c|main.c||<obj>||<lib>||<lkr>||
+SOLK=<src>|stepper.c|main.c|lcd.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File011]
+[File012]
 Location=C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper_motor.obj
 Folder=Output
 DeviceName=PIC16F887
@@ -152,12 +165,12 @@ LanguageToolSuiteID={38171385-97B2-4EC5-BF2C-C2C027BA5B04}
 LanguageToolID={B6D1F1C2-3E8A-49F6-9C0A-75F5EBE32222}
 LanguageToolLocation=C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
-SOLK=<src>|stepper.c|main.c||<obj>||<lib>||<lkr>||
+SOLK=<src>|stepper.c|main.c|lcd.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File012]
+[File013]
 Location=C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper_motor.lst
 Folder=Output
 DeviceName=PIC16F887
@@ -165,12 +178,12 @@ LanguageToolSuiteID={38171385-97B2-4EC5-BF2C-C2C027BA5B04}
 LanguageToolID={B6D1F1C2-3E8A-49F6-9C0A-75F5EBE32222}
 LanguageToolLocation=C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
-SOLK=<src>|stepper.c|main.c||<obj>||<lib>||<lkr>||
+SOLK=<src>|stepper.c|main.c|lcd.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File013]
+[File014]
 Location=C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper_motor.rlf
 Folder=Output
 DeviceName=PIC16F887
@@ -178,12 +191,12 @@ LanguageToolSuiteID={38171385-97B2-4EC5-BF2C-C2C027BA5B04}
 LanguageToolID={B6D1F1C2-3E8A-49F6-9C0A-75F5EBE32222}
 LanguageToolLocation=C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
-SOLK=<src>|stepper.c|main.c||<obj>||<lib>||<lkr>||
+SOLK=<src>|stepper.c|main.c|lcd.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File014]
+[File015]
 Location=C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper_motor.sdb
 Folder=Output
 DeviceName=PIC16F887
@@ -191,7 +204,7 @@ LanguageToolSuiteID={38171385-97B2-4EC5-BF2C-C2C027BA5B04}
 LanguageToolID={B6D1F1C2-3E8A-49F6-9C0A-75F5EBE32222}
 LanguageToolLocation=C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
-SOLK=<src>|stepper.c|main.c||<obj>||<lib>||<lkr>||
+SOLK=<src>|stepper.c|main.c|lcd.c||<obj>||<lib>||<lkr>||
 SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
