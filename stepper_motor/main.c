@@ -15,6 +15,8 @@ uint8_t phase = 0;
 uint8_t speed_ramp = 0;
 
 void __interrupt ISR(){
+
+	if(PIR1bits.TMR2IF == 1){
 	
 		calculaErro();
 
@@ -45,6 +47,8 @@ void __interrupt ISR(){
 		PORTD = phase;	
 
 		PIR1bits.TMR2IF = 0;
+		
+	}
 }
 
 void setup (void){
