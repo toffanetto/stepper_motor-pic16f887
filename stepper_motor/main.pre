@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\main.c"
+# 1 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2204,7 +2204,7 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 6 "C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.h"
+# 6 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h"
 uint16_t setpoint = 0;
 uint16_t position = 0;
 int16_t error = 0;
@@ -2225,18 +2225,17 @@ uint16_t getVelocidade();
 void calculaVelocidade();
 
 
-# 4 "C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\lcd.h"
+# 4 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.h"
 #pragma config CONFIG1=0x2FF4
 #pragma config CONFIG2=0x3FFF
 
-# 27
+# 19
 uint8_t LCD_Entrada = 0x03;
 uint8_t LCD_Controle = 0x0C;
-uint8_t LCD_ShiftDisplay = 0x10;
-
 char c_int_value[2];
 
-void LCD_Setup();
+
+void setupDisplay();
 
 void LCD_SendByte(uint8_t reg, uint8_t byte);
 
@@ -2244,38 +2243,18 @@ void LCD_SendNb(uint8_t nibble);
 
 void LCD_CMD(uint8_t cmd);
 
-void LCD_ClearDisplay(void);
+void clearDisplay(void);
 
-void LCD_Home(void);
+void setCursor(uint8_t linha, uint8_t coluna);
 
-void LCD_Toggle(uint8_t time, uint8_t n);
-
-void LCD_DisplayOn(void);
-
-void LCD_DisplayOff(void);
-
-void LCD_CursorOn(void);
-
-void LCD_CursorOff(void);
-
-void LCD_DisplayRight(void);
-
-void LCD_DisplayLeft(void);
-
-void LCD_CursorRight(void);
-
-void LCD_CursorLeft(void);
-
-void LCD_SetCursor(uint8_t linha, uint8_t coluna);
-
-void LCD_sendChar(uint8_t ch, uint8_t linha, uint8_t coluna);
+void sendChar(uint8_t ch, uint8_t linha, uint8_t coluna);
 
 void LCD_sendString(uint8_t *string, uint8_t linha, uint8_t coluna);
 
 void int2char(uint16_t int_value);
 
 
-# 8 "C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\main.c"
+# 8 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c"
 #pragma config CONFIG1=0x2FF4
 #pragma config CONFIG2=0x3FFF
 
@@ -2287,6 +2266,7 @@ uint8_t speed_ramp = 0;
 
 void __interrupt ISR(){
 
+if(PIR1bits.TMR2IF == 1){
 calculaErro();
 
 if(speed_ramp <= 100 && error !=0){
@@ -2318,8 +2298,11 @@ PORTD = phase;
 PIR1bits.TMR2IF = 0;
 }
 
+}
+
 void setup (void){
-LCD_Setup();
+
+setupDisplay();
 
 setupStepper();
 setPosicaoAtual(0);

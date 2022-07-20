@@ -16,8 +16,7 @@ uint8_t speed_ramp = 0;
 
 void __interrupt ISR(){
 
-	if(PIR1bits.TMR2IF == 1){
-	
+	if(PIR1bits.TMR2IF == 1){	
 		calculaErro();
 
 		if(speed_ramp <= 100 && error !=0){
@@ -47,12 +46,13 @@ void __interrupt ISR(){
 		PORTD = phase;	
 
 		PIR1bits.TMR2IF = 0;
-		
 	}
+
 }
 
 void setup (void){
-	LCD_Setup();
+
+	setupDisplay();
 
 	setupStepper();
 	setPosicaoAtual(0);

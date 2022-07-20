@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c"
+# 1 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c"
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
 typedef signed char int8_t;
@@ -91,7 +91,7 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 6 "C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.h"
+# 6 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h"
 uint16_t setpoint = 0;
 uint16_t position = 0;
 int16_t error = 0;
@@ -2296,7 +2296,7 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 6 "C:\Users\Aluno\Desktop\stepper_motor-pic16f887\stepper_motor\stepper.c"
+# 6 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c"
 void setupStepper(void){
 
 TRISD = 0b11110000;
