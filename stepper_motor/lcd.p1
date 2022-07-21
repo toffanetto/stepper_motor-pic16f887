@@ -3,16 +3,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "1476
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
-"3447
-[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
 [v F1637 `(v ~T0 @X0 1 tf1`ul ]
 "153 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic.h
 [v __delay `JF1637 ~T0 @X0 0 e ]
 [p i __delay ]
-"28 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\LCD.h
+"37 C:\Users\Aluno.PC-17\Desktop\stepper_motor\LCD.h
 [v _LCD_SendNb `(v ~T0 @X0 0 ef1`uc ]
-"26
+"35
 [v _LCD_SendByte `(v ~T0 @X0 0 ef2`uc`uc ]
+"49
+[v _LCD_DisplayOff `(v ~T0 @X0 0 ef ]
+"47
+[v _LCD_DisplayOn `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -1525,7 +1527,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-"4 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\LCD.h
+"4 C:\Users\Aluno.PC-17\Desktop\stepper_motor\LCD.h
 [p x FOSC=INTRC_NOCLKOUT ]
 [p x WDTE=OFF ]
 [p x PWRTE=OFF ]
@@ -1540,344 +1542,504 @@ Version 3.2 HI-TECH Software Intermediate Code
 "5
 [p x BOR4V=BOR40V ]
 [p x WRT=OFF ]
-"19
+"9
+[v _c_int_value `uc ~T0 @X0 -> 5 `i e ]
+[; ;LCD.h: 9: char c_int_value[5];
+"29
 [v _LCD_Entrada `uc ~T0 @X0 1 e ]
 [i _LCD_Entrada
 -> -> 3 `i `uc
 ]
-[; ;LCD.h: 19: uint8_t LCD_Entrada = 0x03;
-"20
+[; ;LCD.h: 29: uint8_t LCD_Entrada = 0x03;
+"30
 [v _LCD_Controle `uc ~T0 @X0 1 e ]
 [i _LCD_Controle
 -> -> 12 `i `uc
 ]
-[; ;LCD.h: 20: uint8_t LCD_Controle = 0x0C;
-"21
-[v _c_int_value `uc ~T0 @X0 -> 2 `i e ]
-[; ;LCD.h: 21: char c_int_value[2];
-[; ;LCD.h: 24: void setupDisplay();
-[; ;LCD.h: 26: void LCD_SendByte(uint8_t reg, uint8_t byte);
-[; ;LCD.h: 28: void LCD_SendNb(uint8_t nibble);
-[; ;LCD.h: 30: void LCD_CMD(uint8_t cmd);
-[; ;LCD.h: 32: void clearDisplay(void);
-[; ;LCD.h: 34: void setCursor(uint8_t linha, uint8_t coluna);
-[; ;LCD.h: 36: void sendChar(uint8_t ch, uint8_t linha, uint8_t coluna);
-[; ;LCD.h: 38: void LCD_sendString(uint8_t *string, uint8_t linha, uint8_t coluna);
-[; ;LCD.h: 40: void int2char(uint16_t int_value);
-"12 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
+[; ;LCD.h: 30: uint8_t LCD_Controle = 0x0C;
+"31
+[v _LCD_ShiftDisplay `uc ~T0 @X0 1 e ]
+[i _LCD_ShiftDisplay
+-> -> 16 `i `uc
+]
+[; ;LCD.h: 31: uint8_t LCD_ShiftDisplay = 0x10;
+[; ;LCD.h: 33: void LCD_Setup();
+[; ;LCD.h: 35: void LCD_SendByte(uint8_t reg, uint8_t byte);
+[; ;LCD.h: 37: void LCD_SendNb(uint8_t nibble);
+[; ;LCD.h: 39: void LCD_CMD(uint8_t cmd);
+[; ;LCD.h: 41: void LCD_ClearDisplay(void);
+[; ;LCD.h: 43: void LCD_Home(void);
+[; ;LCD.h: 45: void LCD_Toggle(uint8_t time, uint8_t n);
+[; ;LCD.h: 47: void LCD_DisplayOn(void);
+[; ;LCD.h: 49: void LCD_DisplayOff(void);
+[; ;LCD.h: 51: void LCD_CursorOn(void);
+[; ;LCD.h: 53: void LCD_CursorOff(void);
+[; ;LCD.h: 55: void LCD_DisplayRight(void);
+[; ;LCD.h: 57: void LCD_DisplayLeft(void);
+[; ;LCD.h: 59: void LCD_CursorRight(void);
+[; ;LCD.h: 61: void LCD_CursorLeft(void);
+[; ;LCD.h: 63: void LCD_SetCursor(uint8_t linha, uint8_t coluna);
+[; ;LCD.h: 65: void LCD_sendChar(uint8_t ch, uint8_t linha, uint8_t coluna);
+[; ;LCD.h: 67: void LCD_sendString(uint8_t *string, uint8_t linha, uint8_t coluna);
+"11 C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
 [v _LCD_PORT `*Vui ~T0 @X0 1 e ]
 [i _LCD_PORT
 -> &U _PORTB `*Vui
 ]
-[; ;lcd.c: 12: volatile unsigned *LCD_PORT = & PORTB;
-"13
+[; ;lcd.c: 11: volatile unsigned *LCD_PORT = & PORTB;
+"12
 [v _LCD_TRIS `*Vui ~T0 @X0 1 e ]
 [i _LCD_TRIS
 -> &U _TRISB `*Vui
 ]
-[; ;lcd.c: 13: volatile unsigned *LCD_TRIS = & TRISB;
-"25
-[v _setupDisplay `(v ~T0 @X0 1 ef ]
+[; ;lcd.c: 12: volatile unsigned *LCD_TRIS = & TRISB;
+"23
+[v _LCD_Setup `(v ~T0 @X0 1 ef ]
 {
-[; ;lcd.c: 25: void setupDisplay(){
-[e :U _setupDisplay ]
+[; ;lcd.c: 23: void LCD_Setup(){
+[e :U _LCD_Setup ]
 [f ]
-[; ;lcd.c: 27: PORTB = 0x00;
-"27
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;lcd.c: 28: TRISB = 0x00;
-"28
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;lcd.c: 29: ANSELH = 0x00;
-"29
-[e = _ANSELH -> -> 0 `i `uc ]
-[; ;lcd.c: 30: *LCD_TRIS = 0x00;
-"30
+[; ;lcd.c: 24: *LCD_TRIS = 0x00;
+"24
 [e = *U _LCD_TRIS -> -> 0 `i `ui ]
-[; ;lcd.c: 31: *LCD_PORT = 0x00;
-"31
+[; ;lcd.c: 25: *LCD_PORT = 0x00;
+"25
 [e = *U _LCD_PORT -> -> 0 `i `ui ]
-[; ;lcd.c: 32: _delay((unsigned long)((50)*(4000000/4000.0)));
-"32
+[; ;lcd.c: 27: _delay((unsigned long)((50)*(4000000/4000.0)));
+"27
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;lcd.c: 35: LCD_SendNb(LCD_Entrada );
-"35
-[e ( _LCD_SendNb (1 _LCD_Entrada ]
-[; ;lcd.c: 36: LCD_SendNb(LCD_Entrada );
-"36
-[e ( _LCD_SendNb (1 _LCD_Entrada ]
-[; ;lcd.c: 37: LCD_SendNb(LCD_Entrada );
-"37
-[e ( _LCD_SendNb (1 _LCD_Entrada ]
-[; ;lcd.c: 38: LCD_SendNb(0x02);
-"38
+[; ;lcd.c: 30: LCD_SendNb(0x03);
+"30
+[e ( _LCD_SendNb (1 -> -> 3 `i `uc ]
+[; ;lcd.c: 31: LCD_SendNb(0x03);
+"31
+[e ( _LCD_SendNb (1 -> -> 3 `i `uc ]
+[; ;lcd.c: 32: LCD_SendNb(0x03);
+"32
+[e ( _LCD_SendNb (1 -> -> 3 `i `uc ]
+[; ;lcd.c: 33: LCD_SendNb(0x02);
+"33
 [e ( _LCD_SendNb (1 -> -> 2 `i `uc ]
-[; ;lcd.c: 39: LCD_SendByte(0, 0x38);
-"39
-[e ( _LCD_SendByte (2 , -> -> 0 `i `uc -> -> 56 `i `uc ]
-[; ;lcd.c: 40: LCD_SendByte(0, LCD_Controle);
-"40
+[; ;lcd.c: 34: LCD_SendByte(0, 0x28);
+"34
+[e ( _LCD_SendByte (2 , -> -> 0 `i `uc -> -> 40 `i `uc ]
+[; ;lcd.c: 35: LCD_SendByte(0, LCD_Controle);
+"35
 [e ( _LCD_SendByte (2 , -> -> 0 `i `uc _LCD_Controle ]
+[; ;lcd.c: 36: LCD_SendByte(0, 0x01);
+"36
+[e ( _LCD_SendByte (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;lcd.c: 37: LCD_SendByte(0, LCD_Entrada);
+"37
+[e ( _LCD_SendByte (2 , -> -> 0 `i `uc _LCD_Entrada ]
+[; ;lcd.c: 38: }
+"38
+[e :UE 138 ]
+}
+"40
+[v _LCD_ClearDisplay `(v ~T0 @X0 1 ef ]
+{
+[; ;lcd.c: 40: void LCD_ClearDisplay(void){
+[e :U _LCD_ClearDisplay ]
+[f ]
 [; ;lcd.c: 41: LCD_SendByte(0, 0x01);
 "41
 [e ( _LCD_SendByte (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;lcd.c: 42: LCD_SendByte(0, LCD_Entrada);
+[; ;lcd.c: 42: _delay((unsigned long)((2)*(4000000/4000.0)));
 "42
-[e ( _LCD_SendByte (2 , -> -> 0 `i `uc _LCD_Entrada ]
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 [; ;lcd.c: 43: }
 "43
-[e :UE 138 ]
-}
-"46
-[v _clearDisplay `(v ~T0 @X0 1 ef ]
-{
-[; ;lcd.c: 46: void clearDisplay(void){
-[e :U _clearDisplay ]
-[f ]
-[; ;lcd.c: 47: LCD_SendByte(0, 0x01);
-"47
-[e ( _LCD_SendByte (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;lcd.c: 48: _delay((unsigned long)((2)*(4000000/4000.0)));
-"48
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;lcd.c: 49: }
-"49
 [e :UE 139 ]
 }
+"45
+[v _LCD_Home `(v ~T0 @X0 1 ef ]
+{
+[; ;lcd.c: 45: void LCD_Home(void){
+[e :U _LCD_Home ]
+[f ]
+[; ;lcd.c: 46: LCD_SendByte(0, 0x02);
+"46
+[e ( _LCD_SendByte (2 , -> -> 0 `i `uc -> -> 2 `i `uc ]
+[; ;lcd.c: 47: _delay((unsigned long)((2)*(4000000/4000.0)));
+"47
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;lcd.c: 48: }
+"48
+[e :UE 140 ]
+}
+"50
+[v _LCD_Toggle `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[; ;lcd.c: 50: void LCD_Toggle(uint8_t time, uint8_t n){
+[e :U _LCD_Toggle ]
+[v _time `uc ~T0 @X0 1 r1 ]
+[v _n `uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;lcd.c: 51: for(n; n > 0; n--){
 "51
+{
+[e _n ]
+[e $ > -> _n `i -> 0 `i 142  ]
+[e $U 143  ]
+[e :U 142 ]
+{
+[; ;lcd.c: 52: LCD_DisplayOff();
+"52
+[e ( _LCD_DisplayOff ..  ]
+[; ;lcd.c: 53: for(uint8_t i = time; i > 0; i--){
+"53
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i _time ]
+[e $ > -> _i `i -> 0 `i 145  ]
+[e $U 146  ]
+[e :U 145 ]
+{
+[; ;lcd.c: 54: _delay((unsigned long)((100)*(4000000/4000.0)));
+"54
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"55
+}
+"53
+[e -- _i -> -> 1 `i `uc ]
+[e $ > -> _i `i -> 0 `i 145  ]
+[e :U 146 ]
+"55
+}
+[; ;lcd.c: 55: }
+[; ;lcd.c: 56: LCD_DisplayOn();
+"56
+[e ( _LCD_DisplayOn ..  ]
+[; ;lcd.c: 57: for(uint8_t i = time; i > 0; i--) {
+"57
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i _time ]
+[e $ > -> _i `i -> 0 `i 148  ]
+[e $U 149  ]
+[e :U 148 ]
+{
+[; ;lcd.c: 58: _delay((unsigned long)((100)*(4000000/4000.0)));
+"58
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"59
+}
+"57
+[e -- _i -> -> 1 `i `uc ]
+[e $ > -> _i `i -> 0 `i 148  ]
+[e :U 149 ]
+"59
+}
+"60
+}
+"51
+[e -- _n -> -> 1 `i `uc ]
+[e $ > -> _n `i -> 0 `i 142  ]
+[e :U 143 ]
+"60
+}
+[; ;lcd.c: 59: }
+[; ;lcd.c: 60: }
+[; ;lcd.c: 61: }
+"61
+[e :UE 141 ]
+}
+"63
+[v _LCD_DisplayOn `(v ~T0 @X0 1 ef ]
+{
+[; ;lcd.c: 63: void LCD_DisplayOn(void){
+[e :U _LCD_DisplayOn ]
+[f ]
+[; ;lcd.c: 64: LCD_Controle |= 0x04;
+"64
+[e =| _LCD_Controle -> -> 4 `i `uc ]
+[; ;lcd.c: 65: LCD_SendByte(0, LCD_Controle);
+"65
+[e ( _LCD_SendByte (2 , -> -> 0 `i `uc _LCD_Controle ]
+[; ;lcd.c: 66: }
+"66
+[e :UE 151 ]
+}
+"68
+[v _LCD_DisplayOff `(v ~T0 @X0 1 ef ]
+{
+[; ;lcd.c: 68: void LCD_DisplayOff(void){
+[e :U _LCD_DisplayOff ]
+[f ]
+[; ;lcd.c: 69: LCD_Controle &= ~0x04;
+"69
+[e =& _LCD_Controle -> ~ -> 4 `i `uc ]
+[; ;lcd.c: 70: LCD_SendByte(0, LCD_Controle);
+"70
+[e ( _LCD_SendByte (2 , -> -> 0 `i `uc _LCD_Controle ]
+[; ;lcd.c: 71: }
+"71
+[e :UE 152 ]
+}
+"73
+[v _LCD_CursorOn `(v ~T0 @X0 1 ef ]
+{
+[; ;lcd.c: 73: void LCD_CursorOn(void){
+[e :U _LCD_CursorOn ]
+[f ]
+[; ;lcd.c: 74: LCD_Controle |= 0x02;
+"74
+[e =| _LCD_Controle -> -> 2 `i `uc ]
+[; ;lcd.c: 75: LCD_SendByte(0, LCD_Controle);
+"75
+[e ( _LCD_SendByte (2 , -> -> 0 `i `uc _LCD_Controle ]
+[; ;lcd.c: 77: }
+"77
+[e :UE 153 ]
+}
+"79
+[v _LCD_CursorOff `(v ~T0 @X0 1 ef ]
+{
+[; ;lcd.c: 79: void LCD_CursorOff(void){
+[e :U _LCD_CursorOff ]
+[f ]
+[; ;lcd.c: 80: LCD_Controle &= 0x02;
+"80
+[e =& _LCD_Controle -> -> 2 `i `uc ]
+[; ;lcd.c: 81: LCD_SendByte(0, LCD_Controle);
+"81
+[e ( _LCD_SendByte (2 , -> -> 0 `i `uc _LCD_Controle ]
+[; ;lcd.c: 82: }
+"82
+[e :UE 154 ]
+}
+"84
+[v _LCD_DisplayRight `(v ~T0 @X0 1 ef ]
+{
+[; ;lcd.c: 84: void LCD_DisplayRight(void){
+[e :U _LCD_DisplayRight ]
+[f ]
+[; ;lcd.c: 85: LCD_ShiftDisplay |= 0x08;
+"85
+[e =| _LCD_ShiftDisplay -> -> 8 `i `uc ]
+[; ;lcd.c: 86: LCD_ShiftDisplay |= 0x06;
+"86
+[e =| _LCD_ShiftDisplay -> -> 6 `i `uc ]
+[; ;lcd.c: 87: LCD_SendByte(0, LCD_ShiftDisplay);
+"87
+[e ( _LCD_SendByte (2 , -> -> 0 `i `uc _LCD_ShiftDisplay ]
+[; ;lcd.c: 88: }
+"88
+[e :UE 155 ]
+}
+"90
+[v _LCD_DisplayLeft `(v ~T0 @X0 1 ef ]
+{
+[; ;lcd.c: 90: void LCD_DisplayLeft(void){
+[e :U _LCD_DisplayLeft ]
+[f ]
+[; ;lcd.c: 91: LCD_ShiftDisplay |= 0x08;
+"91
+[e =| _LCD_ShiftDisplay -> -> 8 `i `uc ]
+[; ;lcd.c: 92: LCD_ShiftDisplay &= ~0x04;
+"92
+[e =& _LCD_ShiftDisplay -> ~ -> 4 `i `uc ]
+[; ;lcd.c: 93: LCD_SendByte(0, LCD_ShiftDisplay);
+"93
+[e ( _LCD_SendByte (2 , -> -> 0 `i `uc _LCD_ShiftDisplay ]
+[; ;lcd.c: 94: }
+"94
+[e :UE 156 ]
+}
+"96
 [v _LCD_SendNb `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;lcd.c: 51: void LCD_SendNb(uint8_t NB){
+[; ;lcd.c: 96: void LCD_SendNb(uint8_t NB){
 [e :U _LCD_SendNb ]
 [v _NB `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;lcd.c: 55: *LCD_PORT = (unsigned)((NB & 0b00000001) >> 0) ? (*LCD_PORT | (1 << 0)) : (*LCD_PORT & ~(1 << 0));
-"55
+[; ;lcd.c: 99: *LCD_PORT = (unsigned)((NB & 0b00000001) >> 0) ? (*LCD_PORT | (1 << 0)) : (*LCD_PORT & ~(1 << 0));
+"99
 [e = *U _LCD_PORT ? != -> >> & -> _NB `i -> 1 `i -> 0 `i `ui -> -> 0 `i `ui : | *U _LCD_PORT -> << -> 1 `i -> 0 `i `ui & *U _LCD_PORT -> ~ << -> 1 `i -> 0 `i `ui ]
-[; ;lcd.c: 56: *LCD_PORT = (unsigned)((NB & 0b00000010) >> 1) ? (*LCD_PORT | (1 << 1)) : (*LCD_PORT & ~(1 << 1));
-"56
+[; ;lcd.c: 100: *LCD_PORT = (unsigned)((NB & 0b00000010) >> 1) ? (*LCD_PORT | (1 << 1)) : (*LCD_PORT & ~(1 << 1));
+"100
 [e = *U _LCD_PORT ? != -> >> & -> _NB `i -> 2 `i -> 1 `i `ui -> -> 0 `i `ui : | *U _LCD_PORT -> << -> 1 `i -> 1 `i `ui & *U _LCD_PORT -> ~ << -> 1 `i -> 1 `i `ui ]
-[; ;lcd.c: 57: *LCD_PORT = (unsigned)((NB & 0b00000100) >> 2) ? (*LCD_PORT | (1 << 2)) : (*LCD_PORT & ~(1 << 2));
-"57
+[; ;lcd.c: 101: *LCD_PORT = (unsigned)((NB & 0b00000100) >> 2) ? (*LCD_PORT | (1 << 2)) : (*LCD_PORT & ~(1 << 2));
+"101
 [e = *U _LCD_PORT ? != -> >> & -> _NB `i -> 4 `i -> 2 `i `ui -> -> 0 `i `ui : | *U _LCD_PORT -> << -> 1 `i -> 2 `i `ui & *U _LCD_PORT -> ~ << -> 1 `i -> 2 `i `ui ]
-[; ;lcd.c: 58: *LCD_PORT = (unsigned)((NB & 0b00001000) >> 3) ? (*LCD_PORT | (1 << 3)) : (*LCD_PORT & ~(1 << 3));
-"58
+[; ;lcd.c: 102: *LCD_PORT = (unsigned)((NB & 0b00001000) >> 3) ? (*LCD_PORT | (1 << 3)) : (*LCD_PORT & ~(1 << 3));
+"102
 [e = *U _LCD_PORT ? != -> >> & -> _NB `i -> 8 `i -> 3 `i `ui -> -> 0 `i `ui : | *U _LCD_PORT -> << -> 1 `i -> 3 `i `ui & *U _LCD_PORT -> ~ << -> 1 `i -> 3 `i `ui ]
-[; ;lcd.c: 59: *LCD_PORT |= 1 << 5;
-"59
+[; ;lcd.c: 104: *LCD_PORT |= 1 << 5;
+"104
 [e =| *U _LCD_PORT -> << -> 1 `i -> 5 `i `ui ]
-[; ;lcd.c: 60: _delay((unsigned long)((10)*(4000000/4000000.0)));
-"60
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-[; ;lcd.c: 61: *LCD_PORT &= ~(1 << 5);
-"61
+[; ;lcd.c: 105: _delay((unsigned long)((1)*(4000000/4000000.0)));
+"105
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[; ;lcd.c: 106: *LCD_PORT &= ~(1 << 5);
+"106
 [e =& *U _LCD_PORT -> ~ << -> 1 `i -> 5 `i `ui ]
-[; ;lcd.c: 62: _delay((unsigned long)((50)*(4000000/4000000.0)));
-"62
+[; ;lcd.c: 107: _delay((unsigned long)((50)*(4000000/4000000.0)));
+"107
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-[; ;lcd.c: 63: }
-"63
-[e :UE 140 ]
+[; ;lcd.c: 108: }
+"108
+[e :UE 157 ]
 }
-"65
+"111
 [v _LCD_SendByte `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[; ;lcd.c: 65: void LCD_SendByte(uint8_t reg, uint8_t byte){
+[; ;lcd.c: 111: void LCD_SendByte(uint8_t reg, uint8_t byte) {
 [e :U _LCD_SendByte ]
 [v _reg `uc ~T0 @X0 1 r1 ]
 [v _byte `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;lcd.c: 67: *LCD_PORT = reg ? (*LCD_PORT | (1 << 4)) : (*LCD_PORT & ~(1 << 4));
-"67
+[; ;lcd.c: 112: *LCD_PORT = reg ? (*LCD_PORT | (1 << 4)) : (*LCD_PORT & ~(1 << 4));
+"112
 [e = *U _LCD_PORT ? != -> _reg `i -> -> -> 0 `i `uc `i : | *U _LCD_PORT -> << -> 1 `i -> 4 `i `ui & *U _LCD_PORT -> ~ << -> 1 `i -> 4 `i `ui ]
-[; ;lcd.c: 68: LCD_SendNb(byte >> 4);
-"68
+[; ;lcd.c: 116: LCD_SendNb(byte >> 4);
+"116
 [e ( _LCD_SendNb (1 -> >> -> _byte `i -> 4 `i `uc ]
-[; ;lcd.c: 69: LCD_SendNb(byte & 0x0f);
-"69
+[; ;lcd.c: 117: LCD_SendNb(byte & 0x0f);
+"117
 [e ( _LCD_SendNb (1 -> & -> _byte `i -> 15 `i `uc ]
-[; ;lcd.c: 70: }
-"70
-[e :UE 141 ]
+[; ;lcd.c: 118: }
+"118
+[e :UE 158 ]
 }
-"73
-[v _setCursor `(v ~T0 @X0 1 ef2`uc`uc ]
+"121
+[v _LCD_SetCursor `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[; ;lcd.c: 73: void setCursor(uint8_t linha, uint8_t coluna){
-[e :U _setCursor ]
+[; ;lcd.c: 121: void LCD_SetCursor(uint8_t linha, uint8_t coluna){
+[e :U _LCD_SetCursor ]
 [v _linha `uc ~T0 @X0 1 r1 ]
 [v _coluna `uc ~T0 @X0 1 r2 ]
 [f ]
-"74
+"122
 [v _aux `uc ~T0 @X0 1 a ]
-[; ;lcd.c: 74: uint8_t aux;
-[; ;lcd.c: 75: if(linha == 2)
-"75
-[e $ ! == -> _linha `i -> 2 `i 143  ]
-[; ;lcd.c: 76: aux = 0xC0;
-"76
-[e = _aux -> -> 192 `i `uc ]
-[e $U 144  ]
-"77
-[e :U 143 ]
-[; ;lcd.c: 77: else
-[; ;lcd.c: 78: aux = 0x80;
-"78
-[e = _aux -> -> 128 `i `uc ]
-[e :U 144 ]
-[; ;lcd.c: 80: aux += coluna - 1;
-"80
+[; ;lcd.c: 122: uint8_t aux;
+[; ;lcd.c: 124: if(linha == 2)
+"124
+[e $ ! == -> _linha `i -> 2 `i 160  ]
+[; ;lcd.c: 125: aux = 0x40;
+"125
+[e = _aux -> -> 64 `i `uc ]
+[e $U 161  ]
+"126
+[e :U 160 ]
+[; ;lcd.c: 126: else
+[; ;lcd.c: 127: aux = 0;
+"127
+[e = _aux -> -> 0 `i `uc ]
+[e :U 161 ]
+[; ;lcd.c: 129: aux += coluna - 1;
+"129
 [e =+ _aux -> - -> _coluna `i -> 1 `i `uc ]
-[; ;lcd.c: 82: LCD_SendByte(0, aux);
-"82
-[e ( _LCD_SendByte (2 , -> -> 0 `i `uc _aux ]
-[; ;lcd.c: 83: }
-"83
-[e :UE 142 ]
+[; ;lcd.c: 131: LCD_SendByte(0, 0x80 | aux);
+"131
+[e ( _LCD_SendByte (2 , -> -> 0 `i `uc -> | -> 128 `i -> _aux `i `uc ]
+[; ;lcd.c: 132: }
+"132
+[e :UE 159 ]
 }
-"86
-[v _sendChar `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+"136
+[v _LCD_sendChar `(v ~T0 @X0 1 ef3`uc`uc`uc ]
 {
-[; ;lcd.c: 86: void sendChar(uint8_t ch, uint8_t linha, uint8_t coluna){
-[e :U _sendChar ]
+[; ;lcd.c: 136: void LCD_sendChar(uint8_t ch, uint8_t linha, uint8_t coluna){
+[e :U _LCD_sendChar ]
 [v _ch `uc ~T0 @X0 1 r1 ]
 [v _linha `uc ~T0 @X0 1 r2 ]
 [v _coluna `uc ~T0 @X0 1 r3 ]
 [f ]
-[; ;lcd.c: 87: setCursor(linha, coluna);
-"87
-[e ( _setCursor (2 , _linha _coluna ]
-[; ;lcd.c: 88: LCD_SendByte(1, ch);
-"88
+[; ;lcd.c: 137: LCD_SetCursor(linha, coluna);
+"137
+[e ( _LCD_SetCursor (2 , _linha _coluna ]
+[; ;lcd.c: 138: LCD_SendByte(1, ch);
+"138
 [e ( _LCD_SendByte (2 , -> -> 1 `i `uc _ch ]
-[; ;lcd.c: 89: }
-"89
-[e :UE 145 ]
+[; ;lcd.c: 139: }
+"139
+[e :UE 162 ]
 }
-"92
+"141
 [v _LCD_sendString `(v ~T0 @X0 1 ef3`*uc`uc`uc ]
 {
-[; ;lcd.c: 92: void LCD_sendString(uint8_t *string, uint8_t linha, uint8_t coluna){
+[; ;lcd.c: 141: void LCD_sendString(uint8_t *string, uint8_t linha, uint8_t coluna){
 [e :U _LCD_sendString ]
 [v _string `*uc ~T0 @X0 1 r1 ]
 [v _linha `uc ~T0 @X0 1 r2 ]
 [v _coluna `uc ~T0 @X0 1 r3 ]
 [f ]
-[; ;lcd.c: 94: if(coluna == 0){
-"94
-[e $ ! == -> _coluna `i -> 0 `i 147  ]
+[; ;lcd.c: 142: if(coluna == 0){
+"142
+[e $ ! == -> _coluna `i -> 0 `i 164  ]
 {
-[; ;lcd.c: 95: for(uint8_t i = 0; i < 17; i++, coluna++){
-"95
+[; ;lcd.c: 143: for(uint8_t i = 0; i < 17; i++, coluna++){
+"143
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 17 `i 148  ]
-[e $U 149  ]
-[e :U 148 ]
+[e $ < -> _i `i -> 17 `i 165  ]
+[e $U 166  ]
+[e :U 165 ]
 {
-[; ;lcd.c: 96: if(string[i] == '\0') break;
-"96
-[e $ ! == -> *U + _string * -> _i `ux -> -> # *U _string `ui `ux `ui -> 0 `ui 151  ]
-[e $U 149  ]
-[e :U 151 ]
-"97
+[; ;lcd.c: 144: if(string[i] == '\0') break;
+"144
+[e $ ! == -> *U + _string * -> _i `ux -> -> # *U _string `ui `ux `ui -> 0 `ui 168  ]
+[e $U 166  ]
+[e :U 168 ]
+"145
 }
-"95
+"143
 [e ; ++ _i -> -> 1 `i `uc ++ _coluna -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 17 `i 148  ]
-[e :U 149 ]
-"97
+[e $ < -> _i `i -> 17 `i 165  ]
+[e :U 166 ]
+"145
 }
-"98
+"146
 [v _col `uc ~T0 @X0 1 a ]
-[; ;lcd.c: 97: }
-[; ;lcd.c: 98: uint8_t col = 18 - coluna;
+[; ;lcd.c: 145: }
+[; ;lcd.c: 146: uint8_t col = 18 - coluna;
 [e = _col -> - -> 18 `i -> _coluna `i `uc ]
-[; ;lcd.c: 99: setCursor(linha, coluna);
-"99
-[e ( _setCursor (2 , _linha _coluna ]
-"100
+[; ;lcd.c: 147: LCD_SetCursor(linha, col);
+"147
+[e ( _LCD_SetCursor (2 , _linha _col ]
+"148
 }
-[; ;lcd.c: 100: }else{
-[e $U 152  ]
-[e :U 147 ]
+[; ;lcd.c: 148: } else{
+[e $U 169  ]
+[e :U 164 ]
 {
-[; ;lcd.c: 101: setCursor(linha, coluna);
-"101
-[e ( _setCursor (2 , _linha _coluna ]
-"102
+[; ;lcd.c: 149: LCD_SetCursor(linha, coluna);
+"149
+[e ( _LCD_SetCursor (2 , _linha _coluna ]
+"150
 }
-[e :U 152 ]
-[; ;lcd.c: 102: }
-[; ;lcd.c: 105: for(uint8_t i = 0; i < 17; i++){
-"105
+[e :U 169 ]
+[; ;lcd.c: 150: }
+[; ;lcd.c: 152: for(uint8_t i = 0; i < 17; i++){
+"152
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 17 `i 153  ]
-[e $U 154  ]
-[e :U 153 ]
+[e $ < -> _i `i -> 17 `i 170  ]
+[e $U 171  ]
+[e :U 170 ]
 {
-[; ;lcd.c: 106: if(string[i] == '\0') break;
-"106
-[e $ ! == -> *U + _string * -> _i `ux -> -> # *U _string `ui `ux `ui -> 0 `ui 156  ]
-[e $U 154  ]
-[e :U 156 ]
-[; ;lcd.c: 107: LCD_SendByte(1, string[i]);
-"107
+[; ;lcd.c: 153: if(string[i] == '\0') break;
+"153
+[e $ ! == -> *U + _string * -> _i `ux -> -> # *U _string `ui `ux `ui -> 0 `ui 173  ]
+[e $U 171  ]
+[e :U 173 ]
+[; ;lcd.c: 154: LCD_SendByte(1, string[i]);
+"154
 [e ( _LCD_SendByte (2 , -> -> 1 `i `uc *U + _string * -> _i `ux -> -> # *U _string `ui `ux ]
-"108
+"155
 }
-"105
+"152
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 17 `i 153  ]
-[e :U 154 ]
-"108
+[e $ < -> _i `i -> 17 `i 170  ]
+[e :U 171 ]
+"155
 }
-[; ;lcd.c: 108: }
-[; ;lcd.c: 109: }
-"109
-[e :UE 146 ]
-}
-"111
-[v _int2char `(v ~T0 @X0 1 ef1`ui ]
-{
-[; ;lcd.c: 111: void int2char(uint16_t int_value){
-[e :U _int2char ]
-[v _int_value `ui ~T0 @X0 1 r1 ]
-[f ]
-"112
-[v _int_value0 `ui ~T0 @X0 1 a ]
-[; ;lcd.c: 112: uint16_t int_value0 = 0;
-[e = _int_value0 -> -> 0 `i `ui ]
-"113
-[v _int_value1 `ui ~T0 @X0 1 a ]
-[; ;lcd.c: 113: uint16_t int_value1 = 0;
-[e = _int_value1 -> -> 0 `i `ui ]
-"114
-[v _int_value2 `ui ~T0 @X0 1 a ]
-[; ;lcd.c: 114: uint16_t int_value2 = 0;
-[e = _int_value2 -> -> 0 `i `ui ]
-[; ;lcd.c: 116: int_value2 = int_value/100;
-"116
-[e = _int_value2 / _int_value -> -> 100 `i `ui ]
-[; ;lcd.c: 117: int_value1 = int_value/10 - int_value2*10;
-"117
-[e = _int_value1 - / _int_value -> -> 10 `i `ui * _int_value2 -> -> 10 `i `ui ]
-[; ;lcd.c: 118: int_value0 = int_value - int_value2*100 - int_value1*10;
-"118
-[e = _int_value0 - - _int_value * _int_value2 -> -> 100 `i `ui * _int_value1 -> -> 10 `i `ui ]
-[; ;lcd.c: 120: c_int_value[2] = int_value0 + 48;
-"120
-[e = *U + &U _c_int_value * -> -> -> 2 `i `ui `ux -> -> # *U &U _c_int_value `ui `ux -> + _int_value0 -> -> 48 `i `ui `uc ]
-[; ;lcd.c: 121: c_int_value[1] = int_value1 + 48;
-"121
-[e = *U + &U _c_int_value * -> -> -> 1 `i `ui `ux -> -> # *U &U _c_int_value `ui `ux -> + _int_value1 -> -> 48 `i `ui `uc ]
-[; ;lcd.c: 122: c_int_value[0] = int_value2 + 48;
-"122
-[e = *U + &U _c_int_value * -> -> -> 0 `i `ui `ux -> -> # *U &U _c_int_value `ui `ux -> + _int_value2 -> -> 48 `i `ui `uc ]
-[; ;lcd.c: 123: }
-"123
-[e :UE 157 ]
+[; ;lcd.c: 155: }
+[; ;lcd.c: 156: }
+"156
+[e :UE 163 ]
 }

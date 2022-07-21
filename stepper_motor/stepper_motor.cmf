@@ -12,45 +12,57 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $stepper_motor.obj
-cinit CODE 0 15 15 3A 2
-text1 CODE 0 E14 E14 13 2
-text2 CODE 0 E27 E27 16 2
-text3 CODE 0 60F 60F 73 2
-text4 CODE 0 EF3 EF3 30 2
-text5 CODE 0 EC3 EC3 30 2
-text6 CODE 0 4C9 4C9 B8 2
-text7 CODE 0 408 408 C1 2
-text8 CODE 0 F23 F23 3E 2
-text9 CODE 0 DF9 DF9 D 2
-text10 CODE 0 E93 E93 30 2
-text11 CODE 0 E3D E3D 18 2
-text12 CODE 0 581 581 8E 2
-text13 CODE 0 335 335 D3 2
-text14 CODE 0 682 682 6E 2
-text15 CODE 0 F61 F61 4C 2
-text16 CODE 0 E70 E70 23 2
-text17 CODE 0 75A 75A 5B 2
-text18 CODE 0 6F0 6F0 6A 2
-text19 CODE 0 E55 E55 1B 2
-text20 CODE 0 7B5 7B5 4A 2
-text21 CODE 0 15A 15A 100 2
-text22 CODE 0 25A 25A DB 2
-text23 CODE 0 FAD FAD 53 2
-text24 CODE 0 E06 E06 E 2
-maintext CODE 0 4F 4F 10B 2
-cstackCOMMON COMMON 1 70 70 D 1
-cstackBANK0 BANK0 1 20 20 3A 1
-cstackBANK1 BANK1 1 A0 A0 8 1
+cinit CODE 0 7E0 7E0 20 2
+text1 CODE 0 A7D A7D 27 2
+text2 CODE 0 A12 A12 16 2
+text3 CODE 0 C6B C6B 4E 2
+text4 CODE 0 154 154 8F 2
+text5 CODE 0 B04 B04 30 2
+text6 CODE 0 DBD DBD 62 2
+text7 CODE 0 AD4 AD4 30 2
+text8 CODE 0 29B 29B B8 2
+text9 CODE 0 B6A B6A 39 2
+text10 CODE 0 9D6 9D6 9 2
+text11 CODE 0 C6 C6 8E 2
+text12 CODE 0 BA3 BA3 3E 2
+text13 CODE 0 9C0 9C0 7 2
+text14 CODE 0 AA4 AA4 30 2
+text15 CODE 0 A28 A28 18 2
+text16 CODE 0 38 38 8E 2
+text17 CODE 0 353 353 D3 2
+text18 CODE 0 E8B E8B 6E 2
+text19 CODE 0 BE1 BE1 40 2
+text20 CODE 0 15 15 23 2
+text21 CODE 0 D62 D62 5B 2
+text22 CODE 0 EF9 EF9 79 2
+text23 CODE 0 A40 A40 1C 2
+text24 CODE 0 C21 C21 4A 2
+text25 CODE 0 426 426 FA 2
+text26 CODE 0 520 520 132 2
+text27 CODE 0 B34 B34 36 2
+text28 CODE 0 9FE 9FE 14 2
+text29 CODE 0 F72 F72 8E 2
+text30 CODE 0 1E3 1E3 B8 2
+text31 CODE 0 E1F E1F 6C 2
+text32 CODE 0 9BC 9BC 4 2
+text33 CODE 0 D0C D0C 56 2
+text34 CODE 0 A5C A5C 21 2
+text35 CODE 0 CB9 CB9 53 2
+text36 CODE 0 9DF 9DF E 2
+maintext CODE 0 652 652 18E 2
+cstackCOMMON COMMON 1 71 71 C 1
+cstackBANK0 BANK0 1 20 20 30 1
+cstackBANK1 BANK1 1 A0 A0 3B 1
+inittext CODE 0 9ED 9ED 11 2
 intentry CODE 0 4 4 E 2
-bssBANK0 BANK0 1 5A 5A A 1
-bssBANK1 BANK1 1 A8 A8 2 1
-idataBANK0 CODE 0 DF5 DF5 4 2
-idataBANK1 CODE 0 DF3 DF3 2 2
-strings STRING 0 800 800 1D 2
-dataBANK0 BANK0 1 64 64 4 1
-dataBANK1 BANK1 1 AA AA 2 1
+bssBANK0 BANK0 1 50 50 F 1
+bssBANK1 BANK1 1 DB DB D 1
+idataBANK1 CODE 0 9C7 9C7 7 2
+strings STRING 0 800 800 40 2
+dataBANK1 BANK1 1 E8 E8 7 1
+clrtext CODE 0 9CE 9CE 8 2
 $startup.obj
-reset_vec CODE 0 0 0 3 2
+reset_vec CODE 0 0 0 4 2
 end_init CODE 0 12 12 3 2
 config CONFIG 0 2007 2007 2 2
 # %UNUSED Section
@@ -59,42 +71,32 @@ config CONFIG 0 2007 2007 2 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 68-6F 1
-RAM AC-EF 1
+RAM 5F-6F 1
+RAM EF-EF 1
 RAM 110-16F 1
-RAM 190-1EF 1
-BANK0 68-6F 1
-BANK1 AC-EF 1
+RAM 190-1E4 1
+BANK0 5F-6F 1
+BANK1 EF-EF 1
 BANK2 110-16F 1
-BANK3 190-1EF 1
-CONST 3-3 2
-CONST 7FF-7FF 2
-CONST 81D-DF2 2
-CONST 1000-1FFF 2
-ENTRY 3-3 2
-ENTRY 7FF-7FF 2
-ENTRY 81D-DF2 2
-ENTRY 1000-1FFF 2
+BANK3 190-1E4 1
+CONST 840-9BB 2
+CONST 1000-1EFF 2
+ENTRY 840-9BB 2
+ENTRY 1000-1EFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
-CODE 3-3 2
-CODE 7FF-7FF 2
-CODE 81D-DF2 2
-CODE 1000-1FFF 2
+CODE 840-9BB 2
+CODE 1000-1EFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
 COMMON 7D-7D 1
 EEDATA 2100-21FF 2
-STRCODE 3-3 2
-STRCODE 7FF-7FF 2
-STRCODE 81D-DF2 2
-STRCODE 1000-1FFF 2
-STRING 3-3 2
-STRING 7FF-7FF 2
-STRING 81D-DF2 2
-STRING 1000-1FFF 2
+STRCODE 840-9BB 2
+STRCODE 1000-1EFF 2
+STRING 840-9BB 2
+STRING 1000-1EFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -109,334 +111,515 @@ STRING 1000-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $stepper_motor.obj
-15 cinit CODE >679:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-15 cinit CODE >682:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-15 cinit CODE >743:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-16 cinit CODE >744:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-17 cinit CODE >745:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-1C cinit CODE >746:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-1D cinit CODE >747:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-22 cinit CODE >748:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-23 cinit CODE >752:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-24 cinit CODE >753:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-25 cinit CODE >754:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-2A cinit CODE >755:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-2B cinit CODE >756:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-30 cinit CODE >757:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-31 cinit CODE >758:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-36 cinit CODE >759:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-37 cinit CODE >760:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-3A cinit CODE >761:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-3B cinit CODE >765:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-3C cinit CODE >766:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-3D cinit CODE >767:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-3E cinit CODE >768:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-3F cinit CODE >771:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-40 cinit CODE >772:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-41 cinit CODE >773:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-42 cinit CODE >774:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-43 cinit CODE >775:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-44 cinit CODE >776:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-45 cinit CODE >777:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-46 cinit CODE >778:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-47 cinit CODE >779:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-48 cinit CODE >780:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-49 cinit CODE >781:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-4A cinit CODE >782:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-4B cinit CODE >788:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-4B cinit CODE >790:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-4C cinit CODE >791:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper_motor.as
-4 intentry CODE >17:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-E06 text24 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\abs.c
-E06 text24 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\abs.c
-E08 text24 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\abs.c
-FAD text23 CODE >32:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-FAD text23 CODE >33:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-FC9 text23 CODE >35:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-FDC text23 CODE >36:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-FE3 text23 CODE >38:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-FF8 text23 CODE >39:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-25A text22 CODE >17:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-25A text22 CODE >19:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-25C text22 CODE >20:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-261 text22 CODE >22:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-26B text22 CODE >23:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-26F text22 CODE >24:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-275 text22 CODE >25:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-275 text22 CODE >27:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-279 text22 CODE >28:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-27A text22 CODE >29:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-27E text22 CODE >32:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-28A text22 CODE >33:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-28D text22 CODE >34:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-29F text22 CODE >35:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-2BE text22 CODE >36:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-2D6 text22 CODE >39:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-2DA text22 CODE >40:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-2DB text22 CODE >41:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-2ED text22 CODE >42:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-30E text22 CODE >43:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-327 text22 CODE >44:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-327 text22 CODE >46:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-329 text22 CODE >48:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-32A text22 CODE >51:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-15A text21 CODE >51:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-15D text21 CODE >55:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-18D text21 CODE >56:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-1C5 text21 CODE >57:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-1FD text21 CODE >58:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-235 text21 CODE >59:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-23F text21 CODE >60:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-246 text21 CODE >61:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-252 text21 CODE >62:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-259 text21 CODE >63:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-7B5 text20 CODE >65:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-7B8 text20 CODE >67:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-7E9 text20 CODE >68:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-7F7 text20 CODE >69:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-7FE text20 CODE >70:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-E55 text19 CODE >73:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-E58 text19 CODE >75:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-E5C text19 CODE >76:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-E5E text19 CODE >78:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-E62 text19 CODE >80:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-E67 text19 CODE >82:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-E6F text19 CODE >83:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-6F0 text18 CODE >92:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-6F0 text18 CODE >94:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-6F5 text18 CODE >95:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-6FA text18 CODE >96:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-709 text18 CODE >95:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-715 text18 CODE >98:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-71C text18 CODE >101:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-728 text18 CODE >105:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-72F text18 CODE >106:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-73E text18 CODE >107:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-753 text18 CODE >105:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-75A text17 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-75A text17 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-75D text17 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-75F text17 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-764 text17 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-766 text17 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-768 text17 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-76D text17 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-771 text17 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-773 text17 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-777 text17 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-779 text17 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-77B text17 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-782 text17 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-786 text17 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-787 text17 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-78E text17 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-796 text17 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-79C text17 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-79D text17 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-7A4 text17 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-7A8 text17 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-7AB text17 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-7B0 text17 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-E70 text16 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-E70 text16 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-E74 text16 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-E76 text16 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-E7C text16 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-E83 text16 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-E8A text16 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-E8E text16 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-F61 text15 CODE >46:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-F61 text15 CODE >47:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-682 text14 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-682 text14 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-68C text14 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-693 text14 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-697 text14 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-69F text14 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-6A4 text14 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-6A8 text14 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-6B2 text14 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-6BA text14 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-6BA text14 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-6BF text14 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-6C1 text14 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-6C9 text14 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-6CF text14 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-6D1 text14 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-6D7 text14 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-6D9 text14 CODE >82:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-6EB text14 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-6EE text14 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-6EF text14 CODE >86:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-335 text13 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-335 text13 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-346 text13 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-34D text13 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-35C text13 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-363 text13 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-368 text13 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-37A text13 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-38C text13 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-390 text13 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-391 text13 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-392 text13 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-398 text13 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-39E text13 CODE >134:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-3A2 text13 CODE >136:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-3A4 text13 CODE >137:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-3B2 text13 CODE >138:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-3BA text13 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-3C2 text13 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-3C6 text13 CODE >143:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-3CA text13 CODE >145:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-3CC text13 CODE >146:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-3DA text13 CODE >147:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-3E2 text13 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-3EA text13 CODE >149:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-3EE text13 CODE >156:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-581 text12 CODE >44:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-581 text12 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-592 text12 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-59B text12 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5AD text12 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5AE text12 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5B4 text12 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5BB text12 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5BD text12 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5BF text12 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5C4 text12 CODE >58:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5CD text12 CODE >60:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5D6 text12 CODE >61:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5DD text12 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5E1 text12 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5EA text12 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5F3 text12 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5F5 text12 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5F5 text12 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5F8 text12 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-5FB text12 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-606 text12 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-E3D text11 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwtoft.c
-E3D text11 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwtoft.c
-E93 text10 CODE >24:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-E93 text10 CODE >25:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-DF9 text9 CODE >42:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-DF9 text9 CODE >43:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-F23 text8 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-F23 text8 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-F27 text8 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-F2B text8 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-F2D text8 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-F2F text8 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-F36 text8 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-F3A text8 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-F3B text8 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-F42 text8 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-F4A text8 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-F50 text8 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-F51 text8 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-F58 text8 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-F5C text8 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-408 text7 CODE >111:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-408 text7 CODE >112:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-40C text7 CODE >113:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-40E text7 CODE >114:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-410 text7 CODE >116:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-42B text7 CODE >117:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-464 text7 CODE >118:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-4AF text7 CODE >120:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-4B6 text7 CODE >121:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-4BF text7 CODE >122:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-4C8 text7 CODE >123:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-4C9 text6 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-4C9 text6 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-4DA text6 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-4E1 text6 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-4F0 text6 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-4F7 text6 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-4FD text6 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-502 text6 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-514 text6 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-526 text6 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-52A text6 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-52B text6 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-531 text6 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-532 text6 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-538 text6 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-53C text6 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-544 text6 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-550 text6 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-55A text6 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-55B text6 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-563 text6 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-567 text6 CODE >85:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
-EC3 text5 CODE >28:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-EC3 text5 CODE >29:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-EF2 text5 CODE >30:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-EF3 text4 CODE >20:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-EF3 text4 CODE >21:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-F22 text4 CODE >22:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-60F text3 CODE >25:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-60F text3 CODE >27:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-612 text3 CODE >28:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-615 text3 CODE >29:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-618 text3 CODE >30:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-622 text3 CODE >31:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-62C text3 CODE >32:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-637 text3 CODE >35:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-63F text3 CODE >36:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-647 text3 CODE >37:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-64F text3 CODE >38:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-655 text3 CODE >39:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-661 text3 CODE >40:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-66D text3 CODE >41:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-677 text3 CODE >42:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-681 text3 CODE >43:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.c
-E27 text2 CODE >6:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-E27 text2 CODE >8:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-E2B text2 CODE >9:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-E2E text2 CODE >11:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-E2F text2 CODE >12:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-E30 text2 CODE >14:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-E33 text2 CODE >15:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-E36 text2 CODE >16:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-E38 text2 CODE >17:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-E3C text2 CODE >18:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
-E14 text1 CODE >53:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-E14 text1 CODE >55:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-E19 text1 CODE >57:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-E1E text1 CODE >58:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-E26 text1 CODE >60:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-4F maintext CODE >62:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-4F maintext CODE >64:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-54 maintext CODE >68:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-58 maintext CODE >69:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-60 maintext CODE >70:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-64 maintext CODE >71:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-6D maintext CODE >72:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-71 maintext CODE >73:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-7A maintext CODE >75:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-7F maintext CODE >77:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-8E maintext CODE >78:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-C4 maintext CODE >79:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-D9 maintext CODE >80:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-EE maintext CODE >81:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-FE maintext CODE >82:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-113 maintext CODE >83:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-12E maintext CODE >84:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-13E maintext CODE >85:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
-159 maintext CODE >66:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c
+7E0 cinit CODE >911:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7E0 cinit CODE >914:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7E0 cinit CODE >1018:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7E1 cinit CODE >1019:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7E2 cinit CODE >1020:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7E3 cinit CODE >1021:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7E4 cinit CODE >1022:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7E5 cinit CODE >1023:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7E6 cinit CODE >1024:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7E7 cinit CODE >1025:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7E8 cinit CODE >1026:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7E9 cinit CODE >1027:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7EE cinit CODE >1046:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7EF cinit CODE >1047:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7F0 cinit CODE >1048:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7F1 cinit CODE >1049:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7F6 cinit CODE >1052:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7F7 cinit CODE >1053:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7F8 cinit CODE >1054:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7F9 cinit CODE >1055:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7FC cinit CODE >1061:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7FC cinit CODE >1063:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+7FD cinit CODE >1064:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+4 intentry CODE >19:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+9DF text36 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\abs.c
+9DF text36 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\abs.c
+9E1 text36 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\abs.c
+CB9 text35 CODE >32:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+CB9 text35 CODE >33:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+CD5 text35 CODE >35:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+CE8 text35 CODE >36:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+CEF text35 CODE >38:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+D04 text35 CODE >39:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+A5C text34 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+A5C text34 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+A5E text34 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+A60 text34 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+A66 text34 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+A6D text34 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+A74 text34 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+A78 text34 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+D0C text33 CODE >47:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+D0C text33 CODE >48:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+D10 text33 CODE >49:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+D12 text33 CODE >50:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+D14 text33 CODE >52:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+D1B text33 CODE >53:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+D22 text33 CODE >54:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+D29 text33 CODE >56:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+D61 text33 CODE >58:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+9BC text32 CODE >25:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+9BC text32 CODE >27:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+E1F text31 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E1F text31 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E27 text31 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E2E text31 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E32 text31 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E3A text31 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E3F text31 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E43 text31 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E4D text31 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E55 text31 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E55 text31 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E5A text31 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E5C text31 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E64 text31 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E6A text31 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E6C text31 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E72 text31 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E74 text31 CODE >82:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E86 text31 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E89 text31 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E8A text31 CODE >86:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+1E3 text30 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+1E3 text30 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+1F4 text30 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+1FB text30 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+20A text30 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+211 text30 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+217 text30 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+21C text30 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+22E text30 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+240 text30 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+244 text30 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+245 text30 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+24B text30 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+24C text30 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+252 text30 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+256 text30 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+25E text30 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+26A text30 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+274 text30 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+275 text30 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+27D text30 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+281 text30 CODE >85:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+F72 text29 CODE >44:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+F72 text29 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+F83 text29 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+F8C text29 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+F9E text29 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+F9F text29 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+FA5 text29 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+FAC text29 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+FAE text29 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+FB0 text29 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+FB5 text29 CODE >58:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+FBE text29 CODE >60:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+FC7 text29 CODE >61:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+FCE text29 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+FD2 text29 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+FDB text29 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+FE4 text29 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+FE6 text29 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+FE6 text29 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+FE9 text29 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+FEC text29 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+FF7 text29 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+9FE text28 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwtoft.c
+9FE text28 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwtoft.c
+B34 text27 CODE >28:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+B34 text27 CODE >29:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+B69 text27 CODE >30:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+520 text26 CODE >19:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+520 text26 CODE >21:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+522 text26 CODE >22:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+527 text26 CODE >24:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+533 text26 CODE >25:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+535 text26 CODE >26:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+53B text26 CODE >27:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+53B text26 CODE >29:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+541 text26 CODE >30:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+544 text26 CODE >31:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+548 text26 CODE >34:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+553 text26 CODE >35:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+556 text26 CODE >36:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+568 text26 CODE >37:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+587 text26 CODE >38:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+5AB text26 CODE >41:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+5AF text26 CODE >42:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+5B2 text26 CODE >43:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+5C4 text26 CODE >44:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+5E5 text26 CODE >45:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+60B text26 CODE >46:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+60B text26 CODE >48:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+60F text26 CODE >50:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+610 text26 CODE >53:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+612 text26 CODE >56:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+61C text26 CODE >57:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+624 text26 CODE >58:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+628 text26 CODE >59:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+62C text26 CODE >60:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+630 text26 CODE >61:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+635 text26 CODE >62:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+640 text26 CODE >63:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+643 text26 CODE >64:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+644 text26 CODE >65:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+645 text26 CODE >66:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+646 text26 CODE >71:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+647 text26 CODE >74:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+426 text25 CODE >96:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+429 text25 CODE >99:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+459 text25 CODE >100:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+491 text25 CODE >101:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+4C9 text25 CODE >102:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+501 text25 CODE >104:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+50B text25 CODE >105:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+50C text25 CODE >106:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+518 text25 CODE >107:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+51F text25 CODE >108:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+C21 text24 CODE >111:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+C24 text24 CODE >112:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+C55 text24 CODE >116:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+C63 text24 CODE >117:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+C6A text24 CODE >118:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+A40 text23 CODE >121:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+A43 text23 CODE >124:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+A47 text23 CODE >125:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+A4C text23 CODE >127:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+A4D text23 CODE >129:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+A52 text23 CODE >131:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+A5B text23 CODE >132:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+EF9 text22 CODE >141:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+EF9 text22 CODE >142:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+EFE text22 CODE >143:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+F03 text22 CODE >144:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+F14 text22 CODE >143:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+F22 text22 CODE >146:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+F2A text22 CODE >147:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+F2C text22 CODE >149:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+F38 text22 CODE >152:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+F3F text22 CODE >153:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+F50 text22 CODE >154:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+F6B text22 CODE >152:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+D62 text21 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D62 text21 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D65 text21 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D67 text21 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D6C text21 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D6E text21 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D70 text21 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D75 text21 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D79 text21 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D7B text21 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D7F text21 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D81 text21 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D83 text21 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D8A text21 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D8E text21 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D8F text21 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D96 text21 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+D9E text21 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+DA4 text21 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+DA5 text21 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+DAC text21 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+DB0 text21 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+DB3 text21 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+DB8 text21 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+15 text20 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+15 text20 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+19 text20 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+1B text20 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+21 text20 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+28 text20 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+2F text20 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+33 text20 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+BE1 text19 CODE >46:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+BE1 text19 CODE >47:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+E8B text18 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E8B text18 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E95 text18 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E9C text18 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EA0 text18 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EA8 text18 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EAD text18 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EB1 text18 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EBB text18 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EC3 text18 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EC3 text18 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EC8 text18 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+ECA text18 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+ED2 text18 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+ED8 text18 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EDA text18 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EE0 text18 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EE2 text18 CODE >82:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EF4 text18 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EF7 text18 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EF8 text18 CODE >86:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+353 text17 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+353 text17 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+364 text17 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+36B text17 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+37A text17 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+381 text17 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+386 text17 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+398 text17 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+3AA text17 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+3AE text17 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+3AF text17 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+3B0 text17 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+3B6 text17 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+3BC text17 CODE >134:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+3C0 text17 CODE >136:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+3C2 text17 CODE >137:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+3D0 text17 CODE >138:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+3D8 text17 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+3E0 text17 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+3E4 text17 CODE >143:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+3E8 text17 CODE >145:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+3EA text17 CODE >146:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+3F8 text17 CODE >147:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+400 text17 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+408 text17 CODE >149:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+40C text17 CODE >156:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+38 text16 CODE >44:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+38 text16 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+49 text16 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+52 text16 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+64 text16 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+65 text16 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+6B text16 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+72 text16 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+74 text16 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+76 text16 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+7B text16 CODE >58:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+84 text16 CODE >60:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+8D text16 CODE >61:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+94 text16 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+98 text16 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+A1 text16 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+AA text16 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+AC text16 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+AC text16 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+AF text16 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+B2 text16 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+BD text16 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+A28 text15 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwtoft.c
+A28 text15 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwtoft.c
+AA4 text14 CODE >24:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+AA4 text14 CODE >25:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+9C0 text13 CODE >42:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+9C0 text13 CODE >43:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+BA3 text12 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+BA3 text12 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+BA7 text12 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+BAB text12 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+BAD text12 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+BAF text12 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+BB6 text12 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+BBA text12 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+BBB text12 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+BC2 text12 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+BCA text12 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+BD0 text12 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+BD1 text12 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+BD8 text12 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+BDC text12 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+C6 text11 CODE >60:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+C6 text11 CODE >61:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+CA text11 CODE >62:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+CC text11 CODE >63:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+CE text11 CODE >65:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+E1 text11 CODE >66:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+10E text11 CODE >67:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+143 text11 CODE >69:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+144 text11 CODE >70:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+149 text11 CODE >71:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+14E text11 CODE >72:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+153 text11 CODE >73:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+9D6 text10 CODE >30:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+9D9 text10 CODE >32:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+9DD text10 CODE >33:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+9DE text10 CODE >34:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+B6A text9 CODE >36:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+B6A text9 CODE >38:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+B6D text9 CODE >39:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+B80 text9 CODE >40:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+B91 text9 CODE >41:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+B99 text9 CODE >42:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+B9F text9 CODE >43:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+BA2 text9 CODE >39:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+29B text8 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+29B text8 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+2AC text8 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+2B3 text8 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+2C2 text8 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+2C9 text8 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+2CF text8 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+2D4 text8 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+2E6 text8 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+2F8 text8 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+2FC text8 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+2FD text8 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+303 text8 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+304 text8 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+30A text8 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+30E text8 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+316 text8 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+322 text8 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+32C text8 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+32D text8 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+335 text8 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+339 text8 CODE >85:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+AD4 text7 CODE >28:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+AD4 text7 CODE >29:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+B03 text7 CODE >30:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+DBD text6 CODE >23:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+DBD text6 CODE >24:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+DC7 text6 CODE >25:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+DCF text6 CODE >27:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+DDA text6 CODE >30:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+DE0 text6 CODE >31:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+DE6 text6 CODE >32:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+DEC text6 CODE >33:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+DF2 text6 CODE >34:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+DFE text6 CODE >35:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+E0A text6 CODE >36:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+E14 text6 CODE >37:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+E1E text6 CODE >38:C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.c
+B04 text5 CODE >20:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+B04 text5 CODE >21:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+B33 text5 CODE >22:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+154 text4 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+154 text4 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+157 text4 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+159 text4 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+164 text4 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+166 text4 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+166 text4 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+168 text4 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+173 text4 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+177 text4 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+17F text4 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+185 text4 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+187 text4 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+189 text4 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+192 text4 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+196 text4 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+197 text4 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+1A0 text4 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+1B0 text4 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+1BE text4 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+1BF text4 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+1C8 text4 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+1CC text4 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+1CF text4 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+1DA text4 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+C6B text3 CODE >9:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+C6B text3 CODE >11:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+C6E text3 CODE >12:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+C6F text3 CODE >13:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+C71 text3 CODE >14:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+C75 text3 CODE >15:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+CAB text3 CODE >16:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+CAE text3 CODE >17:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+CB1 text3 CODE >18:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+CB2 text3 CODE >19:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+CB3 text3 CODE >20:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+CB6 text3 CODE >21:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+CB7 text3 CODE >22:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+CB8 text3 CODE >23:C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.c
+A12 text2 CODE >6:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+A12 text2 CODE >8:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+A16 text2 CODE >9:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+A19 text2 CODE >11:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+A1A text2 CODE >12:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+A1B text2 CODE >14:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+A1E text2 CODE >15:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+A21 text2 CODE >16:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+A23 text2 CODE >17:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+A27 text2 CODE >18:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
+A7D text1 CODE >76:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+A7D text1 CODE >78:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+A80 text1 CODE >79:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+A83 text1 CODE >80:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+A86 text1 CODE >81:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+A8B text1 CODE >83:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+A96 text1 CODE >85:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+A9B text1 CODE >86:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+AA3 text1 CODE >88:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+652 maintext CODE >90:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+652 maintext CODE >92:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+657 maintext CODE >96:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+65B maintext CODE >97:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+665 maintext CODE >98:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+669 maintext CODE >99:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+674 maintext CODE >100:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+678 maintext CODE >101:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+683 maintext CODE >103:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+688 maintext CODE >105:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+697 maintext CODE >106:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+6CD maintext CODE >107:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+6DE maintext CODE >108:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+6EF maintext CODE >109:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+6FF maintext CODE >110:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+710 maintext CODE >111:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+723 maintext CODE >112:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+733 maintext CODE >113:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+746 maintext CODE >115:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+755 maintext CODE >117:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+765 maintext CODE >118:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+770 maintext CODE >119:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+77B maintext CODE >121:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+781 maintext CODE >122:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+787 maintext CODE >124:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+7BD maintext CODE >125:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+7C8 maintext CODE >126:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+7D3 maintext CODE >128:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+7D9 maintext CODE >129:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+7DF maintext CODE >94:C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c
+9CE clrtext CODE >1033:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9CE clrtext CODE >1034:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9CF clrtext CODE >1035:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9CF clrtext CODE >1036:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9D0 clrtext CODE >1037:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9D1 clrtext CODE >1038:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9D2 clrtext CODE >1039:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9D3 clrtext CODE >1040:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9D4 clrtext CODE >1041:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9D5 clrtext CODE >1042:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9ED inittext CODE >992:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9ED inittext CODE >993:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9EE inittext CODE >994:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9EF inittext CODE >995:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9F0 inittext CODE >996:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9F1 inittext CODE >1003:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9F1 inittext CODE >1004:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9F4 inittext CODE >1005:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9F5 inittext CODE >1006:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9F6 inittext CODE >1007:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9F7 inittext CODE >1008:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9F8 inittext CODE >1009:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9F9 inittext CODE >1010:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9FA inittext CODE >1011:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9FB inittext CODE >1012:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9FC inittext CODE >1013:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
+9FD inittext CODE >1014:C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper_motor.as
 $startup.obj
-12 end_init CODE >77:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\startup.as
-12 init CODE >74:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\startup.as
-0 functab ENTRY >40:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\startup.as
-0 functab ENTRY >41:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\startup.as
-0 functab ENTRY >42:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\startup.as
-0 functab ENTRY >43:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\startup.as
-0 functab ENTRY >44:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\startup.as
-0 functab ENTRY >45:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\startup.as
-0 reset_vec CODE >64:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\startup.as
-0 reset_vec CODE >69:D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\startup.as
+12 end_init CODE >79:C:\Users\Aluno.PC-17\Desktop\stepper_motor\startup.as
+12 init CODE >76:C:\Users\Aluno.PC-17\Desktop\stepper_motor\startup.as
+0 functab ENTRY >40:C:\Users\Aluno.PC-17\Desktop\stepper_motor\startup.as
+0 functab ENTRY >41:C:\Users\Aluno.PC-17\Desktop\stepper_motor\startup.as
+0 functab ENTRY >42:C:\Users\Aluno.PC-17\Desktop\stepper_motor\startup.as
+0 functab ENTRY >43:C:\Users\Aluno.PC-17\Desktop\stepper_motor\startup.as
+0 functab ENTRY >44:C:\Users\Aluno.PC-17\Desktop\stepper_motor\startup.as
+0 functab ENTRY >45:C:\Users\Aluno.PC-17\Desktop\stepper_motor\startup.as
+0 reset_vec CODE >64:C:\Users\Aluno.PC-17\Desktop\stepper_motor\startup.as
+0 reset_vec CODE >65:C:\Users\Aluno.PC-17\Desktop\stepper_motor\startup.as
+1 reset_vec CODE >71:C:\Users\Aluno.PC-17\Desktop\stepper_motor\startup.as
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -449,127 +632,173 @@ $startup.obj
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
+_i 5C 0 BANK0 1 bssBANK0 stepper_motor.obj
 ___latbits 2 0 ABS 0 - stepper_motor.obj
-___awdiv@counter 2D 0 BANK0 1 cstackBANK0 stepper_motor.obj
-__LdataBANK0 0 0 ABS 0 dataBANK0 -
+___awdiv@counter A5 0 BANK1 1 cstackBANK1 stepper_motor.obj
 __LdataBANK1 0 0 ABS 0 dataBANK1 -
-_getVelocidade 1BF2 0 CODE 0 text9 stepper_motor.obj
+i1_setPosicaoDesejada 1668 0 CODE 0 text27 stepper_motor.obj
+_getVelocidade 1380 0 CODE 0 text13 stepper_motor.obj
+__end_ofi1___lwtoft 1424 0 CODE 0 text28 stepper_motor.obj
 __Hspace_0 2009 0 ABS 0 - -
-__Hspace_1 AC 0 ABS 0 - -
+__Hspace_1 EF 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
-__HidataBANK0 0 0 ABS 0 idataBANK0 -
 __HidataBANK1 0 0 ABS 0 idataBANK1 -
-___ftdiv@exp 42 0 BANK0 1 cstackBANK0 stepper_motor.obj
+___ftdiv@exp BA 0 BANK1 1 cstackBANK1 stepper_motor.obj
+__size_of_LCD_SetCursor 0 0 ABS 0 - stepper_motor.obj
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __CFG_MCLRE$ON 0 0 ABS 0 - stepper_motor.obj
-?_abs 70 0 COMMON 1 cstackCOMMON stepper_motor.obj
+?_abs 71 0 COMMON 1 cstackCOMMON stepper_motor.obj
 __Hstrings 0 0 ABS 0 strings -
+LCD_SetCursor@linha B7 0 BANK1 1 cstackBANK1 stepper_motor.obj
 __size_of_setupStepper 0 0 ABS 0 - stepper_motor.obj
 ___sp 0 0 STACK 2 stack startup.obj
-_main 9E 0 CODE 0 maintext stepper_motor.obj
-abs@a 70 0 COMMON 1 cstackCOMMON stepper_motor.obj
+_main CA4 0 CODE 0 maintext stepper_motor.obj
+abs@a 71 0 COMMON 1 cstackCOMMON stepper_motor.obj
 btemp 7E 0 ABS 0 - stepper_motor.obj
-LCD_SendByte@byte 35 0 BANK0 1 cstackBANK0 stepper_motor.obj
+LCD_SendByte@byte AD 0 BANK1 1 cstackBANK1 stepper_motor.obj
 start 24 0 CODE 0 init startup.obj
+__size_of___aldiv 0 0 ABS 0 - stepper_motor.obj
 __size_of___awdiv 0 0 ABS 0 - stepper_motor.obj
 __size_of___ftdiv 0 0 ABS 0 - stepper_motor.obj
 __size_of___ftmul 0 0 ABS 0 - stepper_motor.obj
 __size_of___fttol 0 0 ABS 0 - stepper_motor.obj
 __size_of_main 0 0 ABS 0 - stepper_motor.obj
 __size_of___lwdiv 0 0 ABS 0 - stepper_motor.obj
+__size_of_sendString_ 0 0 ABS 0 - stepper_motor.obj
 __CFG_DEBUG$OFF 0 0 ABS 0 - stepper_motor.obj
-?___wmul 31 0 BANK0 1 cstackBANK0 stepper_motor.obj
-___ftdiv@f1 37 0 BANK0 1 cstackBANK0 stepper_motor.obj
-___ftdiv@f2 34 0 BANK0 1 cstackBANK0 stepper_motor.obj
-___ftdiv@f3 3F 0 BANK0 1 cstackBANK0 stepper_motor.obj
-__LidataBANK0 0 0 ABS 0 idataBANK0 -
+?___wmul A9 0 BANK1 1 cstackBANK1 stepper_motor.obj
+___ftdiv@f1 AF 0 BANK1 1 cstackBANK1 stepper_motor.obj
+___ftdiv@f2 AC 0 BANK1 1 cstackBANK1 stepper_motor.obj
+___ftdiv@f3 B7 0 BANK1 1 cstackBANK1 stepper_motor.obj
 __LidataBANK1 0 0 ABS 0 idataBANK1 -
-__size_of_int2char 0 0 ABS 0 - stepper_motor.obj
-_LCD_PORT 66 0 BANK0 1 dataBANK0 stepper_motor.obj
-_LCD_TRIS AA 0 BANK1 1 dataBANK1 stepper_motor.obj
+_LCD_PORT ED 0 BANK1 1 dataBANK1 stepper_motor.obj
+_LCD_TRIS E8 0 BANK1 1 dataBANK1 stepper_motor.obj
 __Hpowerup 0 0 CODE 0 powerup -
-__end_of_setupStepper 1C7A 0 CODE 0 text2 stepper_motor.obj
-__end_of_setPosicaoAtual 1E46 0 CODE 0 text4 stepper_motor.obj
+i1___lwtoft@c 79 0 COMMON 1 cstackCOMMON stepper_motor.obj
+__end_of_LCD_SetCursor 14B8 0 CODE 0 text23 stepper_motor.obj
+__end_of_setupStepper 1450 0 CODE 0 text2 stepper_motor.obj
+_LCD_ShiftDisplay EA 0 BANK1 1 dataBANK1 stepper_motor.obj
+__end_of_setPosicaoAtual 1668 0 CODE 0 text5 stepper_motor.obj
 intlevel0 0 0 ENTRY 0 functab startup.obj
 intlevel1 0 0 ENTRY 0 functab startup.obj
 intlevel2 0 0 ENTRY 0 functab startup.obj
 intlevel3 0 0 ENTRY 0 functab startup.obj
 intlevel4 0 0 ENTRY 0 functab startup.obj
 intlevel5 0 0 ENTRY 0 functab startup.obj
+___aldiv@divisor A0 0 BANK1 1 cstackBANK1 stepper_motor.obj
 wtemp0 7E 0 ABS 0 - stepper_motor.obj
 __Hfunctab 0 0 ENTRY 0 functab -
-___awdiv@sign 2E 0 BANK0 1 cstackBANK0 stepper_motor.obj
+___aldiv@sign AA 0 BANK1 1 cstackBANK1 stepper_motor.obj
+___awdiv@sign A6 0 BANK1 1 cstackBANK1 stepper_motor.obj
 __Hclrtext 0 0 ABS 0 clrtext -
-___ftmul@f1 34 0 BANK0 1 cstackBANK0 stepper_motor.obj
-___ftmul@f2 37 0 BANK0 1 cstackBANK0 stepper_motor.obj
-___wmul@multiplicand 33 0 BANK0 1 cstackBANK0 stepper_motor.obj
-_LCD_sendString DE0 0 CODE 0 text18 stepper_motor.obj
+sendChar_@dado A0 0 BANK1 1 cstackBANK1 stepper_motor.obj
+___ftmul@f1 AC 0 BANK1 1 cstackBANK1 stepper_motor.obj
+___ftmul@f2 AF 0 BANK1 1 cstackBANK1 stepper_motor.obj
+___wmul@multiplicand AB 0 BANK1 1 cstackBANK1 stepper_motor.obj
+_LCD_sendString 1DF2 0 CODE 0 text22 stepper_motor.obj
 _ANSELH 189 0 ABS 0 - stepper_motor.obj
-___awdiv@dividend 2A 0 BANK0 1 cstackBANK0 stepper_motor.obj
-_LCD_SendNb 2B4 0 CODE 0 text21 stepper_motor.obj
+__end_of_sendChar_ 13BE 0 CODE 0 text10 stepper_motor.obj
+___awdiv@dividend A2 0 BANK1 1 cstackBANK1 stepper_motor.obj
+_LCD_SendNb 84C 0 CODE 0 text25 stepper_motor.obj
 __size_of_getVelocidade 0 0 ABS 0 - stepper_motor.obj
-__end_of___wmul 1D26 0 CODE 0 text16 stepper_motor.obj
-_int2char 810 0 CODE 0 text7 stepper_motor.obj
-_setPosicaoAtual 1DE6 0 CODE 0 text4 stepper_motor.obj
-___fttol@f1 44 0 BANK0 1 cstackBANK0 stepper_motor.obj
+__size_of_sendChar_ 0 0 ABS 0 - stepper_motor.obj
+LCD_SetCursor@aux B8 0 BANK1 1 cstackBANK1 stepper_motor.obj
+__end_of___wmul 70 0 CODE 0 text20 stepper_motor.obj
+i1___ftdiv@exp 2E 0 BANK0 1 cstackBANK0 stepper_motor.obj
+i1setPosicaoDesejada@posicao_desejada 3E 0 BANK0 1 cstackBANK0 stepper_motor.obj
+_setupSerial 18D6 0 CODE 0 text3 stepper_motor.obj
+_setPosicaoAtual 1608 0 CODE 0 text5 stepper_motor.obj
+___fttol@f1 BC 0 BANK1 1 cstackBANK1 stepper_motor.obj
 __Lmaintext 0 0 ABS 0 maintext -
-___awdiv@divisor 28 0 BANK0 1 cstackBANK0 stepper_motor.obj
-__end_of_int2char 992 0 CODE 0 text7 stepper_motor.obj
+__end_ofi1___ftdiv 536 0 CODE 0 text30 stepper_motor.obj
+__end_ofi1___fttol 2000 0 CODE 0 text29 stepper_motor.obj
+___awdiv@divisor A0 0 BANK1 1 cstackBANK1 stepper_motor.obj
+__size_ofi1___ftdiv 0 0 ABS 0 - stepper_motor.obj
+__size_ofi1___fttol 0 0 ABS 0 - stepper_motor.obj
 __size_of___ftpack 0 0 ABS 0 - stepper_motor.obj
-__end_of___awdiv F6A 0 CODE 0 text17 stepper_motor.obj
-__end_of___ftdiv B02 0 CODE 0 text6 stepper_motor.obj
-__end_of___ftmul 810 0 CODE 0 text13 stepper_motor.obj
-__end_of___fttol C1E 0 CODE 0 text12 stepper_motor.obj
-__end_of___lwdiv 1EC2 0 CODE 0 text8 stepper_motor.obj
+__end_of___aldiv 3C6 0 CODE 0 text4 stepper_motor.obj
+__end_of___awdiv 1B7A 0 CODE 0 text21 stepper_motor.obj
+__end_of___ftdiv 6A6 0 CODE 0 text8 stepper_motor.obj
+__end_of___ftmul 84C 0 CODE 0 text17 stepper_motor.obj
+__end_of___fttol 18C 0 CODE 0 text16 stepper_motor.obj
+_sendChar_ 13AC 0 CODE 0 text10 stepper_motor.obj
+__end_of___lwdiv 17C2 0 CODE 0 text12 stepper_motor.obj
+__size_ofi1___ftpack 0 0 ABS 0 - stepper_motor.obj
+setupSerial@baudrate AF 0 BANK1 1 cstackBANK1 stepper_motor.obj
 __size_of_calculaVelocidade 0 0 ABS 0 - stepper_motor.obj
-setPosicaoDesejada@posicao_desejada 52 0 BANK0 1 cstackBANK0 stepper_motor.obj
-__end_of_getVelocidade 1C0C 0 CODE 0 text9 stepper_motor.obj
-LCD_sendString@col 46 0 BANK0 1 cstackBANK0 stepper_motor.obj
-___lwdiv@quotient 2E 0 BANK0 1 cstackBANK0 stepper_motor.obj
+setPosicaoDesejada@posicao_desejada CA 0 BANK1 1 cstackBANK1 stepper_motor.obj
+__size_ofi1___wmul 0 0 ABS 0 - stepper_motor.obj
+__end_of_getVelocidade 138E 0 CODE 0 text13 stepper_motor.obj
+LCD_sendString@col BE 0 BANK1 1 cstackBANK1 stepper_motor.obj
+_BAUDCTLbits 187 0 ABS 0 - stepper_motor.obj
+___lwdiv@quotient A5 0 BANK1 1 cstackBANK1 stepper_motor.obj
+?i1___ftpack 71 0 COMMON 1 cstackCOMMON stepper_motor.obj
 __size_of_setup 0 0 ABS 0 - stepper_motor.obj
+i1___ftdiv 3C6 0 CODE 0 text30 stepper_motor.obj
+i1___fttol 1EE4 0 CODE 0 text29 stepper_motor.obj
 __size_of___lwtoft 0 0 ABS 0 - stepper_motor.obj
-__end_of_LCD_sendString EB4 0 CODE 0 text18 stepper_motor.obj
-start_initialization 2A 0 CODE 0 cinit stepper_motor.obj
-_calculaErro 1F5A 0 CODE 0 text23 stepper_motor.obj
-__end_of_LCD_SendNb 4B4 0 CODE 0 text21 stepper_motor.obj
-_setupDisplay C1E 0 CODE 0 text3 stepper_motor.obj
+__end_of_int2char_ 2A8 0 CODE 0 text11 stepper_motor.obj
+__end_of_LCD_sendString 1EE4 0 CODE 0 text22 stepper_motor.obj
+start_initialization FC0 0 CODE 0 cinit stepper_motor.obj
+_calculaErro 1972 0 CODE 0 text35 stepper_motor.obj
+__size_of_int2char_ 0 0 ABS 0 - stepper_motor.obj
+__size_ofi1___lwtoft 0 0 ABS 0 - stepper_motor.obj
+_TRISCbits 87 0 ABS 0 - stepper_motor.obj
+___aldiv@quotient AB 0 BANK1 1 cstackBANK1 stepper_motor.obj
+__end_of_LCD_SendNb A40 0 CODE 0 text25 stepper_motor.obj
+?i1___lwtoft 79 0 COMMON 1 cstackCOMMON stepper_motor.obj
+sendString_@dado A0 0 BANK1 1 cstackBANK1 stepper_motor.obj
+clear_ram0 139C 0 CODE 0 clrtext stepper_motor.obj
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 stepper_motor.obj
 __pcstackBANK1 A0 0 BANK1 1 cstackBANK1 stepper_motor.obj
-___fttol@exp1 51 0 BANK0 1 cstackBANK0 stepper_motor.obj
-___fttol@lval 4D 0 BANK0 1 cstackBANK0 stepper_motor.obj
-___ftpack D04 0 CODE 0 text14 stepper_motor.obj
-___ftpack@arg 28 0 BANK0 1 cstackBANK0 stepper_motor.obj
-___ftpack@exp 2B 0 BANK0 1 cstackBANK0 stepper_motor.obj
-LCD_SendByte@reg 3A 0 BANK0 1 cstackBANK0 stepper_motor.obj
+___fttol@exp1 C9 0 BANK1 1 cstackBANK1 stepper_motor.obj
+___fttol@lval C5 0 BANK1 1 cstackBANK1 stepper_motor.obj
+sendString_@j A3 0 BANK1 1 cstackBANK1 stepper_motor.obj
+i1___ftdiv@cntr 2A 0 BANK0 1 cstackBANK0 stepper_motor.obj
+i1___ftdiv@sign 2F 0 BANK0 1 cstackBANK0 stepper_motor.obj
+_int2char_ 18C 0 CODE 0 text11 stepper_motor.obj
+___ftpack 1D16 0 CODE 0 text18 stepper_motor.obj
+___ftpack@arg A0 0 BANK1 1 cstackBANK1 stepper_motor.obj
+___ftpack@exp A3 0 BANK1 1 cstackBANK1 stepper_motor.obj
+i1___wmul@multiplicand 73 0 COMMON 1 cstackCOMMON stepper_motor.obj
+LCD_SendByte@reg B2 0 BANK1 1 cstackBANK1 stepper_motor.obj
 ___int_sp 0 0 STACK 2 stack startup.obj
-__end_of___ftpack DE0 0 CODE 0 text14 stepper_motor.obj
+_sendString_ 16D4 0 CODE 0 text9 stepper_motor.obj
+_data_recived 50 0 BANK0 1 bssBANK0 stepper_motor.obj
+i1___wmul 14B8 0 CODE 0 text34 stepper_motor.obj
+__end_of___ftpack 1DF2 0 CODE 0 text18 stepper_motor.obj
+__end_of_LCD_Setup 1C3E 0 CODE 0 text6 stepper_motor.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
-__Hcinit 9E 0 CODE 0 cinit -
+__Hcinit 1000 0 CODE 0 cinit -
+i1___wmul@product 75 0 COMMON 1 cstackCOMMON stepper_motor.obj
 __Hidloc 0 0 IDLOC 0 idloc -
 __Hstack 0 0 STACK 2 stack -
 __stringbase 101E 0 STRING 0 strings stepper_motor.obj
-___lwdiv@counter 2D 0 BANK0 1 cstackBANK0 stepper_motor.obj
+___lwdiv@counter A7 0 BANK1 1 cstackBANK1 stepper_motor.obj
+__size_of_LCD_Setup 0 0 ABS 0 - stepper_motor.obj
 __Hmaintext 0 0 ABS 0 maintext -
 __size_of_setPosicaoAtual 0 0 ABS 0 - stepper_motor.obj
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 0 config -
-___lwtoft 1C7A 0 CODE 0 text11 stepper_motor.obj
-__end_of_setPosicaoDesejada 1DE6 0 CODE 0 text5 stepper_motor.obj
+___lwtoft 1450 0 CODE 0 text15 stepper_motor.obj
+__end_of_setPosicaoDesejada 1608 0 CODE 0 text7 stepper_motor.obj
+__end_ofi1___wmul 14FA 0 CODE 0 text34 stepper_motor.obj
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 ABS 0 bank3 -
-__Lcinit 2A 0 CODE 0 cinit -
+__Lcinit FC0 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 0 idloc -
 __Lstack 0 0 STACK 2 stack -
-?_getPosicaoAtual 52 0 BANK0 1 cstackBANK0 stepper_motor.obj
-__size_of_setupDisplay 0 0 ABS 0 - stepper_motor.obj
-__end_of___lwtoft 1CAA 0 CODE 0 text11 stepper_motor.obj
+?_getPosicaoAtual CA 0 BANK1 1 cstackBANK1 stepper_motor.obj
+__end_of___lwtoft 1480 0 CODE 0 text15 stepper_motor.obj
+__Linittext 0 0 ABS 0 inittext -
 _PORTDbits 8 0 ABS 0 - stepper_motor.obj
+_LCD_Setup 1B7A 0 CODE 0 text6 stepper_motor.obj
 _INTCONbits B 0 ABS 0 - stepper_motor.obj
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
@@ -587,195 +816,246 @@ __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
-__end_of_getPosicaoAtual 1D86 0 CODE 0 text10 stepper_motor.obj
-___wmul 1CE0 0 CODE 0 text16 stepper_motor.obj
+__end_of_getPosicaoAtual 15A8 0 CODE 0 text14 stepper_motor.obj
+___wmul 2A 0 CODE 0 text20 stepper_motor.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_ISR 4B4 0 CODE 0 text22 stepper_motor.obj
+_ISR A40 0 CODE 0 text26 stepper_motor.obj
 _PR2 92 0 ABS 0 - stepper_motor.obj
 __S0 2009 0 ABS 0 - -
-__S1 AC 0 ABS 0 - -
+__S1 EF 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_abs 1C0C 0 CODE 0 text24 stepper_motor.obj
+_abs 13BE 0 CODE 0 text36 stepper_motor.obj
 __CFG_BOR4V$BOR40V 0 0 ABS 0 - stepper_motor.obj
-__end_of_calculaVelocidade 1F5A 0 CODE 0 text15 stepper_motor.obj
-setCursor@linha 3F 0 BANK0 1 cstackBANK0 stepper_motor.obj
+__end_of_calculaVelocidade 1842 0 CODE 0 text19 stepper_motor.obj
+i1___wmul@multiplier 71 0 COMMON 1 cstackCOMMON stepper_motor.obj
 saved_w 7E 0 ABS 0 - stepper_motor.obj
-__end_of_setupDisplay D04 0 CODE 0 text3 stepper_motor.obj
-_setPosicaoDesejada 1D86 0 CODE 0 text5 stepper_motor.obj
+_setPosicaoDesejada 15A8 0 CODE 0 text7 stepper_motor.obj
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - stepper_motor.obj
-LCD_sendString@coluna 44 0 BANK0 1 cstackBANK0 stepper_motor.obj
-__end_of_ISR 66A 0 CODE 0 text22 stepper_motor.obj
-__end_of_abs 1C28 0 CODE 0 text24 stepper_motor.obj
+i1___ftdiv@f1 23 0 BANK0 1 cstackBANK0 stepper_motor.obj
+i1___ftdiv@f2 20 0 BANK0 1 cstackBANK0 stepper_motor.obj
+i1___ftdiv@f3 2B 0 BANK0 1 cstackBANK0 stepper_motor.obj
+LCD_sendString@coluna BC 0 BANK1 1 cstackBANK1 stepper_motor.obj
+__size_ofi1_setPosicaoDesejada 0 0 ABS 0 - stepper_motor.obj
+__end_of_ISR CA4 0 CODE 0 text26 stepper_motor.obj
+__end_of_abs 13DA 0 CODE 0 text36 stepper_motor.obj
 __CFG_BOREN$ON 0 0 ABS 0 - stepper_motor.obj
+__size_of_getChar_ 0 0 ABS 0 - stepper_motor.obj
 __Lintentry 8 0 CODE 0 intentry -
 __stringtab 1000 0 STRING 0 strings stepper_motor.obj
-_LCD_Entrada 65 0 BANK0 1 dataBANK0 stepper_motor.obj
+_LCD_Entrada EC 0 BANK1 1 dataBANK1 stepper_motor.obj
 reset_vec 0 0 CODE 0 reset_vec startup.obj
-__pdataBANK0 64 0 BANK0 1 dataBANK0 stepper_motor.obj
-__pdataBANK1 AA 0 BANK1 1 dataBANK1 stepper_motor.obj
+__pdataBANK1 E8 0 BANK1 1 dataBANK1 stepper_motor.obj
+ISR@dado 4F 0 BANK0 1 cstackBANK0 stepper_motor.obj
 __size_of___wmul 0 0 ABS 0 - stepper_motor.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
-_getPosicaoAtual 1D26 0 CODE 0 text10 stepper_motor.obj
+__end_ofi1_setPosicaoDesejada 16D4 0 CODE 0 text27 stepper_motor.obj
+_getPosicaoAtual 1548 0 CODE 0 text14 stepper_motor.obj
 __CFG_FCMEN$ON 0 0 ABS 0 - stepper_motor.obj
+_RCSTAbits 18 0 ABS 0 - stepper_motor.obj
 _PIE1bits 8C 0 ABS 0 - stepper_motor.obj
-__ptext10 1D26 0 CODE 0 text10 stepper_motor.obj
-__ptext11 1C7A 0 CODE 0 text11 stepper_motor.obj
-__ptext12 B02 0 CODE 0 text12 stepper_motor.obj
-__ptext13 66A 0 CODE 0 text13 stepper_motor.obj
-__ptext14 D04 0 CODE 0 text14 stepper_motor.obj
-__ptext15 1EC2 0 CODE 0 text15 stepper_motor.obj
-__ptext16 1CE0 0 CODE 0 text16 stepper_motor.obj
-__ptext17 EB4 0 CODE 0 text17 stepper_motor.obj
-__ptext18 DE0 0 CODE 0 text18 stepper_motor.obj
-__ptext19 1CAA 0 CODE 0 text19 stepper_motor.obj
-__ptext20 F6A 0 CODE 0 text20 stepper_motor.obj
-__ptext21 2B4 0 CODE 0 text21 stepper_motor.obj
-__ptext22 4B4 0 CODE 0 text22 stepper_motor.obj
-__ptext23 1F5A 0 CODE 0 text23 stepper_motor.obj
-__ptext24 1C0C 0 CODE 0 text24 stepper_motor.obj
-_LCD_SendByte$314 3B 0 BANK0 1 cstackBANK0 stepper_motor.obj
-_LCD_SendByte F6A 0 CODE 0 text20 stepper_motor.obj
-___awdiv EB4 0 CODE 0 text17 stepper_motor.obj
-___ftdiv 992 0 CODE 0 text6 stepper_motor.obj
-___ftmul 66A 0 CODE 0 text13 stepper_motor.obj
-___fttol B02 0 CODE 0 text12 stepper_motor.obj
-___lwdiv 1E46 0 CODE 0 text8 stepper_motor.obj
-__pmaintext 9E 0 CODE 0 maintext stepper_motor.obj
-LCD_sendString@i_330 48 0 BANK0 1 cstackBANK0 stepper_motor.obj
-LCD_sendString@linha 43 0 BANK0 1 cstackBANK0 stepper_motor.obj
+__ptext10 13AC 0 CODE 0 text10 stepper_motor.obj
+__ptext11 18C 0 CODE 0 text11 stepper_motor.obj
+__ptext12 1746 0 CODE 0 text12 stepper_motor.obj
+__ptext13 1380 0 CODE 0 text13 stepper_motor.obj
+__ptext14 1548 0 CODE 0 text14 stepper_motor.obj
+__ptext15 1450 0 CODE 0 text15 stepper_motor.obj
+__ptext16 70 0 CODE 0 text16 stepper_motor.obj
+__ptext17 6A6 0 CODE 0 text17 stepper_motor.obj
+__ptext18 1D16 0 CODE 0 text18 stepper_motor.obj
+__ptext19 17C2 0 CODE 0 text19 stepper_motor.obj
+__ptext20 2A 0 CODE 0 text20 stepper_motor.obj
+__ptext21 1AC4 0 CODE 0 text21 stepper_motor.obj
+__ptext22 1DF2 0 CODE 0 text22 stepper_motor.obj
+__ptext23 1480 0 CODE 0 text23 stepper_motor.obj
+__ptext24 1842 0 CODE 0 text24 stepper_motor.obj
+__ptext25 84C 0 CODE 0 text25 stepper_motor.obj
+__ptext26 A40 0 CODE 0 text26 stepper_motor.obj
+__ptext27 1668 0 CODE 0 text27 stepper_motor.obj
+__ptext28 13FC 0 CODE 0 text28 stepper_motor.obj
+__ptext29 1EE4 0 CODE 0 text29 stepper_motor.obj
+__ptext30 3C6 0 CODE 0 text30 stepper_motor.obj
+__ptext31 1C3E 0 CODE 0 text31 stepper_motor.obj
+__ptext32 1378 0 CODE 0 text32 stepper_motor.obj
+__ptext33 1A18 0 CODE 0 text33 stepper_motor.obj
+__ptext34 14B8 0 CODE 0 text34 stepper_motor.obj
+__ptext35 1972 0 CODE 0 text35 stepper_motor.obj
+__ptext36 13BE 0 CODE 0 text36 stepper_motor.obj
+_LCD_SendByte$370 B3 0 BANK1 1 cstackBANK1 stepper_motor.obj
+_LCD_SendByte 1842 0 CODE 0 text24 stepper_motor.obj
+___aldiv 2A8 0 CODE 0 text4 stepper_motor.obj
+___awdiv 1AC4 0 CODE 0 text21 stepper_motor.obj
+___ftdiv 536 0 CODE 0 text8 stepper_motor.obj
+___ftmul 6A6 0 CODE 0 text17 stepper_motor.obj
+___fttol 70 0 CODE 0 text16 stepper_motor.obj
+___lwdiv 1746 0 CODE 0 text12 stepper_motor.obj
+__pmaintext CA4 0 CODE 0 maintext stepper_motor.obj
+LCD_sendString@i_386 C0 0 BANK1 1 cstackBANK1 stepper_motor.obj
+LCD_sendString@linha BB 0 BANK1 1 cstackBANK1 stepper_motor.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
-?___ftpack 28 0 BANK0 1 cstackBANK0 stepper_motor.obj
+?___ftpack A0 0 BANK1 1 cstackBANK1 stepper_motor.obj
 __CFG_CP$OFF 0 0 ABS 0 - stepper_motor.obj
+__end_of_setupSerial 1972 0 CODE 0 text3 stepper_motor.obj
 __CFG_IESO$ON 0 0 ABS 0 - stepper_motor.obj
-_LCD_SendNb$307 2C 0 BANK0 1 cstackBANK0 stepper_motor.obj
-_LCD_SendNb$308 2E 0 BANK0 1 cstackBANK0 stepper_motor.obj
-_LCD_SendNb$309 30 0 BANK0 1 cstackBANK0 stepper_motor.obj
-_LCD_SendNb$310 32 0 BANK0 1 cstackBANK0 stepper_motor.obj
+_LCD_SendNb$363 A4 0 BANK1 1 cstackBANK1 stepper_motor.obj
+_LCD_SendNb$364 A6 0 BANK1 1 cstackBANK1 stepper_motor.obj
+_LCD_SendNb$365 A8 0 BANK1 1 cstackBANK1 stepper_motor.obj
+_LCD_SendNb$366 AA 0 BANK1 1 cstackBANK1 stepper_motor.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - stepper_motor.obj
-___wmul@multiplier 31 0 BANK0 1 cstackBANK0 stepper_motor.obj
+__Hinittext 0 0 ABS 0 inittext -
+___wmul@multiplier A9 0 BANK1 1 cstackBANK1 stepper_motor.obj
+_setupSerial$992 B1 0 BANK1 1 cstackBANK1 stepper_motor.obj
 __size_of_LCD_SendNb 0 0 ABS 0 - stepper_motor.obj
-_c_int_value 62 0 BANK0 1 bssBANK0 stepper_motor.obj
-___lwdiv@divisor 28 0 BANK0 1 cstackBANK0 stepper_motor.obj
-LCD_sendString@string 41 0 BANK0 1 cstackBANK0 stepper_motor.obj
-___lwtoft@c 30 0 BANK0 1 cstackBANK0 stepper_motor.obj
+___lwdiv@divisor A0 0 BANK1 1 cstackBANK1 stepper_motor.obj
+?i1___wmul 71 0 COMMON 1 cstackCOMMON stepper_motor.obj
+i1___fttol@f1 30 0 BANK0 1 cstackBANK0 stepper_motor.obj
+_getChar_ 1378 0 CODE 0 text32 stepper_motor.obj
+LCD_sendString@string B9 0 BANK1 1 cstackBANK1 stepper_motor.obj
+___lwtoft@c A8 0 BANK1 1 cstackBANK1 stepper_motor.obj
 stackhi 0 0 ABS 0 - startup.obj
 stacklo 0 0 ABS 0 - startup.obj
-LCD_sendString@i 47 0 BANK0 1 cstackBANK0 stepper_motor.obj
-setPosicaoAtual@posicao_atual 52 0 BANK0 1 cstackBANK0 stepper_motor.obj
-_calculaVelocidade 1EC2 0 CODE 0 text15 stepper_motor.obj
-?___lwtoft 30 0 BANK0 1 cstackBANK0 stepper_motor.obj
+LCD_sendString@i BF 0 BANK1 1 cstackBANK1 stepper_motor.obj
+setPosicaoAtual@posicao_atual CA 0 BANK1 1 cstackBANK1 stepper_motor.obj
+_calculaVelocidade 17C2 0 CODE 0 text19 stepper_motor.obj
+?___lwtoft A8 0 BANK1 1 cstackBANK1 stepper_motor.obj
 __end_of__stringtab 1020 0 STRING 0 strings stepper_motor.obj
 __CFG_LVP$OFF 0 0 ABS 0 - stepper_motor.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-___ftmul@cntr 42 0 BANK0 1 cstackBANK0 stepper_motor.obj
-___ftmul@sign 43 0 BANK0 1 cstackBANK0 stepper_motor.obj
-_speed_ramp 60 0 BANK0 1 bssBANK0 stepper_motor.obj
+__end_of_getChar_ 1380 0 CODE 0 text32 stepper_motor.obj
+___ftmul@cntr BA 0 BANK1 1 cstackBANK1 stepper_motor.obj
+___ftmul@sign BB 0 BANK1 1 cstackBANK1 stepper_motor.obj
+_speed_ramp 5D 0 BANK0 1 bssBANK0 stepper_motor.obj
+init_fetch0 13DA 0 CODE 0 inittext stepper_motor.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackBANK1 0 0 ABS 0 cstackBANK1 -
-LCD_SendNb@NB 34 0 BANK0 1 cstackBANK0 stepper_motor.obj
+LCD_SendNb@NB AC 0 BANK1 1 cstackBANK1 stepper_motor.obj
 __size_of_LCD_SendByte 0 0 ABS 0 - stepper_motor.obj
-__end_of_calculaErro 2000 0 CODE 0 text23 stepper_motor.obj
+__end_of_calculaErro 1A18 0 CODE 0 text35 stepper_motor.obj
 _PIR1bits C 0 ABS 0 - stepper_motor.obj
-__end_of_setCursor 1CE0 0 CODE 0 text19 stepper_motor.obj
 __Lend_init 24 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-int2char@int_value 54 0 BANK0 1 cstackBANK0 stepper_motor.obj
-__size_of_setCursor 0 0 ABS 0 - stepper_motor.obj
-end_of_initialization 96 0 CODE 0 cinit stepper_motor.obj
-setCursor@coluna 3D 0 BANK0 1 cstackBANK0 stepper_motor.obj
+int2char_@int_value0 D2 0 BANK1 1 cstackBANK1 stepper_motor.obj
+int2char_@int_value1 D4 0 BANK1 1 cstackBANK1 stepper_motor.obj
+int2char_@int_value2 D6 0 BANK1 1 cstackBANK1 stepper_motor.obj
+int2char_@int_value_ CC 0 BANK1 1 cstackBANK1 stepper_motor.obj
+end_of_initialization FF8 0 CODE 0 cinit stepper_motor.obj
+_c_int_value_ E3 0 BANK1 1 bssBANK1 stepper_motor.obj
 __Hintentry 24 0 CODE 0 intentry -
-?_getVelocidade 28 0 BANK0 1 cstackBANK0 stepper_motor.obj
+?_getVelocidade A0 0 BANK1 1 cstackBANK1 stepper_motor.obj
 __Lstrings 0 0 ABS 0 strings -
 __size_of_LCD_sendString 0 0 ABS 0 - stepper_motor.obj
-___awdiv@quotient 2F 0 BANK0 1 cstackBANK0 stepper_motor.obj
-?___awdiv 28 0 BANK0 1 cstackBANK0 stepper_motor.obj
-___lwdiv@dividend 2A 0 BANK0 1 cstackBANK0 stepper_motor.obj
-?___ftdiv 34 0 BANK0 1 cstackBANK0 stepper_motor.obj
-?___ftmul 34 0 BANK0 1 cstackBANK0 stepper_motor.obj
-?___fttol 44 0 BANK0 1 cstackBANK0 stepper_motor.obj
-?___lwdiv 28 0 BANK0 1 cstackBANK0 stepper_motor.obj
-__Hreset_vec 6 0 CODE 0 reset_vec -
+___awdiv@quotient A7 0 BANK1 1 cstackBANK1 stepper_motor.obj
+?___aldiv A0 0 BANK1 1 cstackBANK1 stepper_motor.obj
+?___awdiv A0 0 BANK1 1 cstackBANK1 stepper_motor.obj
+LCD_SetCursor@coluna B5 0 BANK1 1 cstackBANK1 stepper_motor.obj
+___lwdiv@dividend A2 0 BANK1 1 cstackBANK1 stepper_motor.obj
+?___ftdiv AC 0 BANK1 1 cstackBANK1 stepper_motor.obj
+?___ftmul AC 0 BANK1 1 cstackBANK1 stepper_motor.obj
+?___fttol BC 0 BANK1 1 cstackBANK1 stepper_motor.obj
+?___lwdiv A0 0 BANK1 1 cstackBANK1 stepper_motor.obj
+__Hreset_vec 8 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __HbssBANK1 0 0 ABS 0 bssBANK1 -
-_setpoint 5E 0 BANK0 1 bssBANK0 stepper_motor.obj
-_setCursor 1CAA 0 CODE 0 text19 stepper_motor.obj
+_setpoint E1 0 BANK1 1 bssBANK1 stepper_motor.obj
+char2int_@int_value0 20 0 BANK0 1 cstackBANK0 stepper_motor.obj
+char2int_@int_value1 22 0 BANK0 1 cstackBANK0 stepper_motor.obj
+char2int_@int_value2 24 0 BANK0 1 cstackBANK0 stepper_motor.obj
 __size_of_getPosicaoAtual 0 0 ABS 0 - stepper_motor.obj
-__end_of_LCD_SendByte FFE 0 CODE 0 text20 stepper_motor.obj
-__ptext1 1C28 0 CODE 0 text1 stepper_motor.obj
-__ptext2 1C4E 0 CODE 0 text2 stepper_motor.obj
-__ptext3 C1E 0 CODE 0 text3 stepper_motor.obj
-__ptext4 1DE6 0 CODE 0 text4 stepper_motor.obj
-__ptext5 1D86 0 CODE 0 text5 stepper_motor.obj
-__ptext6 992 0 CODE 0 text6 stepper_motor.obj
-__ptext7 810 0 CODE 0 text7 stepper_motor.obj
-__ptext8 1E46 0 CODE 0 text8 stepper_motor.obj
-__ptext9 1BF2 0 CODE 0 text9 stepper_motor.obj
+__end_of_LCD_SendByte 18D6 0 CODE 0 text24 stepper_motor.obj
+__ptext1 14FA 0 CODE 0 text1 stepper_motor.obj
+__ptext2 1424 0 CODE 0 text2 stepper_motor.obj
+__ptext3 18D6 0 CODE 0 text3 stepper_motor.obj
+__ptext4 2A8 0 CODE 0 text4 stepper_motor.obj
+__ptext5 1608 0 CODE 0 text5 stepper_motor.obj
+__ptext6 1B7A 0 CODE 0 text6 stepper_motor.obj
+__ptext7 15A8 0 CODE 0 text7 stepper_motor.obj
+__ptext8 536 0 CODE 0 text8 stepper_motor.obj
+__ptext9 16D4 0 CODE 0 text9 stepper_motor.obj
+_int_value 5A 0 BANK0 1 bssBANK0 stepper_motor.obj
+___aldiv@dividend A4 0 BANK1 1 cstackBANK1 stepper_motor.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-_calculaVelocidade$745 39 0 BANK0 1 cstackBANK0 stepper_motor.obj
+__end_of_sendString_ 1746 0 CODE 0 text9 stepper_motor.obj
+_calculaVelocidade$991 B1 0 BANK1 1 cstackBANK1 stepper_motor.obj
 __Lreset_vec 0 0 CODE 0 reset_vec -
-int2char@int_value0 A0 0 BANK1 1 cstackBANK1 stepper_motor.obj
-int2char@int_value1 A2 0 BANK1 1 cstackBANK1 stepper_motor.obj
-int2char@int_value2 A4 0 BANK1 1 cstackBANK1 stepper_motor.obj
-___ftmul@exp 3E 0 BANK0 1 cstackBANK0 stepper_motor.obj
-__end_of__initialization 96 0 CODE 0 cinit stepper_motor.obj
+i1___ftpack@sign 75 0 COMMON 1 cstackCOMMON stepper_motor.obj
+i1___ftpack 1C3E 0 CODE 0 text31 stepper_motor.obj
+?i1___ftdiv 20 0 BANK0 1 cstackBANK0 stepper_motor.obj
+?i1___fttol 30 0 BANK0 1 cstackBANK0 stepper_motor.obj
+_LCD_SetCursor 1480 0 CODE 0 text23 stepper_motor.obj
+___ftmul@exp B6 0 BANK1 1 cstackBANK1 stepper_motor.obj
+__end_of__initialization FF8 0 CODE 0 cinit stepper_motor.obj
 __Lfunctab 0 0 ENTRY 0 functab -
-__pidataBANK0 1BEA 0 CODE 0 idataBANK0 stepper_motor.obj
-__pidataBANK1 1BE6 0 CODE 0 idataBANK1 stepper_motor.obj
+i1___fttol@exp1 3D 0 BANK0 1 cstackBANK0 stepper_motor.obj
+i1___fttol@lval 39 0 BANK0 1 cstackBANK0 stepper_motor.obj
+__pidataBANK1 138E 0 CODE 0 idataBANK1 stepper_motor.obj
 __Lclrtext 0 0 ABS 0 clrtext -
-_LCD_Controle 64 0 BANK0 1 dataBANK0 stepper_motor.obj
-___ftpack@sign 2C 0 BANK0 1 cstackBANK0 stepper_motor.obj
+_LCD_Controle EB 0 BANK1 1 dataBANK1 stepper_motor.obj
+___ftpack@sign A4 0 BANK1 1 cstackBANK1 stepper_motor.obj
+i1___ftpack@arg 71 0 COMMON 1 cstackCOMMON stepper_motor.obj
+i1___ftpack@exp 74 0 COMMON 1 cstackCOMMON stepper_motor.obj
 __size_of_setPosicaoDesejada 0 0 ABS 0 - stepper_motor.obj
-__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON stepper_motor.obj
-___ftdiv@cntr 3E 0 BANK0 1 cstackBANK0 stepper_motor.obj
-___ftdiv@sign 43 0 BANK0 1 cstackBANK0 stepper_motor.obj
-_ISR$250 20 0 BANK0 1 cstackBANK0 stepper_motor.obj
-_ISR$251 22 0 BANK0 1 cstackBANK0 stepper_motor.obj
-_ISR$252 24 0 BANK0 1 cstackBANK0 stepper_motor.obj
-_ISR$253 26 0 BANK0 1 cstackBANK0 stepper_motor.obj
+i1___lwtoft 13FC 0 CODE 0 text28 stepper_motor.obj
+__pcstackCOMMON 71 0 COMMON 1 cstackCOMMON stepper_motor.obj
+___ftdiv@cntr B6 0 BANK1 1 cstackBANK1 stepper_motor.obj
+___ftdiv@sign BB 0 BANK1 1 cstackBANK1 stepper_motor.obj
+_ISR$287 47 0 BANK0 1 cstackBANK0 stepper_motor.obj
+_ISR$288 49 0 BANK0 1 cstackBANK0 stepper_motor.obj
+_ISR$289 4B 0 BANK0 1 cstackBANK0 stepper_motor.obj
+_ISR$290 4D 0 BANK0 1 cstackBANK0 stepper_motor.obj
+i1___fttol@sign1 38 0 BANK0 1 cstackBANK0 stepper_motor.obj
 __Hend_init 2A 0 CODE 0 end_init -
-__end_of_main 2B4 0 CODE 0 maintext stepper_motor.obj
+init_ram0 13E2 0 CODE 0 inittext stepper_motor.obj
+___aldiv@counter A9 0 BANK1 1 cstackBANK1 stepper_motor.obj
+__end_of_char2int_ 1AC4 0 CODE 0 text33 stepper_motor.obj
+__end_of_main FC0 0 CODE 0 maintext stepper_motor.obj
+__size_of_setupSerial 0 0 ABS 0 - stepper_motor.obj
+__size_of_char2int_ 0 0 ABS 0 - stepper_motor.obj
 _PORTB 6 0 ABS 0 - stepper_motor.obj
 _PORTD 8 0 ABS 0 - stepper_motor.obj
+_RCREG 1A 0 ABS 0 - stepper_motor.obj
+_RCSTA 18 0 ABS 0 - stepper_motor.obj
+_SPBRG 99 0 ABS 0 - stepper_motor.obj
 _T2CON 12 0 ABS 0 - stepper_motor.obj
 _TRISB 86 0 ABS 0 - stepper_motor.obj
 _TRISD 88 0 ABS 0 - stepper_motor.obj
-__end_of_setup 1C4E 0 CODE 0 text1 stepper_motor.obj
+_TXREG 19 0 ABS 0 - stepper_motor.obj
+_TXSTA 98 0 ABS 0 - stepper_motor.obj
+__end_of_setup 1548 0 CODE 0 text1 stepper_motor.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry stepper_motor.obj
-_error 5A 0 BANK0 1 bssBANK0 stepper_motor.obj
-_phase 61 0 BANK0 1 bssBANK0 stepper_motor.obj
+_error DD 0 BANK1 1 bssBANK1 stepper_motor.obj
+_phase 5E 0 BANK0 1 bssBANK0 stepper_motor.obj
 __CFG_CPD$OFF 0 0 ABS 0 - stepper_motor.obj
-_setup 1C28 0 CODE 0 text1 stepper_motor.obj
-_speed A8 0 BANK1 1 bssBANK1 stepper_motor.obj
+_setup 14FA 0 CODE 0 text1 stepper_motor.obj
+_speed DB 0 BANK1 1 bssBANK1 stepper_motor.obj
 __pintentry 8 0 CODE 0 intentry stepper_motor.obj
-___fttol@sign1 4C 0 BANK0 1 cstackBANK0 stepper_motor.obj
+___fttol@sign1 C4 0 BANK1 1 cstackBANK1 stepper_motor.obj
 __size_of_ISR 0 0 ABS 0 - stepper_motor.obj
 __size_of_abs 0 0 ABS 0 - stepper_motor.obj
-__HdataBANK0 0 0 ABS 0 dataBANK0 -
 __HdataBANK1 0 0 ABS 0 dataBANK1 -
-setCursor@aux 40 0 BANK0 1 cstackBANK0 stepper_motor.obj
-__initialization 2A 0 CODE 0 cinit stepper_motor.obj
+__end_ofi1___ftpack 1D16 0 CODE 0 text31 stepper_motor.obj
+__initialization FC0 0 CODE 0 cinit stepper_motor.obj
 __CFG_PWRTE$OFF 0 0 ABS 0 - stepper_motor.obj
-_setupStepper 1C4E 0 CODE 0 text2 stepper_motor.obj
-__pbssBANK0 5A 0 BANK0 1 bssBANK0 stepper_motor.obj
-__pbssBANK1 A8 0 BANK1 1 bssBANK1 stepper_motor.obj
+_char2int_ 1A18 0 CODE 0 text33 stepper_motor.obj
+_setupStepper 1424 0 CODE 0 text2 stepper_motor.obj
+__pbssBANK0 50 0 BANK0 1 bssBANK0 stepper_motor.obj
+__pbssBANK1 DB 0 BANK1 1 bssBANK1 stepper_motor.obj
 __CFG_WRT$OFF 0 0 ABS 0 - stepper_motor.obj
 __pstrings 1000 0 STRING 0 strings stepper_motor.obj
-___wmul@product 35 0 BANK0 1 cstackBANK0 stepper_motor.obj
+___wmul@product AD 0 BANK1 1 cstackBANK1 stepper_motor.obj
 _STATUSbits 3 0 ABS 0 - stepper_motor.obj
 __size_of_calculaErro 0 0 ABS 0 - stepper_motor.obj
-_position 5C 0 BANK0 1 bssBANK0 stepper_motor.obj
-___ftmul@f3_as_product 3F 0 BANK0 1 cstackBANK0 stepper_motor.obj
+_position DF 0 BANK1 1 bssBANK1 stepper_motor.obj
+___ftmul@f3_as_product B7 0 BANK1 1 cstackBANK1 stepper_motor.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -801,25 +1081,50 @@ ___ftmul@f3_as_product 3F 0 BANK0 1 cstackBANK0 stepper_motor.obj
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text1 0 E14 1C28 13 2
-text2 0 E27 1C4E 16 2
-text4 0 EF3 1DE6 30 2
-text5 0 EC3 1D86 30 2
-text8 0 F23 1E46 3E 2
-text9 0 DF9 1BF2 D 2
-text10 0 E93 1D26 30 2
-text11 0 E3D 1C7A 18 2
-text15 0 F61 1EC2 4C 2
-text16 0 E70 1CE0 23 2
-text19 0 E55 1CAA 1B 2
-text23 0 FAD 1F5A 53 2
-text24 0 E06 1C0C E 2
-cstackCOMMON 1 70 70 D 1
-cstackBANK0 1 20 20 48 1
-cstackBANK1 1 A0 A0 C 1
-intentry 0 4 8 7FB 2
-reset_vec 0 0 0 3 2
-idataBANK0 0 DF5 1BEA 4 2
-idataBANK1 0 DF3 1BE6 2 2
-strings 0 800 1000 1D 2
+cinit 0 7E0 FC0 20 2
+text1 0 A7D 14FA 27 2
+text2 0 A12 1424 16 2
+text3 0 C6B 18D6 4E 2
+text4 0 154 2A8 8F 2
+text5 0 B04 1608 30 2
+text6 0 DBD 1B7A 62 2
+text7 0 AD4 15A8 30 2
+text8 0 29B 536 B8 2
+text9 0 B6A 16D4 39 2
+text10 0 9D6 13AC 9 2
+text11 0 C6 18C 8E 2
+text12 0 BA3 1746 3E 2
+text13 0 9C0 1380 7 2
+text14 0 AA4 1548 30 2
+text15 0 A28 1450 18 2
+text16 0 38 70 8E 2
+text17 0 353 6A6 D3 2
+text18 0 E8B 1D16 6E 2
+text19 0 BE1 17C2 40 2
+text21 0 D62 1AC4 5B 2
+text22 0 EF9 1DF2 79 2
+text23 0 A40 1480 1C 2
+text24 0 C21 1842 4A 2
+text25 0 426 84C FA 2
+text26 0 520 A40 132 2
+text27 0 B34 1668 36 2
+text28 0 9FE 13FC 14 2
+text29 0 F72 1EE4 8E 2
+text30 0 1E3 3C6 B8 2
+text31 0 E1F 1C3E 6C 2
+text32 0 9BC 1378 4 2
+text33 0 D0C 1A18 56 2
+text34 0 A5C 14B8 21 2
+text35 0 CB9 1972 53 2
+text36 0 9DF 13BE E 2
+maintext 0 652 CA4 18E 2
+cstackCOMMON 1 71 71 C 1
+cstackBANK0 1 20 20 3F 1
+cstackBANK1 1 A0 A0 4F 1
+inittext 0 9ED 13DA 11 2
+intentry 0 4 8 34 2
+reset_vec 0 0 0 4 2
+idataBANK1 0 9C7 138E 7 2
+strings 0 800 1000 40 2
+clrtext 0 9CE 139C 8 2
 config 0 2007 400E 2 2

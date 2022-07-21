@@ -64,7 +64,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-"6 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h
+"6 C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.h
 [v _setpoint `ui ~T0 @X0 1 e ]
 [i _setpoint
 -> -> 0 `i `ui
@@ -1630,7 +1630,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-"6 D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.c
+"6 C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.c
 [v _setupStepper `(v ~T0 @X0 1 ef ]
 {
 [; ;stepper.c: 6: void setupStepper(void){

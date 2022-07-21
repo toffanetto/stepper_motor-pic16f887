@@ -1,5 +1,5 @@
 
-# 1 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c"
+# 1 "C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2204,7 +2204,7 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 6 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\stepper.h"
+# 6 "C:\Users\Aluno.PC-17\Desktop\stepper_motor\stepper.h"
 uint16_t setpoint = 0;
 uint16_t position = 0;
 int16_t error = 0;
@@ -2225,17 +2225,20 @@ uint16_t getVelocidade();
 void calculaVelocidade();
 
 
-# 4 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\lcd.h"
+# 4 "C:\Users\Aluno.PC-17\Desktop\stepper_motor\lcd.h"
 #pragma config CONFIG1=0x2FF4
 #pragma config CONFIG2=0x3FFF
 
-# 19
+
+
+char c_int_value[5];
+
+# 29
 uint8_t LCD_Entrada = 0x03;
 uint8_t LCD_Controle = 0x0C;
-char c_int_value[2];
+uint8_t LCD_ShiftDisplay = 0x10;
 
-
-void setupDisplay();
+void LCD_Setup();
 
 void LCD_SendByte(uint8_t reg, uint8_t byte);
 
@@ -2243,18 +2246,48 @@ void LCD_SendNb(uint8_t nibble);
 
 void LCD_CMD(uint8_t cmd);
 
-void clearDisplay(void);
+void LCD_ClearDisplay(void);
 
-void setCursor(uint8_t linha, uint8_t coluna);
+void LCD_Home(void);
 
-void sendChar(uint8_t ch, uint8_t linha, uint8_t coluna);
+void LCD_Toggle(uint8_t time, uint8_t n);
+
+void LCD_DisplayOn(void);
+
+void LCD_DisplayOff(void);
+
+void LCD_CursorOn(void);
+
+void LCD_CursorOff(void);
+
+void LCD_DisplayRight(void);
+
+void LCD_DisplayLeft(void);
+
+void LCD_CursorRight(void);
+
+void LCD_CursorLeft(void);
+
+void LCD_SetCursor(uint8_t linha, uint8_t coluna);
+
+void LCD_sendChar(uint8_t ch, uint8_t linha, uint8_t coluna);
 
 void LCD_sendString(uint8_t *string, uint8_t linha, uint8_t coluna);
 
-void int2char(uint16_t int_value);
+# 8 "C:\Users\Aluno.PC-17\Desktop\stepper_motor\serial.h"
+char data_recived[5];
+char c_int_value_[5];
+uint16_t int_value = 0;
+
+void setupSerial(uint16_t baudrate);
+char getChar_(void);
+void sendChar_(char dado);
+void sendString_(char *dado);
+void char2int_();
+void int2char_(uint16_t int_value_);
 
 
-# 8 "D:\Drive\00_UNIFEI\2022.1\Lab. de Microcontroladores\Projeto\stepper_motor-pic16f887\stepper_motor\main.c"
+# 9 "C:\Users\Aluno.PC-17\Desktop\stepper_motor\main.c"
 #pragma config CONFIG1=0x2FF4
 #pragma config CONFIG2=0x3FFF
 
@@ -2263,6 +2296,7 @@ void int2char(uint16_t int_value);
 
 uint8_t phase = 0;
 uint8_t speed_ramp = 0;
+uint8_t i = 0;
 
 void __interrupt ISR(){
 
@@ -2298,11 +2332,37 @@ PORTD = phase;
 PIR1bits.TMR2IF = 0;
 }
 
+if (PIR1bits.RCIF == 1)
+{
+char dado;
+dado = getChar_();
+data_recived[i] = dado;
+i++;
+if(dado == 0x0D){
+data_recived[i]='\0';
+char2int_();
+setPosicaoDesejada(int_value);
+i=0;
+data_recived[0]=0;
+data_recived[1]=0;
+data_recived[2]=0;
+
+
+}
+
+PIR1bits.RCIF = 0;
+}
+
 }
 
 void setup (void){
 
-setupDisplay();
+PORTB = 0x00;
+TRISB = 0x00;
+ANSELH = 0x00;
+LCD_Setup();
+
+setupSerial(10417);
 
 setupStepper();
 setPosicaoAtual(0);
@@ -2325,14 +2385,30 @@ setPosicaoDesejada(180);
 calculaVelocidade();
 
 LCD_sendString("PF:", 1, 1);
-int2char(setpoint*(5.625/32));
-LCD_sendString(c_int_value, 1, 4);
+int2char_(setpoint*(5.625/32));
+LCD_sendString(c_int_value_, 1, 4);
 LCD_sendString("PA:", 1, 9);
-int2char(getPosicaoAtual());
-LCD_sendString(c_int_value, 1,12);
+int2char_(getPosicaoAtual());
+LCD_sendString(c_int_value_, 1,12);
 LCD_sendString("Vel:", 2, 6);
-int2char(getVelocidade());
-LCD_sendString(c_int_value,2,10);
+int2char_(getVelocidade());
+LCD_sendString(c_int_value_,2,10);
+
+_delay((unsigned long)((200)*(4000000/4000.0)));
+
+int2char_(getPosicaoAtual());
+sendString_("Posicao atual: ");
+sendString_(c_int_value_);
+
+sendChar_('\r');
+sendChar_('\n');
+
+int2char_(setpoint*(5.625/32));
+sendString_("Posicao desejada: ");
+sendString_(c_int_value_);
+
+sendChar_('\r');
+sendChar_('\n');
 
 }
 }
