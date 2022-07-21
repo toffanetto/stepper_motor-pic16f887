@@ -19,7 +19,6 @@ volatile unsigned *LCD_TRIS = & TRISB;
 #define D6 2
 #define D7 3
 
-
 void LCD_Setup(){
   *LCD_TRIS = 0x00;
   *LCD_PORT = 0x00;
@@ -132,7 +131,6 @@ void LCD_SetCursor(uint8_t linha, uint8_t coluna){
 }
 
 // Print do caractere
-
 void LCD_sendChar(uint8_t ch, uint8_t linha, uint8_t coluna){
   LCD_SetCursor(linha, coluna);
   LCD_SendByte(1, ch);
